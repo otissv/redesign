@@ -1,0 +1,3 @@
+export function paginationTheme() {
+  return {};
+}

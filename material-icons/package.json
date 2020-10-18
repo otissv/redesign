@@ -15,18 +15,12 @@
     "dev": "tsdx watch",
     "build": "swc src/icons -d dist",
     "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
     "generate": "npm run clean && mkdir dist  ./src/icons && node ./scripts",
     "clean": "rm -rf ./src/*  ./dist",
     "build-storybook": "build-storybook",
     "prepublish": "npm run generate",
     "prepare": "npm run generate",
     "publish": "cd dist && npm publish"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
   },
   "prettier": {
     "printWidth": 80,

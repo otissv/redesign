@@ -1,0 +1,31 @@
+import React from 'react'
+
+import { ThemeProvider } from '@redesign/ui-core'
+import { Timer } from './Timer'
+
+export default {
+  title: 'Components/Atoms/Timer',
+  component: Timer,
+}
+
+export const Default = () => {
+  let year = new Date().getFullYear()
+  const endTime = new Date(year + 1, 11, 31).toISOString()
+
+  return (
+    <ThemeProvider>
+      <Timer endTime={endTime} />
+    </ThemeProvider>
+  )
+}
+
+export const Countdown = () => {
+  let year = new Date().getFullYear()
+  const endTime = new Date(year + 1, 11, 31).toISOString()
+
+  return (
+    <ThemeProvider>
+      <Timer endTime={endTime} countdown />
+    </ThemeProvider>
+  )
+}

@@ -1,0 +1,16 @@
+import React, { FC } from 'react';
+    import { Icon, IconInterface } from "@redesign/ui-core";
+    export const MicrowaveIcon: FC<IconInterface> = function MicrowaveIcon({
+      className,
+      ...propsRest
+    }) {
+      const classNames =  `MicrowaveIcon ${className}`;
+      return (
+        <Icon alt="Microwave" className={classNames} {...propsRest}>
+          <path d="M4,5A2,2 0 0,0 2,7V17A2,2 0 0,0 4,19H20A2,2 0 0,0 22,17V7A2,2 0 0,0 20,5H4M4,7H16V17H4V7M19,7A1,1 0 0,1 20,8A1,1 0 0,1 19,9A1,1 0 0,1 18,8A1,1 0 0,1 19,7M13,9V15H15V9H13M19,11A1,1 0 0,1 20,12A1,1 0 0,1 19,13A1,1 0 0,1 18,12A1,1 0 0,1 19,11Z" />
+
+        </Icon>
+      );
+    };
+    MicrowaveIcon.displayName = 'MicrowaveIcon';
+      

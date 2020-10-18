@@ -1,0 +1,51 @@
+{
+  "name": "@redesign/theme",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "start-storybook -p 6009",
+    "dev": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "fluid": false
+  },
+  "author": "Otis Virginie",
+  "module": "dist/redesign-theme.esm.js",
+  "devDependencies": {
+    "@types/facepaint": "^1.2.1",
+    "@types/jest": "^25.2.3",
+    "husky": "^4.2.5",
+    "tsdx": "^0.13.2",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.3"
+  },
+  "dependencies": {
+    "deepmerge": "^4.2.2",
+    "facepaint": "^1.2.1",
+    "rambda": "^5.6.0"
+  }
+}

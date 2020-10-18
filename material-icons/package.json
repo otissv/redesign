@@ -1,0 +1,84 @@
+{
+  "private": true,
+  "name": "@redesign/material-icons",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "author": "Otis Virginie",
+  "module": "dist/redesign-material-icons.esm.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "start-storybook -p 6008",
+    "dev": "tsdx watch",
+    "build": "swc src/icons -d dist",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "generate": "npm run clean && mkdir dist  ./src/icons && node ./scripts",
+    "clean": "rm -rf ./src/*  ./dist",
+    "build-storybook": "build-storybook",
+    "prepublish": "npm run generate",
+    "prepare": "npm run generate",
+    "publish": "cd dist && npm publish"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "fluid": false
+  },
+  "peerDependencies": {
+    "@redesign/theme": ">=0",
+    "@redesign/ui-core": ">=0",
+    "emotion": ">=10",
+    "react": ">=16"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@redesign/theme": "^0.0.1",
+    "@redesign/ui-core": "^0.0.1",
+    "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-docs": "^6.0.21",
+    "@storybook/addon-links": "^6.0.21",
+    "@storybook/addons": "^6.0.26",
+    "@storybook/react": "^6.0.21",
+    "@storybook/theming": "^6.0.26",
+    "@swc/cli": "^0.1.27",
+    "@swc/core": "^1.2.36",
+    "@types/jest": "^26.0.10",
+    "@types/react": "^16.9.46",
+    "@types/react-copy-to-clipboard": "^4.3.0",
+    "@types/react-dom": "^16.9.8",
+    "babel-loader": "^8.1.0",
+    "emotion": "^10.0.27",
+    "glob": "^7.1.6",
+    "glob-promise": "^3.4.0",
+    "husky": "^4.2.5",
+    "lodash": "^4.17.20",
+    "mkdirp": "^1.0.4",
+    "numbers2words": "^1.4.0",
+    "react": "^16.13.1",
+    "react-copy-to-clipboard": "^5.0.2",
+    "react-debounce-input": "^3.2.2",
+    "react-dom": "^16.13.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.30.0",
+    "sleep": "^6.3.0",
+    "ts-loader": "^8.0.2",
+    "tsdx": "^0.13.2",
+    "tslib": "^2.0.1",
+    "typescript": "^3.9.7"
+  }
+}

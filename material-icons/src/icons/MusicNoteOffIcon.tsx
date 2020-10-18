@@ -1,0 +1,16 @@
+import React, { FC } from 'react';
+    import { Icon, IconInterface } from "@redesign/ui-core";
+    export const MusicNoteOffIcon: FC<IconInterface> = function MusicNoteOffIcon({
+      className,
+      ...propsRest
+    }) {
+      const classNames =  `MusicNoteOffIcon ${className}`;
+      return (
+        <Icon alt="MusicNoteOff" className={classNames} {...propsRest}>
+          <path d="M4.27 3L3 4.27L12 13.27V13.55C11.41 13.21 10.73 13 10 13C7.79 13 6 14.79 6 17S7.79 21 10 21 14 19.21 14 17V15.27L19.73 21L21 19.73L4.27 3M14 7H18V3H12V8.18L14 10.18Z" />
+
+        </Icon>
+      );
+    };
+    MusicNoteOffIcon.displayName = 'MusicNoteOffIcon';
+      

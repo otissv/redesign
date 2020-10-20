@@ -1,4 +1,4 @@
-import { CssStringType, CssFunctionType, isFunction } from '@redesign/theme';
+import { CssStringType, CssFunctionType, isFunction } from '@redesign-system/theme';
 
 export type CssPropTypes = CssStringType | CssFunctionType;
 

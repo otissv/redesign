@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeProvider } from '@redesign/ui-core'
+import { ThemeProvider } from '@redesign-system/ui-core'
 
 import { Accordion } from './Accordion'
 import { AccordionButton } from './AccordionButton'

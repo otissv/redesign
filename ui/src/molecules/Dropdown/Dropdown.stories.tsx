@@ -3,7 +3,7 @@ import React from 'react'
 import { Dropdown, useDropdown } from './Dropdown'
 import { DropdownButton } from './DropdownButton'
 import { DropdownContent } from './DropdownContent'
-import { ThemeProvider } from '@redesign/ui-core'
+import { ThemeProvider } from '@redesign-system/ui-core'
 import { List, ListItem } from '../../atoms/List'
 import { Box } from '../../atoms/Box'
 

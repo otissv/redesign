@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign/ui-core";
+    import { Icon, IconInterface } from "@redesign-system/ui-core";
     export const CodeLessThanOrEqualIcon: FC<IconInterface> = function CodeLessThanOrEqualIcon({
       className,
       ...propsRest

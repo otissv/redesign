@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
 import { SectionInterface } from './section.types'
 
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 import { Heading, HeadingInterface } from '../Heading'
 import { Maybe } from '../../helpers/Maybe'
 import { Either } from '../../helpers/Either'
-import { isString } from '@redesign/theme'
+import { isString } from '@redesign-system/theme'
 import { sectionTheme } from './section.theme'
 
 export const Section: FC<SectionInterface> = function Section({
@@ -18,10 +18,7 @@ export const Section: FC<SectionInterface> = function Section({
 }) {
   const { theme } = useTheme()
   const classNames = `Toggle ${Section}`
-  const cssList: any = React.useMemo(() => [sectionTheme, css], [
-    sectionTheme,
-    css,
-  ])
+  const cssList = [sectionTheme, css]
 
   return (
     <Base

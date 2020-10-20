@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { Base, useTheme, isComponentDisabled } from '@redesign/ui-core'
+import { Base, useTheme, isComponentDisabled } from '@redesign-system/ui-core'
 
 import {
   textboxTheme,

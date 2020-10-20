@@ -1,10 +1,10 @@
-import React, { FC, useMemo } from 'react'
+import React, { FC } from 'react'
 
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 import { mediaTheme, mediaFigureTheme } from './figure.theme'
 import { Either } from '../../helpers/Either'
 import { FigureInterface } from './figure.type'
-import { isString } from '@redesign/theme'
+import { isString } from '@redesign-system/theme'
 import { Caption, CaptionInterface } from '../../atoms/Caption'
 import { Maybe } from '../../helpers/Maybe'
 
@@ -18,7 +18,7 @@ export const Figure: FC<FigureInterface> = function Media({
 }) {
   const { theme } = useTheme()
   const classNames = `Media ${className}`
-  const cssList: any = useMemo(() => [mediaTheme, css], [mediaTheme, css])
+  const cssList = [mediaTheme, css]
 
   return (
     <Base as={as} className={classNames} theme={theme} css={cssList}>

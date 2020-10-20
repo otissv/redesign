@@ -1,4 +1,4 @@
-import { isFunction } from '@redesign/theme'
+import { isFunction } from '@redesign-system/theme'
 
 import { IconInterface } from './icon.types'
 import {
@@ -10,7 +10,7 @@ import {
   SUCCESS,
   WARNING,
   DISABLED,
-} from '@redesign/theme'
+} from '@redesign-system/theme'
 
 export function iconTheme(props: IconInterface) {
   const {

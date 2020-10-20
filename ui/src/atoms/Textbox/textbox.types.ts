@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ThemeComponentInterface } from '@redesign/theme'
+import { ThemeComponentInterface } from '@redesign-system/theme'
 
 export interface TextboxInterface extends ThemeComponentInterface {
   children?: React.ReactNode

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeProvider } from '@redesign/ui-core'
+import { ThemeProvider } from '@redesign-system/ui-core'
 
 import { List } from './List'
 import { ListItem } from './ListItem'

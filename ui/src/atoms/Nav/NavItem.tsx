@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { NavItemInterface } from './nav.types'
 import { navItemTheme } from './nav.theme'

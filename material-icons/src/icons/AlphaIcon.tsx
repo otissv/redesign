@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign/ui-core";
+    import { Icon, IconInterface } from "@redesign-system/ui-core";
     export const AlphaIcon: FC<IconInterface> = function AlphaIcon({
       className,
       ...propsRest

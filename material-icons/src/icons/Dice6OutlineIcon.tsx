@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign/ui-core";
+    import { Icon, IconInterface } from "@redesign-system/ui-core";
     export const Dice6OutlineIcon: FC<IconInterface> = function Dice6OutlineIcon({
       className,
       ...propsRest

@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { VideoInterface } from './video.types'
 import { videoTheme } from './video.theme'
@@ -26,7 +26,7 @@ export const Video: FC<VideoInterface> = function Video({
   const { theme } = useTheme()
 
   const classNames = `Video ${className}`
-  const cssList: any = React.useMemo(() => [videoTheme, css], [videoTheme, css])
+  const cssList = [videoTheme, css]
   const properties = {
     ...propsRest,
     allowFullScreen: allowFullScreen ? true : undefined,

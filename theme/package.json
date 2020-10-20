@@ -1,5 +1,5 @@
 {
-  "name": "@redesign/theme",
+  "name": "@redesign-system/theme",
   "version": "0.0.1",
   "license": "MIT",
   "main": "dist/index.js",
@@ -7,6 +7,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "start-storybook -p 6009",
     "dev": "tsdx watch",

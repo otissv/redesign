@@ -1,7 +1,7 @@
-import { isFunction } from '@redesign/theme'
+import { isFunction } from '@redesign-system/theme'
 
 import { CheckboxInterface } from './checkbox.types'
-import { getBackgroundColor, getBorder } from '@redesign/ui-core'
+import { getBackgroundColor, getBorder } from '@redesign-system/ui-core'
 
 export function checkboxTheme(props: CheckboxInterface) {
   const {

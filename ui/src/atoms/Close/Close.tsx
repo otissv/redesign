@@ -1,7 +1,7 @@
-import React, { FC, useMemo } from 'react'
+import React, { FC } from 'react'
 
 import { CloseInterface } from './close.types'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 import { closeTheme } from './close.theme'
 
 export const Close: FC<CloseInterface> = function Close({
@@ -14,7 +14,7 @@ export const Close: FC<CloseInterface> = function Close({
 }) {
   const { theme } = useTheme()
   const classNames = `Close ${className}`
-  const cssList: any = useMemo(() => [closeTheme, css], [closeTheme, css])
+  const cssList = [closeTheme, css]
 
   //TODO: add appearance theme
 

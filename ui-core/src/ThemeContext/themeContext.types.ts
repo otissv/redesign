@@ -1,4 +1,4 @@
-import { ThemeInterface } from '@redesign/theme'
+import { ThemeInterface } from '@redesign-system/theme'
 
 export interface ThemeContextInterface {
   theme: ThemeInterface

@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 import { AccordionContentInterface } from './accordion.types'
 import { accordionContentTheme } from './accordion.theme'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 export const AccordionContent: FC<AccordionContentInterface> = function AccordionContent({
   as = 'div',
@@ -15,13 +15,7 @@ export const AccordionContent: FC<AccordionContentInterface> = function Accordio
   const { theme } = useTheme()
   const classNames = `AccordionContent ${className}`
 
-  const getActiveStyle = active ? 'display: block;' : 'display: none;'
-
-  const cssList: any = React.useMemo(() => [accordionContentTheme, css], [
-    accordionContentTheme,
-    getActiveStyle,
-    css,
-  ])
+  const cssList = [accordionContentTheme, css]
 
   return active ? (
     <Base

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign/ui-core";
+    import { Icon, IconInterface } from "@redesign-system/ui-core";
     export const BatteryChargingWireless60Icon: FC<IconInterface> = function BatteryChargingWireless60Icon({
       className,
       ...propsRest

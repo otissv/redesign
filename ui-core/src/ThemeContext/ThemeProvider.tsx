@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react'
-import { createTheme, ThemeInterface } from '@redesign/theme'
+import { createTheme, ThemeInterface } from '@redesign-system/theme'
 import { GlobalStyles } from '../GlobalStyles'
 
 import { ThemeProviderInterface } from './themeContext.types'

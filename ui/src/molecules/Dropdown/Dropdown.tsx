@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import cuid from 'cuid'
 
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 import { DropdownInterface } from './dropdown.types'
 import { dropdownTheme } from './dropdown.theme'
 

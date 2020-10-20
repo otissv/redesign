@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@redesign/material-icons",
+  "name": "@redesign-system/material-icons",
   "version": "0.0.1",
   "license": "MIT",
   "main": "dist/index.js",
@@ -34,15 +34,15 @@
     "fluid": false
   },
   "peerDependencies": {
-    "@redesign/theme": ">=0",
-    "@redesign/ui-core": ">=0",
+    "@redesign-system/theme": ">=0",
+    "@redesign-system/ui-core": ">=0",
     "emotion": ">=10",
     "react": ">=16"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
-    "@redesign/theme": "^0.0.1",
-    "@redesign/ui-core": "^0.0.1",
+    "@redesign-system/theme": "^0.0.1",
+    "@redesign-system/ui-core": "^0.0.1",
     "@storybook/addon-actions": "^6.1.0-alpha.26",
     "@storybook/addon-docs": "^6.1.0-alpha.26",
     "@storybook/addon-links": "^6.1.0-alpha.26",

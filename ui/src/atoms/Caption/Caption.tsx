@@ -1,7 +1,7 @@
-import React, { FC, useMemo } from 'react'
+import React, { FC } from 'react'
 import { CaptionInterface } from './caption.types'
 
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 import { captionTheme } from './caption.theme'
 
 export const Caption: FC<CaptionInterface> = function Caption({
@@ -13,7 +13,7 @@ export const Caption: FC<CaptionInterface> = function Caption({
 }) {
   const { theme } = useTheme()
   const classNames = `imageCaption ${className}`
-  const cssList: any = useMemo(() => [captionTheme, css], [captionTheme, css])
+  const cssList = [captionTheme, css]
 
   return (
     <Base

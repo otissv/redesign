@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { MenuDownIcon } from '@redesign/material-icons/MenuDownIcon'
+import { MenuDownIcon } from '@redesign-system/material-icons/MenuDownIcon'
 
 import { DropdownButtonInterface } from './dropdown.types'
 import { Button } from '../../atoms/Button'
@@ -12,10 +12,7 @@ export const DropdownButton: FC<DropdownButtonInterface> = function DropdownButt
   icon: Icon,
   ...propsRest
 }) {
-  const cssList: any = React.useMemo(() => [dropdownButtonTheme, css], [
-    dropdownButtonTheme,
-    css,
-  ])
+  const cssList = [dropdownButtonTheme, css]
 
   return (
     <Button css={cssList} {...propsRest} onClick={onClick}>

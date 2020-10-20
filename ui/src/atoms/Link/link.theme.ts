@@ -35,7 +35,7 @@ import {
   PRIMARY_DISABLED,
   SECONDARY_DISABLED,
   TERTIARY_DISABLED,
-} from '@redesign/theme'
+} from '@redesign-system/theme'
 
 import { LinkInterface } from './link.types'
 

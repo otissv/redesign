@@ -1,4 +1,4 @@
-import { ThemeComponentInterface, AppearanceBaseTypes } from '@redesign/theme'
+import { ThemeComponentInterface, AppearanceBaseTypes } from '@redesign-system/theme'
 
 export const LEFT = 'LEFT'
 export const RIGHT = 'RIGHT'

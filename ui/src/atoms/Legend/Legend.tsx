@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { LegendInterface } from '././legend.types'
 import { legendTheme } from '././legend.theme'
@@ -13,10 +13,7 @@ export const Legend: FC<LegendInterface> = function Legend({
 }) {
   const { theme } = useTheme()
   const classNames = `Fieldset ${className}`
-  const cssList: any = React.useMemo(() => [legendTheme, css], [
-    legendTheme,
-    css,
-  ])
+  const cssList = [legendTheme, css]
 
   return (
     <Base

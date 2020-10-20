@@ -1,5 +1,5 @@
 import React, { FC, useMemo } from 'react'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { ListItemInterface } from './list.types'
 import { listItemTheme } from './list.theme'

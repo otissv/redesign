@@ -1,4 +1,4 @@
-import { isFunction } from '@redesign/theme'
+import { isFunction } from '@redesign-system/theme'
 
 import { ListInterface } from './list.types'
 export function listTheme(props: ListInterface) {

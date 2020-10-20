@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { Base, useTheme, isComponentDisabled } from '@redesign/ui-core'
+import { Base, useTheme, isComponentDisabled } from '@redesign-system/ui-core'
 
 import { ToggleInterface } from './toggle.types'
 import { toggleTheme } from './toggle.theme'
@@ -21,10 +21,7 @@ export const Toggle: FC<ToggleInterface> = function Toggle({
 }: ToggleInterface) {
   const { theme } = useTheme()
   const classNames = `Toggle ${className}`
-  const cssList: any = React.useMemo(() => [toggleTheme, css], [
-    toggleTheme,
-    css,
-  ])
+  const cssList = [toggleTheme, css]
 
   const isDisabled = React.useMemo(
     () =>

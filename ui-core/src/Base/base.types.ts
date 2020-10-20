@@ -1,4 +1,4 @@
-import { ThemeInterface, CssTypes } from '@redesign/theme'
+import { ThemeInterface, CssTypes } from '@redesign-system/theme'
 
 export type ChildrenPropsObjectType = Partial<BaseInterface>
 export type ChildrenPropsFunctionType = (

@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 import { tabsTheme } from './tabs.theme'
 import { TabsInterface } from './tabs.types'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 /*TODO: ARIA
 Keyboard Actions if focus is on the menubar
@@ -35,7 +35,7 @@ export const Tabs: FC<TabsInterface> = function Tabs({
   const { theme } = useTheme()
 
   const classNames = `Tabs ${className}`
-  const cssList: any = React.useMemo(() => [tabsTheme, css], [tabsTheme, css])
+  const cssList = [tabsTheme, css]
 
   return (
     <Base

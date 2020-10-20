@@ -1,6 +1,6 @@
-import React, { FC, useMemo } from 'react'
+import React, { FC } from 'react'
 
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { AlertInterface } from './alert.types'
 import { alertTheme, alertAppearanceTheme } from './alert.theme'
@@ -17,11 +17,7 @@ export const Alert: FC<AlertInterface> = function Alert({
 }) {
   const { theme } = useTheme()
   const classNames = `Alert ${className}`
-  const cssList: any = useMemo(() => [alertTheme, alertAppearanceTheme, css], [
-    alertTheme,
-    alertAppearanceTheme,
-    css,
-  ])
+  const cssList: any = [alertTheme, alertAppearanceTheme, css]
 
   return (
     <Base

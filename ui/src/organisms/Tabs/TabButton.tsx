@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 import { tabsButtonTheme } from './tabs.theme'
 import { ButtonGroupButton } from '../../molecules/ButtonGroup'
-import { useTheme } from '@redesign/ui-core'
+import { useTheme } from '@redesign-system/ui-core'
 import { TabButtonInterface } from './tabs.types'
 
 export const TabButton: FC<TabButtonInterface> = function TabButton({
@@ -17,10 +17,7 @@ export const TabButton: FC<TabButtonInterface> = function TabButton({
 }) {
   const { theme } = useTheme()
   const classNames = `TabButton ${className}`
-  const cssList: any = React.useMemo(() => [tabsButtonTheme, css], [
-    tabsButtonTheme,
-    css,
-  ])
+  const cssList = [tabsButtonTheme, css]
 
   return (
     <ButtonGroupButton

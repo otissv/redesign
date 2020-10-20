@@ -1,2 +1,2 @@
-export * from './Maybe';
-export * from './maybe.types';
+export * from './Maybe'
+export * from './maybe.types'

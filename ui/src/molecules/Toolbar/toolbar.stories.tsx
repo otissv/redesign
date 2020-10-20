@@ -1,11 +1,11 @@
 import React from 'react'
-import { ContentCopyIcon } from '@redesign/material-icons/ContentCopyIcon'
-import { DeleteIcon } from '@redesign/material-icons/DeleteIcon'
-import { DownloadIcon } from '@redesign/material-icons/DownloadIcon'
-import { FileDocumentEditIcon } from '@redesign/material-icons/FileDocumentEditIcon'
-import { PlusIcon } from '@redesign/material-icons/PlusIcon'
+import { ContentCopyIcon } from '@redesign-system/material-icons/ContentCopyIcon'
+import { DeleteIcon } from '@redesign-system/material-icons/DeleteIcon'
+import { DownloadIcon } from '@redesign-system/material-icons/DownloadIcon'
+import { FileDocumentEditIcon } from '@redesign-system/material-icons/FileDocumentEditIcon'
+import { PlusIcon } from '@redesign-system/material-icons/PlusIcon'
 
-import { ThemeProvider } from '@redesign/ui-core'
+import { ThemeProvider } from '@redesign-system/ui-core'
 import { Toolbar } from './Toolbar'
 import { ButtonIcon } from '../ButtonIcon'
 

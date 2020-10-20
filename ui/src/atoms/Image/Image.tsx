@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
 import { ImageInterface } from './Image.types'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { imgTheme, imgSizeTheme } from './Image.theme'
 

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign/ui-core";
+    import { Icon, IconInterface } from "@redesign-system/ui-core";
     export const FileCogIcon: FC<IconInterface> = function FileCogIcon({
       className,
       ...propsRest

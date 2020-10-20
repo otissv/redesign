@@ -13,10 +13,7 @@ export const Link: FC<LinkInterface> = function Link({
   ...propsRest
 }) {
   const classNames = `Link ${className}`
-  const cssList: any = React.useMemo(
-    () => [linkTheme, linkAppearanceTheme, css],
-    [linkTheme, linkAppearanceTheme, css]
-  )
+  const cssList = [linkTheme, linkAppearanceTheme, css]
 
   return (
     <Typography

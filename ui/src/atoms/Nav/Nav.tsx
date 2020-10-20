@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { navTheme } from './nav.theme'
 import { NavInterface } from './nav.types'
@@ -33,7 +33,7 @@ export const Nav: FC<NavInterface> = function Nav({
 }) {
   const { theme } = useTheme()
   const classNames = `Nav ${className}`
-  const cssList: any = React.useMemo(() => [navTheme, css], [navTheme, css])
+  const cssList = [navTheme, css]
 
   return (
     <Base

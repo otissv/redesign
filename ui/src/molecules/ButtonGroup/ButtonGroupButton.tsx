@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react'
+import React, { FC } from 'react'
 
 import { Button } from '../../atoms/Button'
 import { ButtonGroupButtonInterface } from './buttonGroup.types'
@@ -13,10 +13,7 @@ export const ButtonGroupButton: FC<ButtonGroupButtonInterface> = function Button
 }) {
   const classNames = `ButtonGroupButton ${className || ''}`
 
-  const cssList: any = useMemo(() => [buttonGroupButtonTheme, css], [
-    buttonGroupButtonTheme,
-    css,
-  ])
+  const cssList = [buttonGroupButtonTheme, css]
 
   return (
     <Button className={classNames} css={cssList} {...propsRest} active={active}>

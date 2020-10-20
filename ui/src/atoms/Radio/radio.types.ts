@@ -1,4 +1,4 @@
-import { ThemeComponentInterface, AppearanceBaseTypes } from '@redesign/theme'
+import { ThemeComponentInterface, AppearanceBaseTypes } from '@redesign-system/theme'
 
 export interface RadioInterface extends ThemeComponentInterface {
   appearance?: AppearanceBaseTypes

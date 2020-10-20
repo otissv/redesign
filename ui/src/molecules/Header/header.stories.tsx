@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeProvider } from '@redesign/ui-core'
+import { ThemeProvider } from '@redesign-system/ui-core'
 
 import { Header } from './Header'
 import { Typography } from '../../atoms/Typography'

@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 import { AccordionInterface } from './accordion.types'
 import { accordionTheme } from './accordion.theme'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 /*TODO: ARIA
 Keyboard Actions if focus is on the menubar
@@ -34,10 +34,7 @@ export const Accordion: FC<AccordionInterface> = function Accordion({
   const { theme } = useTheme()
 
   const classNames = `Accordion ${className}`
-  const cssList: any = React.useMemo(() => [accordionTheme, css], [
-    accordionTheme,
-    css,
-  ])
+  const cssList = [accordionTheme, css]
 
   return (
     <Base

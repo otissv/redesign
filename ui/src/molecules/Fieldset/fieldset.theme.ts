@@ -1,4 +1,4 @@
-import { isFunction } from '@redesign/theme'
+import { isFunction } from '@redesign-system/theme'
 import { FieldsetInterface } from './fieldset.types'
 
 export function fieldsetTheme(props: FieldsetInterface) {

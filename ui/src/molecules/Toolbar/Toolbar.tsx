@@ -11,10 +11,7 @@ export const Toolbar: FC<ToolbarInterface> = function Toolbar({
   ...propsRest
 }) {
   const classNames = `Toolbar ${className}`
-  const cssList: any = React.useMemo(() => [toolbarTheme, css], [
-    toolbarTheme,
-    css,
-  ])
+  const cssList = [toolbarTheme, css]
 
   return (
     <AppBar className={classNames} css={cssList} {...propsRest}>

@@ -1,4 +1,4 @@
-import { isFunction } from '@redesign/theme'
+import { isFunction } from '@redesign-system/theme'
 
 import {
   PRIMARY,
@@ -36,7 +36,7 @@ import {
   PRIMARY_DISABLED,
   SECONDARY_DISABLED,
   TERTIARY_DISABLED,
-} from '@redesign/theme'
+} from '@redesign-system/theme'
 
 import { BoxInterface } from './box.types'
 

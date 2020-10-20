@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 import { HeaderInterface } from './header.types'
 import { Heading, HeadingInterface } from '../Heading'
 import { CoverImage } from '../CoverImage'
-import { isString } from '@redesign/theme'
+import { isString } from '@redesign-system/theme'
 import { Either } from '../../helpers/Either'
 import { headerTheme } from './header.theme'
 import { Maybe } from '../../helpers/Maybe'
@@ -21,10 +21,7 @@ export const Header: FC<HeaderInterface> = function Header({
   ...propsRest
 }) {
   const classNames = `Header ${className}`
-  const cssList: any = React.useMemo(() => [headerTheme, css], [
-    headerTheme,
-    css,
-  ])
+  const cssList = [headerTheme, css]
 
   return (
     <CoverImage

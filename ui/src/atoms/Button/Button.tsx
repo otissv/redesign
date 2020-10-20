@@ -1,6 +1,6 @@
-import React, { FC, useCallback, useMemo } from 'react'
+import React, { FC } from 'react'
 
-import { Base, useTheme, isComponentDisabled } from '@redesign/ui-core'
+import { Base, useTheme, isComponentDisabled } from '@redesign-system/ui-core'
 import { ButtonInterface } from './button.types'
 
 import {
@@ -9,7 +9,7 @@ import {
   buttonStretchTheme,
   buttonAppearanceTheme,
 } from './button.theme'
-import { noop } from '@redesign/theme'
+import { noop } from '@redesign-system/theme'
 
 export const Button: FC<ButtonInterface> = function Button({
   appearance,
@@ -23,24 +23,15 @@ export const Button: FC<ButtonInterface> = function Button({
 }) {
   const { theme } = useTheme()
   const classNames = `Button ${className}`
-  const cssList: any = useMemo(
-    () => [
-      buttonTheme,
-      buttonAppearanceTheme,
-      buttonSizeTheme,
-      buttonStretchTheme,
-      css,
-    ],
-    [
-      buttonTheme,
-      buttonAppearanceTheme,
-      buttonSizeTheme,
-      buttonStretchTheme,
-      css,
-    ]
-  )
+  const cssList = [
+    buttonTheme,
+    buttonAppearanceTheme,
+    buttonSizeTheme,
+    buttonStretchTheme,
+    css,
+  ]
 
-  const handleOnClick = useCallback(
+  const handleOnClick = React.useCallback(
     function handleOnClick(e: any) {
       e.preventDefault()
 
@@ -49,7 +40,7 @@ export const Button: FC<ButtonInterface> = function Button({
     [onClick]
   )
 
-  const isDisabled = useMemo(
+  const isDisabled = React.useMemo(
     () =>
       isComponentDisabled({
         appearance,

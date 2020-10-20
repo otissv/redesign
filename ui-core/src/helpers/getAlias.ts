@@ -1,4 +1,4 @@
-import { AliasInterface } from '@redesign/theme'
+import { AliasInterface } from '@redesign-system/theme'
 
 export function getAlias(style: string) {
   const alias: AliasInterface = {

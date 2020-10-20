@@ -16,10 +16,7 @@ export const ButtonIcon: FC<ButtonIconInterface> = function ButtonIcon({
   ...propsRest
 }) {
   const classNames = `ButtonIcon ${className}`
-  const cssList: any = React.useMemo(() => [buttonIconTheme, css], [
-    buttonIconTheme,
-    css,
-  ])
+  const cssList = [buttonIconTheme, css]
 
   const Component: any = icon
 

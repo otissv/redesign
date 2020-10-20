@@ -2,11 +2,11 @@ import React, { FC } from 'react'
 
 import { CoverImageInterface } from './coverImage.types'
 import { Overlay } from '../../atoms/Overlay'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 import { Maybe } from '../../helpers/Maybe'
 import { Either } from '../../helpers/Either'
 import { Caption, CaptionInterface } from '../../atoms/Caption'
-import { isString } from '@redesign/theme'
+import { isString } from '@redesign-system/theme'
 import { coverImageContentTheme, coverImageTheme } from './coverImage.theme'
 
 export const CoverImage: FC<CoverImageInterface> = function CoverImage({
@@ -28,10 +28,7 @@ export const CoverImage: FC<CoverImageInterface> = function CoverImage({
 }) {
   const { theme } = useTheme()
   const classNames = `CoverImage ${className}`
-  const cssList: any = React.useMemo(() => [coverImageTheme, css], [
-    coverImageTheme,
-    css,
-  ])
+  const cssList = [coverImageTheme, css]
   return (
     <Base
       className={classNames}

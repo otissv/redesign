@@ -2,10 +2,10 @@ import React, { FC } from 'react'
 
 import { PaginationInterface } from './pagination.types'
 
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 import { paginationTheme } from './pagination.theme'
 import { Button } from '../../atoms/Button'
-import { noop, ACTIVE, DISABLED } from '@redesign/theme'
+import { noop, ACTIVE, DISABLED } from '@redesign-system/theme'
 
 export function createPageNumbers({ currentPage, onPageClick, total }: any) {
   switch (true) {
@@ -76,10 +76,7 @@ export const Pagination: FC<PaginationInterface> = function Pagination({
   ...propsRest
 }) {
   const { theme } = useTheme()
-  const cssList: any = React.useMemo(() => [paginationTheme, css], [
-    paginationTheme,
-    css,
-  ])
+  const cssList = [paginationTheme, css]
   const classNames = `TableBody ${className}`
 
   const startItem = (currentPage - 1) * size + 1

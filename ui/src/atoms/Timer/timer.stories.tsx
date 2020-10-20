@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ThemeProvider } from '@redesign/ui-core'
+import { ThemeProvider } from '@redesign-system/ui-core'
 import { Timer } from './Timer'
 
 export default {

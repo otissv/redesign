@@ -13,10 +13,7 @@ export const AppBarSearch: FC<AppBarSearchInterface> = function AppBarSearch({
 }) {
   const classNames = `AppBar ${className}`
 
-  const cssList: any = React.useMemo(() => [appBarSearchTheme, css], [
-    appBarSearchTheme,
-    css,
-  ])
+  const cssList = [appBarSearchTheme, css]
 
   function handleOnChange(e: any) {
     const value = e.target.value

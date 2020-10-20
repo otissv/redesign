@@ -1,5 +1,5 @@
-import React, { FC, useMemo } from 'react'
-import { Base, useTheme } from '@redesign/ui-core'
+import React, { FC } from 'react'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { BadgeInterface } from './badge.types'
 
@@ -16,10 +16,7 @@ export const Badge: FC<BadgeInterface> = function Badge({
 }) {
   const { theme } = useTheme()
   const classNames = `Badge ${className}`
-  const cssList: any = useMemo(
-    () => [badgeTheme, badgePillTheme, badgeAppearanceTheme, css],
-    [badgeTheme, css]
-  )
+  const cssList = [badgeTheme, badgePillTheme, badgeAppearanceTheme, css]
 
   return (
     <Base

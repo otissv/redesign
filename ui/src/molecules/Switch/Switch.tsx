@@ -12,10 +12,7 @@ export const Switch: FC<SwitchInterface> = function Switch({
   ...propsRest
 }) {
   const classNames = `Switch ${className}`
-  const cssList: any = React.useMemo(() => [switchTheme, css], [
-    switchTheme,
-    css,
-  ])
+  const cssList = [switchTheme, css]
   return (
     <Toggle css={cssList} className={classNames} {...propsRest}>
       {children}

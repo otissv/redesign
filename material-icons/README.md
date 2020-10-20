@@ -4,7 +4,7 @@ A collection of over 5000 [Material Design Icons](https://github.com/templarian/
 
 ## Usage
 
-`npm install @redesign/material-icons @redesign/theme @redesign/ui-core`
+`npm install @redesign-system/material-icons @redesign-system/theme @redesign-system/ui-core`
 
 ## Installation
 

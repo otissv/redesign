@@ -1,5 +1,5 @@
-import React, { FC, useMemo } from 'react'
-import { Base } from '@redesign/ui-core'
+import React, { FC } from 'react'
+import { Base } from '@redesign-system/ui-core'
 
 import { TextboxInterface } from './textbox.types'
 
@@ -18,22 +18,13 @@ export const TextboxGroup: FC<TextboxInterface> = function TextboxGroup({
   ...propsRest
 }) {
   const classNames = `TextboxGroup ${className}`
-  const cssList: any = useMemo(
-    () => [
-      textboxAppearanceTheme,
-      textboxSizeTheme,
-      textboxWidthsTheme,
-      textboxGroupTheme,
-      css,
-    ],
-    [
-      textboxGroupTheme,
-      textboxAppearanceTheme,
-      textboxSizeTheme,
-      textboxWidthsTheme,
-      css,
-    ]
-  )
+  const cssList = [
+    textboxAppearanceTheme,
+    textboxSizeTheme,
+    textboxWidthsTheme,
+    textboxGroupTheme,
+    css,
+  ]
 
   return (
     <Base

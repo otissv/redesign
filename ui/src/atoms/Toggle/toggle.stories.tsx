@@ -1,7 +1,7 @@
 import React from 'react'
-import { MenuIcon } from '@redesign/material-icons/MenuIcon'
-import { MenuOpenIcon } from '@redesign/material-icons/MenuOpenIcon'
-import { ThemeProvider } from '@redesign/ui-core'
+import { MenuIcon } from '@redesign-system/material-icons/MenuIcon'
+import { MenuOpenIcon } from '@redesign-system/material-icons/MenuOpenIcon'
+import { ThemeProvider } from '@redesign-system/ui-core'
 
 import { Toggle } from './Toggle'
 

@@ -1,4 +1,4 @@
-import { isFunction } from '@redesign/theme'
+import { isFunction } from '@redesign-system/theme'
 
 import { AppBarInterface } from './appBar.types'
 
@@ -13,7 +13,7 @@ import {
   SUCCESS,
   WARNING,
   DISABLED,
-} from '@redesign/theme'
+} from '@redesign-system/theme'
 
 const input = (color: ColorInterface) => ({
   background: 'hsla(0,0%,0%,0.1)',

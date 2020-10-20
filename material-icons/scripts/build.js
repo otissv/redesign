@@ -46,6 +46,9 @@ async function createPackageJson(paths) {
       typings: pkg.typings,
       author: pkg.author,
       module: pkg.module,
+      "publishConfig": {
+        "access": "public"
+      },
     }
 
     await writeFile(`./dist/package.json`, JSON.stringify(npmPkg, null, 2), {
@@ -89,7 +92,7 @@ async function writeDefinitions(path) {
     const { fileName } = getPathsInfo(path)
 
     const data = `import { FC } from "react";
-import { IconInterface } from "@redesign/ui-core";
+import { IconInterface } from "@redesign-system/ui-core";
 export declare const ${fileName}Icon: FC<IconInterface>;`
 
     await writeFile(`./dist/${fileName}Icon.d.ts`, data, { flag: 'w' })

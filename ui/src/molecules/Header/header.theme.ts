@@ -1,4 +1,4 @@
-import { isFunction } from '@redesign/theme'
+import { isFunction } from '@redesign-system/theme'
 import { HeaderInterface } from './header.types'
 
 export function headerTheme(props: HeaderInterface) {

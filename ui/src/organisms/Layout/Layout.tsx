@@ -1,6 +1,6 @@
 import React, { FC, Fragment } from 'react'
 
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 import { LayoutInterface } from './layout.types'
 import { Header } from '../../molecules/Header'
 import { Either } from '../../helpers/Either'

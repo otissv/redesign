@@ -13,7 +13,7 @@ export const Label: FC<LabelInterface> = function Label({
   ...propsRest
 }) {
   const classNames = `Label ${className}`
-  const cssList: any = React.useMemo(() => [labelTheme, css], [labelTheme, css])
+  const cssList = [labelTheme, css]
 
   return (
     <Fragment>

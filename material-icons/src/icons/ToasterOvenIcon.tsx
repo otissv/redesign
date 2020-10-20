@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign/ui-core";
+    import { Icon, IconInterface } from "@redesign-system/ui-core";
     export const ToasterOvenIcon: FC<IconInterface> = function ToasterOvenIcon({
       className,
       ...propsRest

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { appBarFooterTheme } from './appBar.theme'
 

@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
 import { TypographyInterface } from './typography.types'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import {
   typographyAppearanceTheme,
@@ -20,24 +20,14 @@ export const Typography: FC<TypographyInterface> = function Typography({
 }) {
   const { theme } = useTheme()
   const classNames = `Typography ${className}`
-  const cssList: any = React.useMemo(
-    () => [
-      typographyAppearanceTheme,
-      typographyTheme,
-      typographyModifyTheme,
-      typographyWrapTheme,
-      typographyTransformTheme,
-      css,
-    ],
-    [
-      typographyAppearanceTheme,
-      typographyTheme,
-      typographyModifyTheme,
-      typographyWrapTheme,
-      typographyTransformTheme,
-      css,
-    ]
-  )
+  const cssList = [
+    typographyAppearanceTheme,
+    typographyTheme,
+    typographyModifyTheme,
+    typographyWrapTheme,
+    typographyTransformTheme,
+    css,
+  ]
 
   const attributes = React.useMemo(
     () => ({

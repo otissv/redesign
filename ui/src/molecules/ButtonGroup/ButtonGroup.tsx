@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 import { buttonGroupTheme, buttonStretchGroupTheme } from './buttonGroup.theme'
 import { ButtonGroupInterface } from './buttonGroup.types'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 export const ButtonGroup: FC<ButtonGroupInterface> = function ButtonGroup({
   as = 'div',
@@ -16,11 +16,7 @@ export const ButtonGroup: FC<ButtonGroupInterface> = function ButtonGroup({
   const { theme } = useTheme()
   const classNames = `ButtonGroup ${className}`
 
-  const cssList: any = React.useMemo(
-    () => [buttonGroupTheme, buttonStretchGroupTheme, css],
-    [buttonGroupTheme, buttonStretchGroupTheme, css]
-  )
-
+  const cssList = [buttonGroupTheme, buttonStretchGroupTheme, css]
   return (
     <Base
       as={as}

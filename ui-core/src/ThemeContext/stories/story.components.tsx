@@ -1,5 +1,5 @@
 import React from 'react'
-import { createTheme } from '@redesign/theme'
+import { createTheme } from '@redesign-system/theme'
 
 import { Base } from '../../Base'
 

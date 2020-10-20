@@ -1,4 +1,4 @@
-import { isFunction } from '@redesign/theme'
+import { isFunction } from '@redesign-system/theme'
 import { ImageInterface } from './Image.types'
 
 export function imgTheme(props: ImageInterface) {

@@ -1,5 +1,5 @@
-import { ThemeComponentInterface } from '@redesign/theme'
-import { PRIMARY, SECONDARY } from '@redesign/theme'
+import { ThemeComponentInterface } from '@redesign-system/theme'
+import { PRIMARY, SECONDARY } from '@redesign-system/theme'
 
 type ErrorTypes = typeof PRIMARY | typeof SECONDARY
 

@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react'
 
-import { ThemeProvider } from '@redesign/ui-core'
+import { ThemeProvider } from '@redesign-system/ui-core'
 
 import { Pagination } from './Pagination'
 

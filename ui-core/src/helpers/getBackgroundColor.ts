@@ -10,7 +10,7 @@ import {
   DISABLED,
   ColorInterface,
   AppearanceBaseTypes,
-} from '@redesign/theme';
+} from '@redesign-system/theme';
 
 interface GetAppearanceInterface {
   appearance: AppearanceBaseTypes | undefined;

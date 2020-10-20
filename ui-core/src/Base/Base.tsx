@@ -9,7 +9,7 @@ import {
 import { createStyleString } from '../helpers/createStyleString'
 import { buildCssUtilities } from '../helpers/buildCssUtilities'
 import { ignoreAttributes } from './ignoreAttributes'
-import { isFunction } from '@redesign/theme'
+import { isFunction } from '@redesign-system/theme'
 
 function CreateComponent({ tag = 'div', children, ...props }: any) {
   return createElement(
@@ -24,9 +24,9 @@ function CreateComponent({ tag = 'div', children, ...props }: any) {
  
  ##Installation
  Install the ui-core and its peer dependencies into your project
- `npm install @redesign/theme emotion react`  
+ `npm install @redesign-system/theme emotion react`  
  or  
- `yarn add @redesign/theme emotion react`  
+ `yarn add @redesign-system/theme emotion react`  
 
  ## Default
 

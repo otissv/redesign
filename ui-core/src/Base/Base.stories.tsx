@@ -1,6 +1,6 @@
 import React from 'react'
 import { Base } from './Base'
-import { createTheme } from '@redesign/theme'
+import { createTheme } from '@redesign-system/theme'
 
 export default {
   title: 'Core/Base',

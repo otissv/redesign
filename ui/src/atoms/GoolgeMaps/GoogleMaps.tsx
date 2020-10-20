@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { GoogleMapsInterface } from './googleMaps.types'
 import { googleMapsTheme } from './googleMaps.theme'
@@ -18,10 +18,7 @@ export const GoogleMaps = React.memo(function GoogleMaps({
 }: GoogleMapsInterface) {
   const { theme } = useTheme()
   const classNames = `GoogleMaps ${className}}`
-  const cssList: any = useMemo(() => [googleMapsTheme, css], [
-    googleMapsTheme,
-    css,
-  ])
+  const cssList = [googleMapsTheme, css]
   const query = encodeURIComponent(location as string)
 
   return (

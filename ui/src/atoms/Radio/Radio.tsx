@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { Base, useTheme, isComponentDisabled } from '@redesign/ui-core'
+import { Base, useTheme, isComponentDisabled } from '@redesign-system/ui-core'
 
 import { RadioInterface } from './radio.types'
 import { radioTheme, radioContainerTheme } from './radio.theme'
@@ -20,11 +20,8 @@ export const Radio: FC<RadioInterface> = function Radio({
 }: RadioInterface) {
   const { theme } = useTheme()
   const classNames = `Radio ${className}`
-  const cssList: any = React.useMemo(() => [radioTheme, css], [radioTheme, css])
-  const radioContainerCssList: any = React.useMemo(
-    () => [radioContainerTheme, css],
-    [radioContainerTheme, css]
-  )
+  const cssList = [radioTheme, css]
+  const radioContainerCssList = [radioContainerTheme, css]
 
   const isDisabled = React.useMemo(
     () =>

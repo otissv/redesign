@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { FieldsetInterface } from './fieldset.types'
 import { fieldsetTheme } from './fieldset.theme'
@@ -16,10 +16,7 @@ export const Fieldset: FC<FieldsetInterface> = function Fieldset({
 }) {
   const { theme } = useTheme()
   const classNames = `Fieldset ${className}`
-  const cssList: any = React.useMemo(() => [fieldsetTheme, css], [
-    fieldsetTheme,
-    css,
-  ])
+  const cssList = [fieldsetTheme, css]
 
   return (
     <Base

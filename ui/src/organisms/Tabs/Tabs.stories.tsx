@@ -1,9 +1,9 @@
 import React from 'react'
-import { HomeIcon } from '@redesign/material-icons/'
-import { ContentCopyIcon } from '@redesign/material-icons/'
-import { DeleteAlertIcon } from '@redesign/material-icons/'
+import { HomeIcon } from '@redesign-system/material-icons/'
+import { ContentCopyIcon } from '@redesign-system/material-icons/'
+import { DeleteAlertIcon } from '@redesign-system/material-icons/'
 
-import { ThemeProvider } from '@redesign/ui-core'
+import { ThemeProvider } from '@redesign-system/ui-core'
 import { TabList } from './TabList'
 import { Tabs } from './Tabs'
 import { TabButton } from './TabButton'

@@ -1,6 +1,6 @@
-import React, { FC, useMemo } from 'react'
+import React, { FC } from 'react'
 
-import { Base, useTheme, isComponentDisabled } from '@redesign/ui-core'
+import { Base, useTheme, isComponentDisabled } from '@redesign-system/ui-core'
 
 import { CheckboxInterface } from './checkbox.types'
 import { checkboxTheme } from './checkbox.theme'
@@ -21,9 +21,9 @@ export const Checkbox: FC<CheckboxInterface> = function Checkbox({
 }: CheckboxInterface) {
   const { theme } = useTheme()
   const classNames = `Checkbox ${className}`
-  const cssList: any = useMemo(() => [checkboxTheme, css], [checkboxTheme, css])
+  const cssList = [checkboxTheme, css]
 
-  const isDisabled = useMemo(
+  const isDisabled = React.useMemo(
     () =>
       isComponentDisabled({
         appearance,

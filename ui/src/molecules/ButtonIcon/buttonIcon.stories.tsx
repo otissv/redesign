@@ -1,6 +1,6 @@
 import React from 'react'
-import { ThemeProvider } from '@redesign/ui-core'
-import { HomeIcon } from '@redesign/material-icons/HomeIcon'
+import { ThemeProvider } from '@redesign-system/ui-core'
+import { HomeIcon } from '@redesign-system/material-icons/HomeIcon'
 
 import { ButtonIcon } from './ButtonIcon'
 import { Box } from '../../atoms/Box'

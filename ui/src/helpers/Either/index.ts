@@ -1,2 +1,2 @@
-export * from './Either';
-export * from './either.types';
+export * from './Either'
+export * from './either.types'

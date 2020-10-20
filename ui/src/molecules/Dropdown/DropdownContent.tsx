@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 import { DropdownContentInterface } from './dropdown.types'
 import { Portal } from '../../helpers/Portal/Portal'
 
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 import { dropdownContentTheme } from './dropdown.theme'
 
 export const DropdownContent: FC<DropdownContentInterface> = function Dropdown({
@@ -22,10 +22,7 @@ export const DropdownContent: FC<DropdownContentInterface> = function Dropdown({
 }) {
   const { theme } = useTheme()
   const classNames = `DropdownContent ${className}`
-  const cssList: any = React.useMemo(() => [dropdownContentTheme, css], [
-    dropdownContentTheme,
-    css,
-  ])
+  const cssList = [dropdownContentTheme, css]
 
   return (
     <Portal selector={`#${id}`}>

@@ -8,9 +8,9 @@ import {
   headingSecondaryTitleTheme,
 } from './heading.theme'
 
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 import { Maybe } from '../../helpers/Maybe'
-import { isString } from '@redesign/theme'
+import { isString } from '@redesign-system/theme'
 import { Either } from '../../helpers/Either'
 
 export const Heading: FC<HeadingInterface> = function Heading({
@@ -25,10 +25,7 @@ export const Heading: FC<HeadingInterface> = function Heading({
 }) {
   const { theme } = useTheme()
   const classNames = `Heading ${className}`
-  const cssList: any = React.useMemo(() => [headingTheme, css], [
-    headingTheme,
-    css,
-  ])
+  const cssList = [headingTheme, css]
 
   return (
     <Base

@@ -1,10 +1,10 @@
-import React, { FunctionComponent, useMemo } from 'react'
-import { Base, useTheme } from '@redesign/ui-core'
+import React, { FC } from 'react'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { JsonInterface } from './json.types'
 import { jsonTheme } from './json.theme'
 
-export const Json: FunctionComponent<JsonInterface> = function JsonView({
+export const Json: FC<JsonInterface> = function JsonView({
   as = 'pre',
   className = '',
   css = '',
@@ -12,8 +12,8 @@ export const Json: FunctionComponent<JsonInterface> = function JsonView({
   ...propsRest
 }: any) {
   const { theme } = useTheme()
-  const classNames = useMemo(() => `Json ${className}`, [className])
-  const cssList: any = useMemo(() => [jsonTheme, css], [jsonTheme, css])
+  const classNames = `Json ${className}`
+  const cssList = [jsonTheme, css]
 
   return (
     <Base

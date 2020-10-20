@@ -3,7 +3,7 @@ import React, { FC, useMemo } from 'react'
 import { iconTheme, iconAppearanceTheme } from './icon.theme'
 
 import { IconInterface } from './icon.types'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 export const Icon: FC<IconInterface> = function Icon({
   as = 'svg',

@@ -1,4 +1,4 @@
-import { ThemeComponentInterface, AppearanceBaseTypes } from '@redesign/theme'
+import { ThemeComponentInterface, AppearanceBaseTypes } from '@redesign-system/theme'
 
 export interface IconInterface extends ThemeComponentInterface {
   alt?: string

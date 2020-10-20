@@ -12,10 +12,7 @@ export const TextArea: FC<TextAreaInterface> = function Textarea({
   ...propsRest
 }) {
   const classNames = `TextArea ${className}`
-  const cssList: any = React.useMemo(() => [textAreaTheme, css], [
-    textAreaTheme,
-    css,
-  ])
+  const cssList = [textAreaTheme, css]
 
   return <Textbox as={as} className={classNames} css={cssList} {...propsRest} />
 }

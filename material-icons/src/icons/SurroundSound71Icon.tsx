@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign/ui-core";
+    import { Icon, IconInterface } from "@redesign-system/ui-core";
     export const SurroundSound71Icon: FC<IconInterface> = function SurroundSound71Icon({
       className,
       ...propsRest

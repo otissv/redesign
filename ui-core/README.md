@@ -4,11 +4,11 @@ Core components fro Redesign UI
 
 ## Installation
 
-`npm install @redesign/theme`
+`npm install @redesign-system/theme`
 
 or
 
-`yarn add @redesign/theme`
+`yarn add @redesign-system/theme`
 
 ## Components
 

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Base, ThemeProvider } from '@redesign/ui-core'
-import { createTheme } from '@redesign/theme'
+import { Base, ThemeProvider } from '@redesign-system/ui-core'
+import { createTheme } from '@redesign-system/theme'
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { DebounceInput } from 'react-debounce-input';
-import { Icon  } from '@redesign/ui-core'
+import { Icon  } from '@redesign-system/ui-core'
 
 
 import { AbTestingIcon } from './icons/AbTestingIcon'

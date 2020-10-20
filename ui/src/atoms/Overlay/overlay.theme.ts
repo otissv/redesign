@@ -1,4 +1,4 @@
-import { isFunction } from '@redesign/theme'
+import { isFunction } from '@redesign-system/theme'
 import { OverlayInterface } from './overlay.types'
 
 export function overlayTheme(props: OverlayInterface) {

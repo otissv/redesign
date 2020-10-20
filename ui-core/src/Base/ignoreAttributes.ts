@@ -1,4 +1,4 @@
-import { utilityTheme } from '@redesign/theme'
+import { utilityTheme } from '@redesign-system/theme'
 
 export const ignoreAttributes = [
   ...Object.keys(utilityTheme({})),

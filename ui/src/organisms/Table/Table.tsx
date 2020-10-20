@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { TableInterface } from './table.types'
 import { tableTheme } from './table.theme'
@@ -14,7 +14,7 @@ export const Table: FC<TableInterface> = function Table({
 }) {
   const { theme } = useTheme()
   const classNames = `Table ${className}`
-  const cssList: any = React.useMemo(() => [tableTheme, css], [tableTheme, css])
+  const cssList = [tableTheme, css]
 
   return (
     <Base

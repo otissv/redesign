@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign/ui-core";
+    import { Icon, IconInterface } from "@redesign-system/ui-core";
     export const NetworkStrength3AlertIcon: FC<IconInterface> = function NetworkStrength3AlertIcon({
       className,
       ...propsRest

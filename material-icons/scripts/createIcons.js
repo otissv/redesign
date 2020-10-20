@@ -35,7 +35,7 @@ async function makeReactIcon({ fileName, data, ...props }) {
   try {
     const componentName = `${fileName}Icon`
     const componentString = `import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign/ui-core";
+    import { Icon, IconInterface } from "@redesign-system/ui-core";
     export const ${componentName}: FC<IconInterface> = function ${componentName}({
       className,
       ...propsRest

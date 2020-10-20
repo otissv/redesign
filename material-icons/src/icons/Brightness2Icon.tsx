@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign/ui-core";
+    import { Icon, IconInterface } from "@redesign-system/ui-core";
     export const Brightness2Icon: FC<IconInterface> = function Brightness2Icon({
       className,
       ...propsRest

@@ -1,7 +1,7 @@
-import React, { FC, useMemo } from 'react'
+import React, { FC } from 'react'
 
 import { ErrorMessageInterface } from './errorMessage.types'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import {
   errorMessageTheme,
@@ -17,10 +17,7 @@ export const ErrorMessage: FC<ErrorMessageInterface> = function ErrorMessage({
 }: ErrorMessageInterface) {
   const { theme } = useTheme()
   const classNames = `ErrorMessage ${className}`
-  const cssList: any = useMemo(
-    () => [errorMessageTheme, errorMessageAppearanceTheme, css],
-    [errorMessageTheme, errorMessageAppearanceTheme, css]
-  )
+  const cssList = [errorMessageTheme, errorMessageAppearanceTheme, css]
 
   return (
     <Base

@@ -1,6 +1,6 @@
 import React from 'react'
 import { ButtonInterface } from '../../atoms/Button'
-import { ThemeComponentInterface } from '@redesign/theme'
+import { ThemeComponentInterface } from '@redesign-system/theme'
 import { ButtonGroupInterface, ButtonGroupButtonIconInterface } from 'molecules'
 
 export const SET_TAB_ACTIVE = 'SET_TAB_ACTIVE'

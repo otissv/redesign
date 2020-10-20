@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 import { tabsPanelTheme } from './tabs.theme'
 
 import { TabPanelInterface } from './tabs.types'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 export const TabPanel: FC<TabPanelInterface> = function TabPanel({
   as = 'div',
@@ -16,13 +16,7 @@ export const TabPanel: FC<TabPanelInterface> = function TabPanel({
   const { theme } = useTheme()
   const classNames = `TabPanel ${className}`
 
-  const getActiveStyle = active ? 'display: block;' : 'display: none;'
-
-  const cssList: any = React.useMemo(() => [tabsPanelTheme, css], [
-    tabsPanelTheme,
-    getActiveStyle,
-    css,
-  ])
+  const cssList = [tabsPanelTheme, css]
 
   return active ? (
     <Base

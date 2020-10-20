@@ -1,4 +1,4 @@
-import { ThemeComponentInterface } from '@redesign/theme'
+import { ThemeComponentInterface } from '@redesign-system/theme'
 
 export interface FieldsetInterface extends ThemeComponentInterface {
   children?: React.ReactNode

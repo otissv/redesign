@@ -1,7 +1,7 @@
-import React, { FC, useMemo } from 'react'
+import React, { FC } from 'react'
 
 import { CopyrightInterface } from './copyright.types'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 import { copyrightTheme } from './copyright.theme'
 
 export const Copyright: FC<CopyrightInterface> = function Copyright({
@@ -13,10 +13,7 @@ export const Copyright: FC<CopyrightInterface> = function Copyright({
 }) {
   const { theme } = useTheme()
   const classNames = `Copyright ${className}`
-  const cssList: any = useMemo(() => [copyrightTheme, css], [
-    copyrightTheme,
-    css,
-  ])
+  const cssList = [copyrightTheme, css]
 
   return (
     <Base

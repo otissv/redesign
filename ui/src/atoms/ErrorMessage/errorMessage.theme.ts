@@ -1,7 +1,7 @@
-import { isFunction } from '@redesign/theme'
+import { isFunction } from '@redesign-system/theme'
 import { ErrorMessageInterface } from './errorMessage.types'
 
-import { PRIMARY, SECONDARY } from '@redesign/theme'
+import { PRIMARY, SECONDARY } from '@redesign-system/theme'
 
 export function errorMessageTheme(props: ErrorMessageInterface) {
   const {

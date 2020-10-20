@@ -1,4 +1,7 @@
-import { ThemeComponentInterface, AppearanceBaseTypes } from '@redesign/theme'
+import {
+  ThemeComponentInterface,
+  AppearanceBaseTypes,
+} from '@redesign-system/theme'
 
 import {
   ButtonGroupInterface,

@@ -3,7 +3,7 @@ import React, { FC, useCallback } from 'react'
 import { ButtonGroup } from '../../molecules/ButtonGroup'
 import { tabsListTheme } from './tabs.theme'
 import { TabsListInterface } from './tabs.types'
-import { useTheme } from '@redesign/ui-core'
+import { useTheme } from '@redesign-system/ui-core'
 
 export const TabList: FC<TabsListInterface> = function TabList({
   active,
@@ -15,10 +15,7 @@ export const TabList: FC<TabsListInterface> = function TabList({
 }) {
   const { theme } = useTheme()
   const classNames = `TabList ${className}`
-  const cssList: any = React.useMemo(
-    () => [tabsListTheme, css, 'overflow:hidden;'],
-    [tabsListTheme, css]
-  )
+  const cssList = [tabsListTheme, css, 'overflow:hidden;']
 
   const handleOnWheel = useCallback(function handleOnWheel(e: any) {
     e.preventDefault()

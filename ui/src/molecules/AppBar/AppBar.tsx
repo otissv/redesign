@@ -1,5 +1,5 @@
 import React, { FC, Fragment } from 'react'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { AppBarInterface } from './appBar.types'
 import { appBarTheme, appBarAppearanceTheme } from './appBar.theme'
@@ -45,10 +45,7 @@ export const AppBar: FC<AppBarInterface> = function AppBar({
 }) {
   const { theme } = useTheme()
   const classNames = `AppBar ${className}`
-  const cssList: any = React.useMemo(
-    () => [appBarTheme, appBarAppearanceTheme, css],
-    [appBarTheme, appBarAppearanceTheme, css]
-  )
+  const cssList = [appBarTheme, appBarAppearanceTheme, css]
 
   const components =
     smallAppBar &&

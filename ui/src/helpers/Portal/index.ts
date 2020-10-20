@@ -1,2 +1,2 @@
-export * from './Portal';
-export * from './portal.types';
+export * from './Portal'
+export * from './portal.types'

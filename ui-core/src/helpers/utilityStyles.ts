@@ -1,4 +1,4 @@
-import { UtilityInterface } from '@redesign/theme'
+import { UtilityInterface } from '@redesign-system/theme'
 
 import { BaseInterface } from '../Base'
 import { getAlias } from './getAlias'

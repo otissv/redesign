@@ -13,10 +13,7 @@ export const ButtonGroupButtonIcon: FC<ButtonGroupButtonIconInterface> = functio
 }) {
   const classNames = `ButtonGroupButtonIcon ${className || ''}`
 
-  const cssList: any = React.useMemo(() => [buttonGroupButtonIconTheme, css], [
-    buttonGroupButtonIconTheme,
-    css,
-  ])
+  const cssList = [buttonGroupButtonIconTheme, css]
 
   return (
     <ButtonIcon className={classNames} css={cssList} {...propsRest}>

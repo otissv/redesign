@@ -4,7 +4,7 @@ import {
   SECONDARY_DISABLED,
   TERTIARY_DISABLED,
   AppearanceTypes,
-} from '@redesign/theme';
+} from '@redesign-system/theme';
 
 interface PropsInterface {
   disabled?: boolean;

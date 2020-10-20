@@ -1,7 +1,7 @@
 import React from 'react'
-import { ThemeProvider } from '@redesign/ui-core'
-import { ChevronRightIcon } from '@redesign/material-icons/ChevronRightIcon'
-import { ChevronDownIcon } from '@redesign/material-icons/ChevronDownIcon'
+import { ThemeProvider } from '@redesign-system/ui-core'
+import { ChevronRightIcon } from '@redesign-system/material-icons/ChevronRightIcon'
+import { ChevronDownIcon } from '@redesign-system/material-icons/ChevronDownIcon'
 
 import { Table } from './Table'
 import { Checkbox } from '../../atoms/Checkbox'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeProvider } from '@redesign/ui-core'
+import { ThemeProvider } from '@redesign-system/ui-core'
 
 import { GoogleMaps } from './GoogleMaps'
 import { useString } from '../../hooks/useString'

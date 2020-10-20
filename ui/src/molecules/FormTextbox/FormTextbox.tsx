@@ -1,9 +1,9 @@
-import React, { FC, useMemo } from 'react'
-import { isString, SECONDARY_ERROR } from '@redesign/theme'
+import React, { FC } from 'react'
+import { isString, SECONDARY_ERROR } from '@redesign-system/theme'
 
 import { FormTextBoxInterface } from './formTextbox.types'
 
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 import { Maybe } from '../../helpers/Maybe'
 import { Either } from '../../helpers/Either'
 import { Textbox } from '../../atoms/Textbox'
@@ -37,10 +37,7 @@ export const FormTextbox: FC<FormTextBoxInterface> = function FormTextbox({
 }) {
   const { theme } = useTheme()
   const classNames = `FormTextbox ${className}`
-  const cssList: any = useMemo(() => [formTextboxTheme, css], [
-    formTextboxTheme,
-    css,
-  ])
+  const cssList = [formTextboxTheme, css]
 
   const invalid =
     (typeof errorMessage === 'string' && !!Boolean(errorMessage)) ||

@@ -1,6 +1,6 @@
 import React from 'react'
-import { MenuIcon } from '@redesign/material-icons/MenuIcon'
-import { MenuOpenIcon } from '@redesign/material-icons/MenuOpenIcon'
+import { MenuIcon } from '@redesign-system/material-icons/MenuIcon'
+import { MenuOpenIcon } from '@redesign-system/material-icons/MenuOpenIcon'
 
 import { appBarTriggerTheme } from './appBar.theme'
 import { Toggle } from '../../atoms/Toggle'
@@ -17,10 +17,7 @@ export function AppBarTrigger({
 }: any) {
   const classNames = `AppBarTrigger ${className}`
 
-  const cssList: any = React.useMemo(() => [appBarTriggerTheme, css], [
-    appBarTriggerTheme,
-    css,
-  ])
+  const cssList = [appBarTriggerTheme, css]
 
   const triggerDefault = [<MenuOpenIcon key={1} />, <MenuIcon key={2} />]
 

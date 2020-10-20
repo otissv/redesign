@@ -1,5 +1,5 @@
 import { HeaderInterface } from 'molecules/Header'
-import { CssTypes } from '@redesign/theme'
+import { CssTypes } from '@redesign-system/theme'
 
 export interface LayoutInterface {
   as?: string

@@ -1,4 +1,4 @@
-import { isFunction } from '@redesign/theme'
+import { isFunction } from '@redesign-system/theme'
 
 import { TypographyInterface } from './typography.types'
 import {
@@ -11,7 +11,7 @@ import {
   SUCCESS,
   WARNING,
   DISABLED,
-} from '@redesign/theme'
+} from '@redesign-system/theme'
 
 export function typographyTheme(props: TypographyInterface) {
   const {

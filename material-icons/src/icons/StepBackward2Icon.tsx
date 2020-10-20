@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-    import { Icon, IconInterface } from "@redesign/ui-core";
+    import { Icon, IconInterface } from "@redesign-system/ui-core";
     export const StepBackward2Icon: FC<IconInterface> = function StepBackward2Icon({
       className,
       ...propsRest

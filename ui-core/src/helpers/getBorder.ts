@@ -1,4 +1,4 @@
-import { toUpperFirst } from '@redesign/theme';
+import { toUpperFirst } from '@redesign-system/theme';
 
 export function getBorder(
   border: { [key: string]: string },

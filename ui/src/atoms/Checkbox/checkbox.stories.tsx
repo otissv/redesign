@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ThemeProvider } from '@redesign/ui-core'
+import { ThemeProvider } from '@redesign-system/ui-core'
 import { Label } from '../Label'
 
 export default {

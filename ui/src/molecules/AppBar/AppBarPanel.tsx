@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 import { AppBarPanelInterface } from './appBar.types'
 import { appBarPanelTheme } from './appBar.theme'
 
@@ -15,10 +15,7 @@ export const AppBarPanel: FC<AppBarPanelInterface> = function AppBarPanel({
   const { theme } = useTheme()
   const classNames = `AppBarPanel ${className}`
 
-  const cssList: any = React.useMemo(() => [appBarPanelTheme, css], [
-    appBarPanelTheme,
-    css,
-  ])
+  const cssList = [appBarPanelTheme, css]
 
   return smallAppBar ? (
     <Base

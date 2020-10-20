@@ -4,11 +4,11 @@ React Design System built with Emotion base on Atomic Design.
 
 ## Installation
 
-`npm install @redesign/ui @redesign/ui-core @redesign/theme @redesign/material-icons`
+`npm install @redesign-system/ui @redesign-system/ui-core @redesign-system/theme @redesign-system/material-icons`
 
 or
 
-`yarn add @redesign/ui @redesign/ui-core @redesign/theme @redesign/material-icons`
+`yarn add @redesign-system/ui @redesign-system/ui-core @redesign-system/theme @redesign-system/material-icons`
 
 ## Theme
 

@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Base, useTheme } from '@redesign/ui-core'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { MainInterface } from './main.types'
 import { mainTheme } from './main.theme'
@@ -13,7 +13,7 @@ export const Main: FC<MainInterface> = function Main({
 }) {
   const { theme } = useTheme()
   const classNames = `Main ${className}`
-  const cssList: any = React.useMemo(() => [mainTheme, css], [mainTheme, css])
+  const cssList = [mainTheme, css]
 
   return (
     <Base

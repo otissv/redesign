@@ -1,0 +1,46 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add storybook -D
+
+PATH: 
+  /usr/local/opt/gettext/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin:/usr/local/opt/gettext/bin:/Users/otisvirginie/Library/Android/sdk/emulator:/Users/otisvirginie/Library/Android/sdk/tools:/Users/otisvirginie/Library/Android/sdk/tools/bin:/Users/otisvirginie/terraform:/Users/otisvirginie/Library/Android/sdk/emulator:/Users/otisvirginie/Library/Android/sdk/tools:/Users/otisvirginie/Library/Android/sdk/tools/bin:/Users/otisvirginie/terraform
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.6.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: http://localhost:4873/storybook: no such package available
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66987:18)
+      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140748:22)
+      at Request.emit (events.js:203:13)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141720:10)
+      at Request.emit (events.js:203:13)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141642:12)
+      at Object.onceWrapper (events.js:291:20)
+      at IncomingMessage.emit (events.js:208:15)
+      at endReadableNT (_stream_readable.js:1154:12)
+      at processTicksAndRejections (internal/process/task_queues.js:77:11)
+
+npm manifest: 
+  {
+    "name": "docs",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "storybook": "start-storybook -p 6006 -c .storybook"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

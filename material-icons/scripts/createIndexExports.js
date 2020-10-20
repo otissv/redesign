@@ -19,7 +19,7 @@ async function makeIndex(paths) {
       const { fileName } = getPathsInfo(path)
 
       return `${acc}
-  export * from './icons/${fileName}'`
+  export * from './icons/${fileName}Icon'`
     }, '')
 
     return {

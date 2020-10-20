@@ -15,7 +15,6 @@ function createIcons(path) {
       dest: `./src/icons`,
     }))
     .then(writeDateToFile)
-    .then(console.log)
     .catch(errorHandler)
 }
 exports.createIcons = createIcons
@@ -52,7 +51,7 @@ async function makeReactIcon({ fileName, data, ...props }) {
       `
     return {
       ...props,
-      fileName,
+      fileName: `${fileName}Icon`,
       data: componentString,
     }
   } catch (error) {

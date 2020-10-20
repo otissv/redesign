@@ -20,7 +20,7 @@ async function makeStories(paths) {
         const { fileName } = getPathsInfo(path)
         return {
           imports: `${acc.imports}
-import { ${fileName}Icon } from './icons/${fileName}'`,
+import { ${fileName}Icon } from './icons/${fileName}Icon'`,
           icons: `${acc.icons}
 ${fileName}Icon,`,
         }
@@ -37,95 +37,96 @@ import { createTheme } from '@redesign/theme'
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { DebounceInput } from 'react-debounce-input';
 import { Icon  } from '@redesign/ui-core'
+
 ${imports}
+
 export default {
   title: 'Icons',
   component: Icon,
 };
+
 const theme: any = createTheme()
+
+
+
+const icons =[
+${icons}
+]
+
 function Copy({ text, Icon, ...propsRest }: { [key: string]: any }) {
   const [state, setState] = React.useState(text)
-  const css = ({ theme: { color, elevate, radius } }: any) => {
-    return {
-      color: color.white,
-      background: color.transparent,
-      border: 'none',
-      borderRadius: radius.rounded,
-      '&:hover': { background: color.night_blue_400, boxShadow: elevate[2] },
-    }
-  }
+
   function handelOnCopy(text: string) {
     setState('copied')
     setTimeout(() => setState(text), 2000)
   }
+
+  const copyStyle = {
+    color: '#fff',
+    background: 'rgba(0,0,0,0)',
+    border: 'none',
+    borderRadius: '5px',
+    width: '100px',
+    textAlign: 'center',
+    padding: '8px',
+    cursor: 'pointer'
+  }
+
   return (
-    <CopyToClipboard
-      text={text}
-      onCopy={handelOnCopy}
-    >
-      <Base
-        className="Copy"
-        as="div"
-        w="100px"
-        textAlign="center"
-        css={css}
-        theme={theme}
-        p={2}
-        {...propsRest}
-      >
+    <CopyToClipboard text={text} onCopy={handelOnCopy}>
+      <div className="Copy" style={copyStyle as any} {...propsRest}>
         <Icon w="50px" />
         <Label>{state}</Label>
-      </Base>
+      </div>
     </CopyToClipboard>
   )
 }
 function Label(props: { [key: string]: any }) {
-  const css = {
+  const labelStyles = {
     fontSize: '12px',
+    display: 'block',
+    overflow: 'hidden',
+    whiteSpace: 'nowrap',
+    textOverflow: 'ellipsis',
+    padding: '8px',
+    margin: '4px',
   }
-  return (
-    <Base
-      as="span"
-      display="block"
-      truncate
-      css={css}
-      theme={theme}
-      p={2}
-      m={1}
-      {...props}
-    />
-  )
+  return <span style={labelStyles as any} {...props} />
 }
-const icons =[
-${icons}
-]
+
 export const Default = () => {
   const [search, setSearch] = React.useState('')
   return (
     <ThemeProvider>
+      <h1 style={{ marginBottom: '40px',textAlign: 'center' }}>Redesign Material Icons</h1>
+
       <DebounceInput
         debounceTimeout={300}
         onChange={event => setSearch(event.target.value)}
-        style={{ margin: '0 auto 20px auto', display: 'block' }}
+        style={{
+          margin: '0 auto 40px auto',
+          display: 'block',
+          padding: '6px 8px',
+        }}
         placeholder="Search icons"
       />
-      <Base
-        className="container"
-        theme={theme}
-        match
-        margin={2}
-        display="inline-block"
+      <div
+        className="Container"
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+        }}
       >
         {icons.map(icon => {
           const text = icon.displayName
           if (search.trim() === '') {
-            return <CopyIcon key={text} Icon={icon} text={text} />
+            return <Copy key={text} Icon={icon} text={text} />
           }
           return text?.toLowerCase().includes(search.toLowerCase()) ? (
-            <CopyIcon key={text} Icon={icon} text={text} />
+            <Copy key={text} Icon={icon} text={text} />
           ) : null
         })}
-      </Base>
+      </div>
     </ThemeProvider>
   )
 }

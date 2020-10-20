@@ -4,7 +4,7 @@ import { create } from '@storybook/theming/create'
 
 const background = 'hsla(211,26%,21%,1)'
 
-import logo from '../src/redesign.svg'
+import logo from './redesign.svg'
 
 export default create({
   base: 'dark',

@@ -44,7 +44,6 @@ export const Base: FC<BaseInterface> = function Base(props) {
     ...propsRest
   } = props
 
-  console.log(props)
   // merge styles into string
   const _styles = [
     ...(css ? [createStyleString(css, props)] : []),

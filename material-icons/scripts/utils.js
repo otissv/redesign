@@ -106,7 +106,7 @@ exports.toFileName = toFileName
 async function writeDateToFile({ data, fileName, dest, ...props }) {
   try {
     await await mkdirp(dest)
-    await writeFile(`${dest}/${fileName}Icon.tsx`, data, { flag: 'w' })
+    await writeFile(`${dest}/${fileName}.tsx`, data, { flag: 'w' })
 
     return {
       ...props,

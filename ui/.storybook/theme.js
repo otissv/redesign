@@ -1,7 +1,7 @@
 // YourTheme.js
 
 import { create } from '@storybook/theming/create'
-import logo from '../src/redesign.svg'
+import logo from './redesign.svg'
 
 const background = 'hsla(211,26%,21%,1)'
 

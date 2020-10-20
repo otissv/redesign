@@ -1,4 +1,10 @@
 {
   "version": "0.0.1",
-  "private": true
+  "private": true,
+  "scripts": {
+    "build-docs": "cd docs && npm run build-storybook",
+    "build-ui": "cd ui && npm run build-storybook",
+    "build-ui-core": "cd ui-core && npm run build-storybook",
+    "build-material-icons": "cd material-icons && npm run build-storybook"
+  }
 }

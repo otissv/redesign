@@ -14,10 +14,7 @@ export const NavItem: FC<NavItemInterface> = function NavItem({
   const { theme } = useTheme()
   const classNames = `NavItem ${className}`
 
-  const cssList: any = React.useMemo(() => [navItemTheme, css], [
-    navItemTheme,
-    css,
-  ])
+  const cssList = [navItemTheme, css]
 
   return (
     <Base

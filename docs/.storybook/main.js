@@ -17,9 +17,5 @@ module.exports = {
       title: "UI",
       url: "http://localhost:6006",
     },
-    icons: {
-      title: "Icons",
-      url: "http://localhost:6008",
-    },
   },
 };

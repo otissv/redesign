@@ -96,7 +96,7 @@ export function useSelected(initialState: SelectedInterface = {}) {
         id,
       })
     },
-    [dispatch, SELECTED_ADD]
+    [dispatch]
   )
 
   const addMany = React.useCallback(
@@ -106,7 +106,7 @@ export function useSelected(initialState: SelectedInterface = {}) {
         ids,
       })
     },
-    [dispatch, SELECTED_ADD_MANY]
+    [dispatch]
   )
 
   const remove = React.useCallback(
@@ -116,7 +116,7 @@ export function useSelected(initialState: SelectedInterface = {}) {
         id,
       })
     },
-    [dispatch, SELECTED_REMOVE]
+    [dispatch]
   )
 
   const removeAll = React.useCallback(
@@ -125,7 +125,7 @@ export function useSelected(initialState: SelectedInterface = {}) {
         type: SELECTED_REMOVE_ALL,
       })
     },
-    [dispatch, SELECTED_REMOVE_ALL]
+    [dispatch]
   )
 
   const reset = React.useCallback(
@@ -134,7 +134,7 @@ export function useSelected(initialState: SelectedInterface = {}) {
         type: SELECTED_RESET,
       })
     },
-    [dispatch, SELECTED_RESET]
+    [dispatch]
   )
 
   /*
@@ -163,7 +163,7 @@ export function useSelected(initialState: SelectedInterface = {}) {
             id,
           })
     },
-    [dispatch, SELECTED_ADD, SELECTED_REMOVE]
+    [dispatch]
   )
 
   const onToggleClick = React.useCallback(
@@ -181,7 +181,7 @@ export function useSelected(initialState: SelectedInterface = {}) {
             id,
           })
     },
-    [dispatch, SELECTED_REMOVE, SELECTED_ADD]
+    [dispatch, state]
   )
 
   function onCheckAllChange(data: SelectedDataInterface[] = []) {
@@ -201,7 +201,6 @@ export function useSelected(initialState: SelectedInterface = {}) {
 
   function onCheckAllClick(data: SelectedDataInterface[] = []) {
     return (e: any) => {
-      console.log('onCheckAllClick')
       if (data && e.target.checked) {
         let selected: string[] = []
         for (let item of data) {

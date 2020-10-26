@@ -1,13 +1,13 @@
 import React from 'react'
 
 import { ThemeProvider } from '@redesign-system/ui-core'
+import { Radio } from './Radio'
 import { Box } from '../Box'
 
 export default {
   title: 'Components/Atoms/Radio',
   component: Radio,
 }
-import { Radio } from './Radio'
 
 export const Default = () => (
   <ThemeProvider>

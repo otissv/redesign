@@ -299,7 +299,6 @@ export function boxAppearanceTheme(props: BoxInterface) {
         ...boxAppearanceTheme?.tertiaryDisabled,
       }
 
-    case PRIMARY:
     default:
       return {
         ...boxAppearanceTheme?.[appearance as string],

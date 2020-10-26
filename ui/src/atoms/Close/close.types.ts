@@ -1,5 +1,5 @@
-import { ThemeComponentInterface } from '@redesign-system/theme';
+import { ThemeComponentInterface } from '@redesign-system/theme'
 
 export interface CloseInterface extends ThemeComponentInterface {
-  onClose?: any;
+  onClose?: any
 }

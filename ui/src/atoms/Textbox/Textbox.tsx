@@ -31,22 +31,13 @@ export const Textbox: FC<TextboxInterface> = function Textbox({
 }) {
   const { theme } = useTheme()
   const classNames = `Textbox ${className}`
-  const cssList: any = React.useMemo(
-    () => [
-      textboxTheme,
-      textboxAppearanceTheme,
-      textboxSizeTheme,
-      textboxWidthsTheme,
-      css,
-    ],
-    [
-      textboxTheme,
-      textboxAppearanceTheme,
-      textboxSizeTheme,
-      textboxWidthsTheme,
-      css,
-    ]
-  )
+  const cssList = [
+    textboxTheme,
+    textboxAppearanceTheme,
+    textboxSizeTheme,
+    textboxWidthsTheme,
+    css,
+  ]
 
   const isDisabled = React.useMemo(
     () =>
@@ -54,7 +45,7 @@ export const Textbox: FC<TextboxInterface> = function Textbox({
         appearance,
         disabled,
       }),
-    [appearance, disabled, isComponentDisabled]
+    [appearance, disabled]
   )
 
   return (

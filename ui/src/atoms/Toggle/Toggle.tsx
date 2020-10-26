@@ -29,7 +29,7 @@ export const Toggle: FC<ToggleInterface> = function Toggle({
         appearance,
         disabled,
       }),
-    [appearance, disabled, isComponentDisabled]
+    [appearance, disabled]
   )
 
   return (

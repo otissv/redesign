@@ -12,7 +12,7 @@ import {
 } from './typography.theme'
 
 export const Typography: FC<TypographyInterface> = function Typography({
-  as: el = 'p',
+  as = 'p',
   children,
   className = '',
   css = '',
@@ -31,19 +31,19 @@ export const Typography: FC<TypographyInterface> = function Typography({
 
   const attributes = React.useMemo(
     () => ({
-      ...(el === 'hr'
+      ...(as === 'hr'
         ? {
             role: 'separator',
             'aria-orientation': 'horizontal',
           }
         : {}),
     }),
-    []
+    [as]
   )
 
   return (
     <Base
-      as={el}
+      as={as}
       className={classNames}
       css={cssList}
       {...attributes}

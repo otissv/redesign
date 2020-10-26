@@ -29,7 +29,7 @@ export const Radio: FC<RadioInterface> = function Radio({
         appearance,
         disabled,
       }),
-    [appearance, disabled, isComponentDisabled]
+    [appearance, disabled]
   )
 
   return (

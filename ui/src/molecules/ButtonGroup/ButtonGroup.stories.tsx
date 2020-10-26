@@ -40,13 +40,13 @@ export const Active = () => {
     <ThemeProvider>
       <Box>
         <ButtonGroup>
-          <ButtonGroupButton id="1" onClick={onClick} active={active == '1'}>
+          <ButtonGroupButton id="1" onClick={onClick} active={active === '1'}>
             Primary
           </ButtonGroupButton>
-          <ButtonGroupButton id="2" onClick={onClick} active={active == '2'}>
+          <ButtonGroupButton id="2" onClick={onClick} active={active === '2'}>
             Primary
           </ButtonGroupButton>
-          <ButtonGroupButton id="3" onClick={onClick} active={active == '3'}>
+          <ButtonGroupButton id="3" onClick={onClick} active={active === '3'}>
             Primary
           </ButtonGroupButton>
         </ButtonGroup>

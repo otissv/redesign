@@ -150,15 +150,3 @@ export const Appearance = () => (
     </Box>
   </ThemeProvider>
 )
-
-{
-  /* 
-
-
-
-    
-    
-    
-    
-    */
-}

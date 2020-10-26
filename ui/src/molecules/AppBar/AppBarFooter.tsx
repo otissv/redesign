@@ -15,10 +15,7 @@ export function AppBarFooter({
 
   const classNames = `AppBarFooter ${className}`
 
-  const cssList: any = React.useMemo(() => [appBarFooterTheme, css], [
-    appBarFooterTheme,
-    css,
-  ])
+  const cssList = [appBarFooterTheme, css]
 
   return smallAppBar ? (
     <Base

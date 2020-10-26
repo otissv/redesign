@@ -1,5 +1,5 @@
-import { ThemeComponentInterface } from '@redesign-system/theme';
+import { ThemeComponentInterface } from '@redesign-system/theme'
 
 export interface OverlayInterface extends ThemeComponentInterface {
-  color?: string;
+  color?: string
 }

@@ -29,7 +29,7 @@ export const Checkbox: FC<CheckboxInterface> = function Checkbox({
         appearance,
         disabled,
       }),
-    [appearance, disabled, isComponentDisabled]
+    [appearance, disabled]
   )
 
   return (

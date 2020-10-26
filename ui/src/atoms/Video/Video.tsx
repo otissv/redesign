@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-
+import cuid from 'cuid'
 import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { VideoInterface } from './video.types'
@@ -24,6 +24,7 @@ export const Video: FC<VideoInterface> = function Video({
   ...propsRest
 }) {
   const { theme } = useTheme()
+  const iframeTitle = React.useRef(cuid())
 
   const classNames = `Video ${className}`
   const cssList = [videoTheme, css]
@@ -49,7 +50,15 @@ export const Video: FC<VideoInterface> = function Video({
       css={cssList}
       {...(embeded ? null : properties)}
     >
-      {embeded ? <iframe frameBorder="0" /> : children}
+      {embeded ? (
+        <iframe
+          key={iframeTitle.current}
+          title={iframeTitle.current}
+          frameBorder="0"
+        />
+      ) : (
+        children
+      )}
     </Base>
   )
 }

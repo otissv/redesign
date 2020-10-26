@@ -1,5 +1,5 @@
 import React from 'react'
-
+import cuid from 'cuid'
 import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { GoogleMapsInterface } from './googleMaps.types'
@@ -33,6 +33,7 @@ export const GoogleMaps = React.memo(function GoogleMaps({
     >
       <div className="gmap_canvas">
         <iframe
+          title={cuid()}
           width={width}
           height={height}
           id="gmap_canvas"

@@ -46,7 +46,7 @@ export const Button: FC<ButtonInterface> = function Button({
         appearance,
         disabled,
       }),
-    [appearance, disabled, isComponentDisabled]
+    [appearance, disabled]
   )
 
   return (

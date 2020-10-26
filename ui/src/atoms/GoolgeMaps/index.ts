@@ -1,2 +1,2 @@
-export * from './GoogleMaps';
-export * from './googleMaps.types';
+export * from './GoogleMaps'
+export * from './googleMaps.types'

@@ -53,11 +53,7 @@ export const Image: FC<ImageInterface> = function Image({
   // }
   const { theme } = useTheme()
   const classNames = `Image ${className}`
-  const cssList: any = React.useMemo(() => [imgTheme, imgSizeTheme, css], [
-    imgTheme,
-    imgSizeTheme,
-    css,
-  ])
+  const cssList = [imgTheme, imgSizeTheme, css]
 
   return (
     <Base

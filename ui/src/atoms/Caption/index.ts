@@ -1,3 +1,3 @@
-export * from './Caption';
-export * from './caption.theme';
-export * from './caption.types';
+export * from './Caption'
+export * from './caption.theme'
+export * from './caption.types'

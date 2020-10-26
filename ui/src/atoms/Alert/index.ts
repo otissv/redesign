@@ -1,3 +1,3 @@
-export * from './Alert';
-export * from './alert.types';
-export * from './alert.theme';
+export * from './Alert'
+export * from './alert.types'
+export * from './alert.theme'

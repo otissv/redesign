@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react'
+import React, { FC } from 'react'
 import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { ListItemInterface } from './list.types'
@@ -12,8 +12,8 @@ export const ListItem: FC<ListItemInterface> = function List({
   ...propsRest
 }) {
   const { theme } = useTheme()
-  const classNames = useMemo(() => `ListItem ${className}`, [className])
-  const cssList: any = useMemo(() => [listItemTheme, css], [listItemTheme, css])
+  const classNames = `ListItem ${className}`
+  const cssList = [listItemTheme, css]
 
   return (
     <Base

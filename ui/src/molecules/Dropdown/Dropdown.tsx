@@ -45,10 +45,7 @@ export const Dropdown: FC<DropdownInterface> = function Alert({
 }) {
   const { theme } = useTheme()
   const classNames = `Dropdown ${className}`
-  const cssList: any = React.useMemo(() => [dropdownTheme, css], [
-    dropdownTheme,
-    css,
-  ])
+  const cssList = [dropdownTheme, css]
 
   return (
     <Base

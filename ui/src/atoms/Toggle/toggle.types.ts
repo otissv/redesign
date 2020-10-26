@@ -1,6 +1,9 @@
 import React from 'react'
 
-import { ThemeComponentInterface, AppearanceBaseTypes } from '@redesign-system/theme'
+import {
+  ThemeComponentInterface,
+  AppearanceBaseTypes,
+} from '@redesign-system/theme'
 
 export interface ToggleInterface extends ThemeComponentInterface {
   children: React.ReactNode[]

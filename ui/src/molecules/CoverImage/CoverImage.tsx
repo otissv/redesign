@@ -29,6 +29,7 @@ export const CoverImage: FC<CoverImageInterface> = function CoverImage({
   const { theme } = useTheme()
   const classNames = `CoverImage ${className}`
   const cssList = [coverImageTheme, css]
+
   return (
     <Base
       className={classNames}
@@ -66,10 +67,7 @@ function CoverImageContent({
 }: any) {
   const { theme } = useTheme()
   const classNames = `CoverImageContent ${className}`
-  const cssList: any = React.useMemo(() => [coverImageContentTheme, css], [
-    coverImageContentTheme,
-    css,
-  ])
+  const cssList = [coverImageContentTheme, css]
 
   return (
     <Base

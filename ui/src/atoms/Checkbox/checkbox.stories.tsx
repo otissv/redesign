@@ -2,12 +2,12 @@ import React from 'react'
 
 import { ThemeProvider } from '@redesign-system/ui-core'
 import { Label } from '../Label'
+import { Checkbox } from './Checkbox'
 
 export default {
   title: 'Components/Atoms/Checkbox',
   component: Checkbox,
 }
-import { Checkbox } from './Checkbox'
 
 export const Default = () => (
   <ThemeProvider>

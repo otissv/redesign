@@ -1,6 +1,13 @@
-import { GoogleMapsInterface } from './googleMaps.types';
+import { isFunction } from '@redesign-system/theme'
 
-export function googleMapsTheme({ height, width }: GoogleMapsInterface) {
+import { GoogleMapsInterface } from './googleMaps.types'
+
+export function googleMapsTheme(props: GoogleMapsInterface) {
+  const {
+    height,
+    width,
+    theme: { GoogleMaps },
+  } = props
   return {
     position: 'relative',
     textAlign: 'right',
@@ -13,5 +20,9 @@ export function googleMapsTheme({ height, width }: GoogleMapsInterface) {
       height: 'inherit',
       width: 'inherit',
     },
-  };
+
+    ...(isFunction(GoogleMaps)
+      ? GoogleMaps(props)?.default
+      : GoogleMaps?.default),
+  }
 }

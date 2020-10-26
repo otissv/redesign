@@ -1,3 +1,14 @@
+const sites =
+  process.env.NODE_ENV === "development"
+    ? {
+        core: "http://localhost:6007",
+        ui: "http://localhost:6006",
+      }
+    : {
+        core: "https://redesign-ui-core.netlify.app",
+        ui: "https://redesign-ui.netlify.app",
+      };
+
 module.exports = {
   stories: [
     "../stories/**/*.stories.mdx",
@@ -11,11 +22,11 @@ module.exports = {
   refs: {
     core: {
       title: "UI Core",
-      url: "http://localhost:6007",
+      url: sites.core,
     },
     ui: {
       title: "UI",
-      url: "http://localhost:6006",
+      url: sites.ui,
     },
   },
 };

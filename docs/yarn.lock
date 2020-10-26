@@ -1313,6 +1313,20 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
 
+"@redesign-system/theme@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@redesign-system/theme/-/theme-0.0.2.tgz#a6a7ebbdcdee57c4e9530c1cb8cd77d651e1d078"
+  integrity sha512-EMbMMJ/PtM8kb2EtEbZmxJ+Fj/FdPOAUpmBEsW+FG0vV38JUykJPIGnD9UlM6lSaBuiUbkBpb6wGOYYimq0L/w==
+  dependencies:
+    deepmerge "^4.2.2"
+    facepaint "^1.2.1"
+    rambda "^5.6.0"
+
+"@redesign-system/ui-core@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@redesign-system/ui-core/-/ui-core-0.0.2.tgz#699f72275e7b5073344b94fb9de8820ae610ef87"
+  integrity sha512-vV++PHGma5U7hgfhr/vPDjRx4j0ZAgH6pXShkYmAyJEeJny1PHC9jf3Lyii36FW/phoKy2/nRY5z8UVBJH4aEg==
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
@@ -4003,6 +4017,16 @@ create-ecdh@^4.0.0:
     bn.js "^4.1.0"
     elliptic "^6.5.3"
 
+create-emotion@^10.0.27:
+  version "10.0.27"
+  resolved "https://registry.yarnpkg.com/create-emotion/-/create-emotion-10.0.27.tgz#cb4fa2db750f6ca6f9a001a33fbf1f6c46789503"
+  integrity sha512-fIK73w82HPPn/RsAij7+Zt8eCE8SptcJ3WoRMfxMtjteYxud8GDTKKld7MYwAX2TVhrw29uR1N/bVGxeStHILg==
+  dependencies:
+    "@emotion/cache" "^10.0.27"
+    "@emotion/serialize" "^0.11.15"
+    "@emotion/sheet" "0.9.4"
+    "@emotion/utils" "0.11.3"
+
 create-hash@^1.1.0, create-hash@^1.1.2, create-hash@^1.2.0:
   version "1.2.0"
   resolved "http://localhost:4873/create-hash/-/create-hash-1.2.0.tgz#889078af11a63756bcfb59bd221996be3a9ef196"
@@ -4254,6 +4278,11 @@ deep-object-diff@^1.1.0:
   version "1.1.0"
   resolved "http://localhost:4873/deep-object-diff/-/deep-object-diff-1.1.0.tgz#d6fabf476c2ed1751fc94d5ca693d2ed8c18bc5a"
   integrity sha512-b+QLs5vHgS+IoSNcUE4n9HP2NwcHj7aqnJWsjPtuG75Rh5TOaGt0OjAYInh77d5T16V5cRDC+Pw/6ZZZiETBGw==
+
+deepmerge@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
+  integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
 
 defer-to-connect@^1.0.1:
   version "1.1.3"
@@ -4568,6 +4597,14 @@ emotion-theming@^10.0.19:
     "@babel/runtime" "^7.5.5"
     "@emotion/weak-memoize" "0.2.5"
     hoist-non-react-statics "^3.3.0"
+
+emotion@^10.0.27:
+  version "10.0.27"
+  resolved "https://registry.yarnpkg.com/emotion/-/emotion-10.0.27.tgz#f9ca5df98630980a23c819a56262560562e5d75e"
+  integrity sha512-2xdDzdWWzue8R8lu4G76uWX5WhyQuzATon9LmNeCy/2BHVC6dsEpfhN1a0qhELgtDVdjyEA6J8Y/VlI5ZnaH0g==
+  dependencies:
+    babel-plugin-emotion "^10.0.27"
+    create-emotion "^10.0.27"
 
 encodeurl@~1.0.2:
   version "1.0.2"
@@ -4942,6 +4979,11 @@ extract-zip@^1.6.6:
     debug "^2.6.9"
     mkdirp "^0.5.4"
     yauzl "^2.10.0"
+
+facepaint@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/facepaint/-/facepaint-1.2.1.tgz#89929e601b15227278c53c516f764fc462b09c33"
+  integrity sha512-oNvBekbhsm/0PNSOWca5raHNAi6dG960Bx6LJgxDPNF59WpuspgQ17bN5MKwOr7JcFdQYc7StW3VZ28DBZLavQ==
 
 fast-deep-equal@^3.1.1:
   version "3.1.3"
@@ -8144,6 +8186,11 @@ querystring@0.2.0, querystring@^0.2.0:
   version "0.2.0"
   resolved "http://localhost:4873/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
   integrity sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=
+
+rambda@^5.6.0:
+  version "5.13.1"
+  resolved "https://registry.yarnpkg.com/rambda/-/rambda-5.13.1.tgz#878de64abba268a515f5cd5327448da4344e9b3b"
+  integrity sha512-ygj/oPmskiJXcTMWPo1RkKnqI2EjwvO/0KV/F+oJ5njhj4vDENLPqBV3CjDMiJ8yZTZvQbPOciUnsmXZkAF3Vw==
 
 ramda@^0.21.0:
   version "0.21.0"

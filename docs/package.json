@@ -20,6 +20,9 @@
     "storybook": "^6.0.26"
   },
   "dependencies": {
-    "@storybook/addon-a11y": "^6.0.26"
+    "@redesign-system/theme": "^0.0.2",
+    "@redesign-system/ui-core": "^0.0.2",
+    "@storybook/addon-a11y": "^6.0.26",
+    "emotion": "^10.0.27"
   }
 }

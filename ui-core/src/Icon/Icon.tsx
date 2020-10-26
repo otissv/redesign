@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react'
+import React, { FC } from 'react'
 
 import { iconTheme, iconAppearanceTheme } from './icon.theme'
 
@@ -18,12 +18,8 @@ export const Icon: FC<IconInterface> = function Icon({
   ...propsRest
 }) {
   const { theme } = useTheme()
-  const classNames = useMemo(() => `Icon ${className}`, [className])
-  const cssList: any = useMemo(() => [iconTheme, iconAppearanceTheme, css], [
-    iconTheme,
-    iconAppearanceTheme,
-    css,
-  ])
+  const classNames = `Icon ${className}`
+  const cssList = [iconTheme, iconAppearanceTheme, css]
 
   const props = {
     height,

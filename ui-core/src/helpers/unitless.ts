@@ -46,4 +46,4 @@ export const unitlessKeys = {
   strokeMiterlimit: 1,
   strokeOpacity: 1,
   strokeWidth: 1,
-};
+}

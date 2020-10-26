@@ -1,3 +1,3 @@
-export type IsStringType = (value: any) => boolean;
+export type IsStringType = (value: any) => boolean
 
-export const isString: IsStringType = value => typeof value === 'string';
+export const isString: IsStringType = value => typeof value === 'string'

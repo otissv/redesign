@@ -1,1 +1,1 @@
-export * from './textTransform';
+export * from './textTransform'

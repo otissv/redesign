@@ -5,8 +5,8 @@
  */
 export const tryCatch = (Right: any) => {
   try {
-    return Right();
+    return Right()
   } catch (e) {
-    return new Error(e);
+    return new Error(e)
   }
-};
+}

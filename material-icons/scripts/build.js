@@ -1,4 +1,3 @@
-const swc = require('@swc/core')
 const pkg = require('../package.json')
 
 const {
@@ -46,8 +45,8 @@ async function createPackageJson(paths) {
       typings: pkg.typings,
       author: pkg.author,
       module: pkg.module,
-      "publishConfig": {
-        "access": "public"
+      publishConfig: {
+        access: 'public',
       },
     }
 
@@ -75,10 +74,6 @@ export * from './${fileName}Icon';`
     await writeFile(`./dist/index.d.ts`, iconExports, {
       flag: 'w',
     })
-
-    await writeFile(`./dist/index.js`, iconExports, {
-      flag: 'w',
-    }).catch(console.error)
 
     return paths
   } catch (error) {

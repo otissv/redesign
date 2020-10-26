@@ -1,5 +1,5 @@
-import merge from 'deepmerge';
-import { maybe } from '../utils';
+import merge from 'deepmerge'
+import { maybe } from '../utils'
 
 import {
   ElevateInterface,
@@ -10,14 +10,14 @@ import {
   ELEVATE_4,
   ELEVATE_5,
   PartialElevateInterface,
-} from './elevate.types';
-import { PartialThemeInterface } from '../theme';
+} from './elevate.types'
+import { PartialThemeInterface } from '../theme'
 
 export function elevateTheme<
   P extends PartialThemeInterface,
   T extends PartialElevateInterface
 >(theme?: P): T {
-  const elevate = maybe({})(theme?.elevate);
+  const elevate = maybe({})(theme?.elevate)
 
   const defaults: ElevateInterface = {
     0: ELEVATE_0,
@@ -26,7 +26,7 @@ export function elevateTheme<
     3: ELEVATE_3,
     4: ELEVATE_4,
     5: ELEVATE_5,
-  };
+  }
 
-  return merge(defaults, elevate) as T;
+  return merge(defaults, elevate) as T
 }

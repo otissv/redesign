@@ -10,11 +10,11 @@ import {
   DISABLED,
   ColorInterface,
   AppearanceBaseTypes,
-} from '@redesign-system/theme';
+} from '@redesign-system/theme'
 
 interface GetAppearanceInterface {
-  appearance: AppearanceBaseTypes | undefined;
-  color: ColorInterface;
+  appearance: AppearanceBaseTypes | undefined
+  color: ColorInterface
 }
 
 export function getBackgroundColor({
@@ -34,7 +34,7 @@ export function getBackgroundColor({
         '&:active': {
           background: color.accent_700,
         },
-      };
+      }
     }
 
     case ACTIVE: {
@@ -49,7 +49,7 @@ export function getBackgroundColor({
         '&:active': {
           background: color.active_600,
         },
-      };
+      }
     }
 
     case ACTION: {
@@ -64,7 +64,7 @@ export function getBackgroundColor({
         '&:active': {
           background: color.action_700,
         },
-      };
+      }
     }
 
     case DANGER: {
@@ -79,7 +79,7 @@ export function getBackgroundColor({
         '&:active': {
           background: color.danger_700,
         },
-      };
+      }
     }
 
     case ERROR: {
@@ -94,7 +94,7 @@ export function getBackgroundColor({
         '&:active': {
           background: color.error_700,
         },
-      };
+      }
     }
 
     case SUCCESS: {
@@ -109,7 +109,7 @@ export function getBackgroundColor({
         '&:active': {
           background: color.success_700,
         },
-      };
+      }
     }
 
     case WARNING: {
@@ -124,7 +124,7 @@ export function getBackgroundColor({
         '&:active': {
           background: color.warning_700,
         },
-      };
+      }
     }
 
     case DISABLED: {
@@ -140,7 +140,7 @@ export function getBackgroundColor({
         '&:hover': {
           background: color.disabled,
         },
-      };
+      }
     }
 
     case PRIMARY:
@@ -156,6 +156,6 @@ export function getBackgroundColor({
         '&:active': {
           background: color.grey_700,
         },
-      };
+      }
   }
 }

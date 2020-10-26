@@ -348,5 +348,5 @@ export function normalizeTheme() {
 
     [hidden] {
       display: none;
-  }`;
+  }`
 }

@@ -1,2 +1,2 @@
-export * from './transition.theme';
-export * from './transition.types';
+export * from './transition.theme'
+export * from './transition.types'

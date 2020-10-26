@@ -2,21 +2,22 @@
   "name": "@redesign-system/theme",
   "version": "0.0.2",
   "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "build/index.js",
+  "typings": "build/index.d.ts",
   "files": [
-    "dist"
+    "build"
   ],
+  "module": "build/redesign-theme.esm.js",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "start": "start-storybook -p 6009",
     "dev": "tsdx watch",
-    "build": "tsdx build",
+    "build": "tsdx lint && swc src -d build",
     "test": "tsdx test",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
+    "prepare": "npm run build",
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {},
@@ -37,8 +38,9 @@
     "fluid": false
   },
   "author": "Otis Virginie",
-  "module": "dist/redesign-theme.esm.js",
   "devDependencies": {
+    "@swc/cli": "^0.1.27",
+    "@swc/core": "^1.2.36",
     "@types/facepaint": "^1.2.1",
     "@types/jest": "^25.2.3",
     "husky": "^4.2.5",

@@ -289,7 +289,7 @@ export function globalTheme<
       height: 0,
       overflow: 'visible',
       border: border.thin,
-      margin: 'calc(${unit.default} - 1px) 0',
+      margin: `calc(${unit.default} - 1px) 0`,
       textShadow: 'none',
     },
 

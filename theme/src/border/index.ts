@@ -1,2 +1,2 @@
-export * from './border.theme';
-export * from './border.types';
+export * from './border.theme'
+export * from './border.types'

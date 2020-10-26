@@ -2,10 +2,11 @@
   "name": "@redesign-system/ui-core",
   "version": "0.0.2",
   "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "build/index.js",
+  "typings": "build/index.d.ts",
+  "module": "build/redesign-ui-core.esm.js",
   "files": [
-    "dist"
+    "build"
   ],
   "publishConfig": {
     "access": "public"
@@ -13,10 +14,10 @@
   "scripts": {
     "start": "start-storybook -p 6007",
     "dev": "tsdx watch",
-    "build": "tsdx build",
+    "build": "tsdx lint && swc src -d build",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
+    "prepare": "npm run build",
     "build-storybook": "build-storybook"
   },
   "husky": {
@@ -36,7 +37,6 @@
     "fluid": false
   },
   "author": "Otis Virginie",
-  "module": "dist/redesign-ui-core.esm.js",
   "peerDependencies": {
     "@redesign-system/theme": ">=0",
     "emotion": ">=10",
@@ -53,6 +53,8 @@
     "@storybook/addons": "^6.1.0-alpha.26",
     "@storybook/react": "^6.1.0-alpha.26",
     "@storybook/theming": "^6.1.0-alpha.26",
+    "@swc/cli": "^0.1.27",
+    "@swc/core": "^1.2.36",
     "@types/jest": "^26.0.10",
     "@types/react": "^16.9.46",
     "@types/react-dom": "^16.9.8",

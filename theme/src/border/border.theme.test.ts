@@ -1,14 +1,14 @@
-import { borderTheme } from './border.theme';
-import { theme as testTheme } from '../../../testing/fixtures';
-import { PartialThemeInterface } from '../theme';
-import { PartialBorderInterface } from '../border';
+import { borderTheme } from './border.theme'
+import { theme as testTheme } from '../../../testing/fixtures'
+import { PartialThemeInterface } from '../theme'
+import { PartialBorderInterface } from '../border'
 
 interface ExtendBorderInterface extends PartialBorderInterface {
-  test: string;
+  test: string
 }
 
 interface ExtendThemeInterface {
-  border: ExtendBorderInterface;
+  border: ExtendBorderInterface
 }
 
 describe('borderTheme', () => {
@@ -16,13 +16,13 @@ describe('borderTheme', () => {
     const theme: PartialThemeInterface = {
       color: testTheme.color,
       unit: testTheme.unit,
-    };
-    const actual = borderTheme(theme);
-    expect(actual).toEqual(testTheme.border);
-  });
+    }
+    const actual = borderTheme(theme)
+    expect(actual).toEqual(testTheme.border)
+  })
 
   it('can overwrite border theme', () => {
-    const thickWidth = '100px';
+    const thickWidth = '100px'
 
     const theme: PartialThemeInterface = {
       color: testTheme.color,
@@ -30,13 +30,13 @@ describe('borderTheme', () => {
       border: {
         thickWidth,
       },
-    };
-    const actual = borderTheme(theme).thickWidth;
-    expect(actual).toBe(thickWidth);
-  });
+    }
+    const actual = borderTheme(theme).thickWidth
+    expect(actual).toBe(thickWidth)
+  })
 
   it('can extend border theme', () => {
-    const test = '99px dash #fff';
+    const test = '99px dash #fff'
 
     const theme = {
       color: testTheme.color,
@@ -44,12 +44,12 @@ describe('borderTheme', () => {
       border: {
         test,
       },
-    };
+    }
 
     const actual = borderTheme<ExtendThemeInterface, ExtendBorderInterface>(
       theme
-    );
+    )
 
-    expect(actual.test).toBe(test);
-  });
-});
+    expect(actual.test).toBe(test)
+  })
+})

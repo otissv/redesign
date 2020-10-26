@@ -1,2 +1,2 @@
-export * from './elevate.theme';
-export * from './elevate.types';
+export * from './elevate.theme'
+export * from './elevate.types'

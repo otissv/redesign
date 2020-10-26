@@ -3,7 +3,7 @@
  * @returns   Returns frozen object.
  */
 export const deepFreeze = (o: any) => {
-  Object.freeze(o);
+  Object.freeze(o)
 
   Object.getOwnPropertyNames(o).forEach((prop: string) => {
     if (
@@ -12,9 +12,9 @@ export const deepFreeze = (o: any) => {
       (typeof o[prop] === 'object' || typeof o[prop] === 'function') &&
       !Object.isFrozen(o[prop])
     ) {
-      deepFreeze(o[prop]);
+      deepFreeze(o[prop])
     }
-  });
+  })
 
-  return o;
-};
+  return o
+}

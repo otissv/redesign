@@ -1,0 +1,12 @@
+export var UNIT_0 = '0px';
+export var UNIT_1 = '4px';
+export var UNIT_2 = '8px';
+export var UNIT_3 = '12px';
+export var UNIT_4 = '16px';
+export var UNIT_5 = '24px';
+export var UNIT_6 = '32px';
+export var UNIT_7 = '48px';
+export var UNIT_8 = '64px';
+export var UNIT_9 = '96px';
+export var UNIT_10 = '128px';
+export var UNIT_DEFAULT = '24px';

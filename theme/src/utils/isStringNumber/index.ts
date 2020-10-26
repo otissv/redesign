@@ -1,1 +1,1 @@
-export * from './isStringNumber';
+export * from './isStringNumber'

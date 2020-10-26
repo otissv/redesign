@@ -1,2 +1,2 @@
-export * from './font.types';
-export * from './font.theme';
+export * from './font.types'
+export * from './font.theme'

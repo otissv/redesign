@@ -1,2 +1,2 @@
-export * from './utility.theme';
-export * from './utility.types';
+export * from './utility.theme'
+export * from './utility.types'

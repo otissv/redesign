@@ -1,2 +1,2 @@
-export * from './swatches.theme';
-export * from './swatches.types';
+export * from './swatches.theme'
+export * from './swatches.types'

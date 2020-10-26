@@ -4,12 +4,12 @@ import {
   SECONDARY_DISABLED,
   TERTIARY_DISABLED,
   AppearanceTypes,
-} from '@redesign-system/theme';
+} from '@redesign-system/theme'
 
 interface PropsInterface {
-  disabled?: boolean;
-  appearance?: AppearanceTypes;
-  [key: string]: any;
+  disabled?: boolean
+  appearance?: AppearanceTypes
+  [key: string]: any
 }
 
 export function isComponentDisabled({ appearance, disabled }: PropsInterface) {
@@ -19,5 +19,5 @@ export function isComponentDisabled({ appearance, disabled }: PropsInterface) {
     appearance === SECONDARY_DISABLED ||
     appearance === TERTIARY_DISABLED
     ? true
-    : undefined;
+    : undefined
 }

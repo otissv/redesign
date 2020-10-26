@@ -1,1 +1,1 @@
-export * from './cloneMap';
+export * from './cloneMap'

@@ -1,2 +1,2 @@
 export const isLength = (length: number) => (value: string): boolean =>
-  value != null && value.length === length;
+  value != null && value.length === length

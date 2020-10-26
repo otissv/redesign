@@ -1,1 +1,1 @@
-export * from './deepfreeze';
+export * from './deepfreeze'

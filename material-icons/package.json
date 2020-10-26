@@ -13,7 +13,7 @@
   "scripts": {
     "start": "start-storybook -p 6008",
     "dev": "tsdx watch",
-    "build": "swc src/icons -d dist",
+    "build": "swc src/icons -d dist && swc src/index.tsx -o dist/index.js",
     "test": "tsdx test --passWithNoTests",
     "generate": "npm run clean && mkdir dist  ./src/icons && node ./scripts",
     "clean": "rm -rf ./src/*  ./dist",

@@ -1,2 +1,2 @@
-export * from './noop';
-export * from './noop.types';
+export * from './noop'
+export * from './noop.types'

@@ -1,1 +1,1 @@
-export * from './isLength';
+export * from './isLength'

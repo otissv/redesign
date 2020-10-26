@@ -16,7 +16,7 @@ React Design System Components
 
 ## Principles
 
-- With the exception of ThemeProvider components all components are stateless and must context. This allows components to be easily composable.
+- With the exception of ThemeProvider components all components are stateless and do not use context. This allows components to be easily composable.
   State can be passed as props to components using the provided hooks.
 
 - All components are themeable and can be customized.

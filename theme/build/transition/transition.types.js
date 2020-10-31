@@ -1,8 +1,12 @@
-export var XSLOW = '3s';
-export var SLOW = '0.5s';
-export var MEDIUM = '0.3s';
-export var FAST = '0.1s';
-export var EASE = 'ease';
-export var EASE_IN = 'ease-in';
-export var EASE_OUT = 'ease-out';
-export var EASE_IN_OUT = 'ease-in-out';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.EASE_IN_OUT = exports.EASE_OUT = exports.EASE_IN = exports.EASE = exports.FAST = exports.MEDIUM = exports.SLOW = exports.XSLOW = void 0;
+exports.XSLOW = '3s';
+exports.SLOW = '0.5s';
+exports.MEDIUM = '0.3s';
+exports.FAST = '0.1s';
+exports.EASE = 'ease';
+exports.EASE_IN = 'ease-in';
+exports.EASE_OUT = 'ease-out';
+exports.EASE_IN_OUT = 'ease-in-out';
+//# sourceMappingURL=transition.types.js.map

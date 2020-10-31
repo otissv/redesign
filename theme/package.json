@@ -1,20 +1,16 @@
 {
+  "private": true,
   "name": "@redesign-system/theme",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
-  "main": "build/index.js",
-  "typings": "build/index.d.ts",
-  "files": [
-    "build"
-  ],
-  "module": "build/redesign-theme.esm.js",
+  "typings": "index.d.ts",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "start": "start-storybook -p 6009",
     "dev": "tsdx watch",
-    "build": "tsdx lint && swc src -d build",
+    "build": "npm run lint && node ../scripts",
     "test": "tsdx test",
     "lint": "tsdx lint",
     "prepare": "npm run build",
@@ -39,7 +35,6 @@
   },
   "author": "Otis Virginie",
   "devDependencies": {
-    "@swc/cli": "^0.1.27",
     "@swc/core": "^1.2.36",
     "@types/facepaint": "^1.2.1",
     "@types/jest": "^25.2.3",

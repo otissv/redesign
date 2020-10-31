@@ -1,4 +1,7 @@
-export var swatches = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.swatches = void 0;
+exports.swatches = {
     // red
     red_050: '#FFEEEE',
     red_100: '#FACDCD',
@@ -338,5 +341,6 @@ export var swatches = {
     warm_grey_600: '#625D52',
     warm_grey_700: '#504A40',
     warm_grey_800: '#423D33',
-    warm_grey_900: '#27241D'
+    warm_grey_900: '#27241D',
 };
+//# sourceMappingURL=swatches.theme.js.map

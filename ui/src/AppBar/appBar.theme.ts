@@ -16,22 +16,10 @@ import {
 } from '@redesign-system/theme'
 
 const input = (color: ColorInterface) => ({
-  background: 'hsla(0,0%,0%,0.1)',
-  border: '1px solid #0000',
   flex: 0,
 
   '&::placeholder': {
     color: color.grey_900,
-  },
-
-  '&:hover': {
-    background: 'hsla(0,0%,0%,0.2)',
-  },
-  '&:focus': {
-    background: 'hsla(0,0%,0%,0.2)',
-  },
-  '&:active': {
-    background: 'hsla(0,0%, 0%,0.2)',
   },
 })
 
@@ -50,10 +38,8 @@ export function appBarTheme(props: AppBarInterface) {
     position: 'relative',
     width: width || '100%',
     zIndex: '1100',
-    backgroundColor: color.default,
-    color: color.white,
 
-    '>button.Button': {
+    '>button.Button, >a.Link': {
       minHeight: 'inherit',
       border: '1px solid #0000',
       borderRadius: 0,
@@ -64,7 +50,6 @@ export function appBarTheme(props: AppBarInterface) {
 
     'input.Input': {
       ...input(color),
-      color: color.foregroundInvert,
     },
     ...(isFunction(AppBar) ? AppBar(props)?.default : AppBar?.default),
   }

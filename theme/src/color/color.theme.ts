@@ -1,9 +1,19 @@
 import merge from 'deepmerge'
-import { maybe } from '../utils'
+import { maybe } from '../utils/maybe'
 
 import { swatches as palette } from '../swatches'
 import { ColorInterface, PartialColorInterface } from './color.types'
 import { PartialThemeInterface } from '../theme'
+
+function getDefaultColor(swatches: any) {
+  return ({ fallback, color }: { fallback: string; color: string }) => {
+    if (color) {
+      return swatches[color] || color
+    } else {
+      return fallback
+    }
+  }
+}
 
 export function colorTheme<
   P extends PartialThemeInterface,
@@ -12,6 +22,8 @@ export function colorTheme<
   const maybeTheme = maybe({})
   const hostSwatches = maybeTheme(theme?.swatches)
   const _swatches = merge(hostSwatches, palette)
+
+  const getColor = getDefaultColor(_swatches)
 
   const {
     accent: hostAccent,
@@ -29,6 +41,7 @@ export function colorTheme<
     text: hostText,
     backgroundInvert: hostBackgroundInvert,
     textInvert: hostTextInvert,
+    defaults: colorDefaults,
     ...hostColors
   } = maybeTheme(theme?.color)
 
@@ -60,7 +73,7 @@ export function colorTheme<
     text: _swatches[color['text']],
     textInvert: _swatches[color['textInvert']],
 
-    linkText: '#4ea1f3',
+    linkText: colorDefaults?.linkText || '#4ea1f3',
     linkTextHover: '#4ea1f3',
     linkTextActive: '#4ea1f3',
     linkTextFocus: '#4ea1f3',
@@ -71,8 +84,14 @@ export function colorTheme<
     linkBackgroundFocus: '#4ea1f3',
     linkBackgroundVisited: '#4ea1f3',
 
-    background: _swatches[`${color['background']}_600`],
-    backgroundInvert: _swatches[color['backgroundInvert']],
+    background: getColor({
+      fallback: _swatches[`${color['background']}_600`],
+      color: colorDefaults?.background,
+    }),
+    backgroundInvert: getColor({
+      fallback: _swatches[color['backgroundInvert']],
+      color: colorDefaults?.backgroundInvert,
+    }),
     background_050: _swatches[`${color['background']}_050`],
     background_100: _swatches[`${color['background']}_100`],
     background_200: _swatches[`${color['background']}_200`],
@@ -84,8 +103,15 @@ export function colorTheme<
     background_800: _swatches[`${color['background']}_800`],
     background_900: _swatches[`${color['background']}_900`],
 
-    default: _swatches[`${color['default']}_600`],
-    default2: _swatches[`${color['default']}_500`],
+    default: getColor({
+      fallback: _swatches[`${color['default']}_600`],
+      color: colorDefaults?.default,
+    }),
+
+    default2: getColor({
+      fallback: _swatches[`${color['default']}_500`],
+      color: colorDefaults?.default,
+    }),
     default_050: _swatches[`${color['default']}_050`],
     default_100: _swatches[`${color['default']}_100`],
     default_200: _swatches[`${color['default']}_200`],
@@ -97,8 +123,14 @@ export function colorTheme<
     default_800: _swatches[`${color['default']}_800`],
     default_900: _swatches[`${color['default']}_900`],
 
-    grey: _swatches[`${color['grey']}_600`],
-    grey2: _swatches[`${color['grey']}_500`],
+    grey: getColor({
+      fallback: _swatches[`${color['grey']}_600`],
+      color: colorDefaults?.grey,
+    }),
+    grey2: getColor({
+      fallback: _swatches[`${color['grey']}_500`],
+      color: colorDefaults?.grey,
+    }),
     grey_050: _swatches[`${color['grey']}_050`],
     grey_100: _swatches[`${color['grey']}_100`],
     grey_200: _swatches[`${color['grey']}_200`],
@@ -110,8 +142,14 @@ export function colorTheme<
     grey_800: _swatches[`${color['grey']}_800`],
     grey_900: _swatches[`${color['grey']}_900`],
 
-    active: _swatches[`${color['active']}_600`],
-    active2: _swatches[`${color['active']}_500`],
+    active: getColor({
+      fallback: _swatches[`${color['active']}_600`],
+      color: colorDefaults?.active,
+    }),
+    active2: getColor({
+      fallback: _swatches[`${color['active']}_500`],
+      color: colorDefaults?.active,
+    }),
     active_050: _swatches[`${color['active']}_050`],
     active_100: _swatches[`${color['active']}_100`],
     active_200: _swatches[`${color['active']}_200`],
@@ -123,8 +161,14 @@ export function colorTheme<
     active_800: _swatches[`${color['active']}_800`],
     active_900: _swatches[`${color['active']}_900`],
 
-    accent: _swatches[`${color['accent']}_600`],
-    accent2: _swatches[`${color['accent']}_500`],
+    accent: getColor({
+      fallback: _swatches[`${color['accent']}_600`],
+      color: colorDefaults?.accent,
+    }),
+    accent2: getColor({
+      fallback: _swatches[`${color['accent']}_500`],
+      color: colorDefaults?.accent,
+    }),
     accent_050: _swatches[`${color['accent']}_050`],
     accent_100: _swatches[`${color['accent']}_100`],
     accent_200: _swatches[`${color['accent']}_200`],
@@ -136,8 +180,14 @@ export function colorTheme<
     accent_800: _swatches[`${color['accent']}_800`],
     accent_900: _swatches[`${color['accent']}_900`],
 
-    action: _swatches[`${color['action']}_600`],
-    action2: _swatches[`${color['action']}_500`],
+    action: getColor({
+      fallback: _swatches[`${color['action']}_600`],
+      color: colorDefaults?.action,
+    }),
+    action2: getColor({
+      fallback: _swatches[`${color['action']}_500`],
+      color: colorDefaults?.action,
+    }),
     action_050: _swatches[`${color['action']}_050`],
     action_100: _swatches[`${color['action']}_100`],
     action_200: _swatches[`${color['action']}_200`],
@@ -149,8 +199,14 @@ export function colorTheme<
     action_800: _swatches[`${color['action']}_800`],
     action_900: _swatches[`${color['action']}_900`],
 
-    danger: _swatches[`${color['danger']}_600`],
-    danger2: _swatches[`${color['danger']}_500`],
+    danger: getColor({
+      fallback: _swatches[`${color['danger']}_600`],
+      color: colorDefaults?.danger,
+    }),
+    danger2: getColor({
+      fallback: _swatches[`${color['danger']}_500`],
+      color: colorDefaults?.danger,
+    }),
     danger_050: _swatches[`${color['danger']}_050`],
     danger_100: _swatches[`${color['danger']}_100`],
     danger_200: _swatches[`${color['danger']}_200`],
@@ -162,8 +218,14 @@ export function colorTheme<
     danger_800: _swatches[`${color['danger']}_800`],
     danger_900: _swatches[`${color['danger']}_900`],
 
-    error: _swatches[`${color['error']}_600`],
-    error2: _swatches[`${color['error']}_500`],
+    error: getColor({
+      fallback: _swatches[`${color['error']}_600`],
+      color: colorDefaults?.error,
+    }),
+    error2: getColor({
+      fallback: _swatches[`${color['error']}_500`],
+      color: colorDefaults?.error,
+    }),
     error_050: _swatches[`${color['error']}_050`],
     error_100: _swatches[`${color['error']}_100`],
     error_200: _swatches[`${color['error']}_200`],
@@ -175,21 +237,14 @@ export function colorTheme<
     error_800: _swatches[`${color['error']}_800`],
     error_900: _swatches[`${color['error']}_900`],
 
-    warning: _swatches[`${color['warning']}_600`],
-    warning2: _swatches[`${color['warning']}_500`],
-    warning_050: _swatches[`${color['warning']}_050`],
-    warning_100: _swatches[`${color['warning']}_100`],
-    warning_200: _swatches[`${color['warning']}_200`],
-    warning_300: _swatches[`${color['warning']}_300`],
-    warning_400: _swatches[`${color['warning']}_400`],
-    warning_500: _swatches[`${color['warning']}_500`],
-    warning_600: _swatches[`${color['warning']}_600`],
-    warning_700: _swatches[`${color['warning']}_700`],
-    warning_800: _swatches[`${color['warning']}_800`],
-    warning_900: _swatches[`${color['warning']}_900`],
-
-    success: _swatches[`${color['success']}_600`],
-    success2: _swatches[`${color['success']}_500`],
+    success: getColor({
+      fallback: _swatches[`${color['success']}_600`],
+      color: colorDefaults?.success,
+    }),
+    success2: getColor({
+      fallback: _swatches[`${color['success']}_500`],
+      color: colorDefaults?.success,
+    }),
     success_050: _swatches[`${color['success']}_050`],
     success_100: _swatches[`${color['success']}_100`],
     success_200: _swatches[`${color['success']}_200`],
@@ -201,8 +256,33 @@ export function colorTheme<
     success_800: _swatches[`${color['success']}_800`],
     success_900: _swatches[`${color['success']}_900`],
 
-    disabled: _swatches[`${color['disabled']}_600`],
-    disabled2: _swatches[`${color['disabled']}_500`],
+    warning: getColor({
+      fallback: _swatches[`${color['warning']}_600`],
+      color: colorDefaults?.warning,
+    }),
+    warning2: getColor({
+      fallback: _swatches[`${color['warning']}_500`],
+      color: colorDefaults?.warning,
+    }),
+    warning_050: _swatches[`${color['warning']}_050`],
+    warning_100: _swatches[`${color['warning']}_100`],
+    warning_200: _swatches[`${color['warning']}_200`],
+    warning_300: _swatches[`${color['warning']}_300`],
+    warning_400: _swatches[`${color['warning']}_400`],
+    warning_500: _swatches[`${color['warning']}_500`],
+    warning_600: _swatches[`${color['warning']}_600`],
+    warning_700: _swatches[`${color['warning']}_700`],
+    warning_800: _swatches[`${color['warning']}_800`],
+    warning_900: _swatches[`${color['warning']}_900`],
+
+    disabled: getColor({
+      fallback: _swatches[`${color['disabled']}_600`],
+      color: colorDefaults?.disabled,
+    }),
+    disabled2: getColor({
+      fallback: _swatches[`${color['disabled']}_500`],
+      color: colorDefaults?.disabled,
+    }),
     disabled_050: _swatches[`${color['disabled']}_050`],
     disabled_100: _swatches[`${color['disabled']}_100`],
     disabled_200: _swatches[`${color['disabled']}_200`],

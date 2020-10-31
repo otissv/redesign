@@ -1,9 +1,8 @@
 import React from 'react'
-import { ThemeProvider } from '@redesign-system/ui-core'
+import { ThemeProvider, useString } from '@redesign-system/ui-core'
 
 import { Nav } from './Nav'
 import { NavItem } from './NavItem'
-import { useString } from '../useString'
 import { Button } from '../Button'
 
 export default {

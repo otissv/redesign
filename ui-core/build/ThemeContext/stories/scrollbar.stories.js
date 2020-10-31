@@ -1,12 +1,45 @@
-import React from 'react';
-import { theme, Box, Td, Th } from './story.components';
-import { ThemeProvider } from '../ThemeProvider';
-export default {
-    title: 'Theme/Scrollbar'
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Scrollbar = void 0;
+var tslib_1 = require("tslib");
+var react_1 = tslib_1.__importDefault(require("react"));
+var story_components_1 = require("./story.components");
+var ThemeProvider_1 = require("../ThemeProvider");
+exports.default = {
+    title: 'Theme/Scrollbar',
 };
-export var Scrollbar = function() {
-    return React.createElement(ThemeProvider, null, React.createElement(Box, {
-        display: "flex",
-        flexWrap: "wrap"
-    }, React.createElement("table", null, React.createElement("thead", null, React.createElement("tr", null, React.createElement(Th, null, "Key"), React.createElement(Th, null, "Value"))), React.createElement("tbody", null, React.createElement("tr", null, React.createElement(Td, null, "width"), React.createElement(Td, null, theme.scrollbar.width)), React.createElement("tr", null, React.createElement(Td, null, "height"), React.createElement(Td, null, theme.scrollbar.height)), React.createElement("tr", null, React.createElement(Td, null, "backgroundColor"), React.createElement(Td, null, theme.scrollbar.backgroundColor)), React.createElement("tr", null, React.createElement(Td, null, "corner.backgroundColor"), React.createElement(Td, null, theme.scrollbar.corner.backgroundColor)), React.createElement("tr", null, React.createElement(Td, null, "thumb.backgroundColor"), React.createElement(Td, null, theme.scrollbar.thumb.backgroundColor)), React.createElement("tr", null, React.createElement(Td, null, "thumb.outline"), React.createElement(Td, null, theme.scrollbar.thumb.outline)), React.createElement("tr", null, React.createElement(Td, null, "thumb.transition"), React.createElement(Td, null, theme.scrollbar.thumb.transition)), React.createElement("tr", null, React.createElement(Td, null, "thumb.hover"), React.createElement(Td, null, theme.scrollbar.thumb.hover.backgroundColor))))));
+exports.Scrollbar = function () {
+    return (react_1.default.createElement(ThemeProvider_1.ThemeProvider, null,
+        react_1.default.createElement(story_components_1.Box, { display: "flex", flexWrap: "wrap" },
+            react_1.default.createElement("table", null,
+                react_1.default.createElement("thead", null,
+                    react_1.default.createElement("tr", null,
+                        react_1.default.createElement(story_components_1.Th, null, "Key"),
+                        react_1.default.createElement(story_components_1.Th, null, "Value"))),
+                react_1.default.createElement("tbody", null,
+                    react_1.default.createElement("tr", null,
+                        react_1.default.createElement(story_components_1.Td, null, "width"),
+                        react_1.default.createElement(story_components_1.Td, null, story_components_1.theme.scrollbar.width)),
+                    react_1.default.createElement("tr", null,
+                        react_1.default.createElement(story_components_1.Td, null, "height"),
+                        react_1.default.createElement(story_components_1.Td, null, story_components_1.theme.scrollbar.height)),
+                    react_1.default.createElement("tr", null,
+                        react_1.default.createElement(story_components_1.Td, null, "backgroundColor"),
+                        react_1.default.createElement(story_components_1.Td, null, story_components_1.theme.scrollbar.backgroundColor)),
+                    react_1.default.createElement("tr", null,
+                        react_1.default.createElement(story_components_1.Td, null, "corner.backgroundColor"),
+                        react_1.default.createElement(story_components_1.Td, null, story_components_1.theme.scrollbar.corner.backgroundColor)),
+                    react_1.default.createElement("tr", null,
+                        react_1.default.createElement(story_components_1.Td, null, "thumb.backgroundColor"),
+                        react_1.default.createElement(story_components_1.Td, null, story_components_1.theme.scrollbar.thumb.backgroundColor)),
+                    react_1.default.createElement("tr", null,
+                        react_1.default.createElement(story_components_1.Td, null, "thumb.outline"),
+                        react_1.default.createElement(story_components_1.Td, null, story_components_1.theme.scrollbar.thumb.outline)),
+                    react_1.default.createElement("tr", null,
+                        react_1.default.createElement(story_components_1.Td, null, "thumb.transition"),
+                        react_1.default.createElement(story_components_1.Td, null, story_components_1.theme.scrollbar.thumb.transition)),
+                    react_1.default.createElement("tr", null,
+                        react_1.default.createElement(story_components_1.Td, null, "thumb.hover"),
+                        react_1.default.createElement(story_components_1.Td, null, story_components_1.theme.scrollbar.thumb.hover.backgroundColor)))))));
 };
+//# sourceMappingURL=scrollbar.stories.js.map

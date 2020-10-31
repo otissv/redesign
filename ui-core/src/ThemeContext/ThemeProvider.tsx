@@ -4,7 +4,6 @@ import { GlobalStyles } from '../GlobalStyles'
 
 import { ThemeProviderInterface } from './themeContext.types'
 import { ThemeContext } from './ThemeContext'
-import { Normalize } from '../Normalize'
 
 export const ThemeProvider = function ThemeProvider({
   children,
@@ -21,7 +20,6 @@ export const ThemeProvider = function ThemeProvider({
 
   return (
     <ThemeContext.Provider value={context}>
-      <Normalize />
       <GlobalStyles theme={themeContext} />
       {children}
     </ThemeContext.Provider>

@@ -5,7 +5,7 @@ import {
   PartialMediaQueriesInterface,
 } from './mediaQueries.theme.types'
 import { PartialThemeInterface } from '../theme'
-import { maybe } from '../utils'
+import { maybe } from '../utils/maybe'
 
 export function mediaQueriesTheme<
   P extends PartialThemeInterface,

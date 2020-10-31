@@ -1,8 +1,7 @@
 import React from 'react'
-import { ThemeProvider } from '@redesign-system/ui-core'
+import { ThemeProvider, useString } from '@redesign-system/ui-core'
 
 import { GoogleMaps } from './GoogleMaps'
-import { useString } from '../useString'
 import { Textbox } from '../Textbox'
 
 export default {

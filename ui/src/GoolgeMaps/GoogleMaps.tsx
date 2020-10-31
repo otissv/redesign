@@ -14,6 +14,7 @@ export const GoogleMaps = React.memo(function GoogleMaps({
   themed = [],
   height = '300',
   width = '100%',
+  zoom,
   ...propsRest
 }: GoogleMapsInterface) {
   const { theme } = useTheme()
@@ -37,7 +38,7 @@ export const GoogleMaps = React.memo(function GoogleMaps({
           width={width}
           height={height}
           id="gmap_canvas"
-          src={`https://maps.google.com/maps?q=${query}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
+          src={`https://maps.google.com/maps?q=${query}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
           frameBorder="0"
           scrolling="no"
           marginHeight={0}

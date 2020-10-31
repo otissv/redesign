@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeProvider } from '@redesign-system/ui-core'
+import { ThemeProvider, useString } from '@redesign-system/ui-core'
 import { Logo } from '../Logo'
 
 import { AppBar, useAppBar } from './AppBar'
@@ -10,7 +10,6 @@ import { AppBarFooter } from './AppBarFooter'
 import { List, ListItem } from '../List'
 import { Nav, NavItem } from '../Nav'
 import { Button } from '../Button'
-import { useString } from '../useString'
 
 export default {
   title: 'Components/AppBar',
@@ -44,7 +43,7 @@ export const Default = () => {
         >
           <NavItem id="dashboard" title="Default 1" onClick={onClick}>
             <Button
-              appearance={active === 'dashboard' ? 'ACTIVE' : ''}
+              appearance={active === 'dashboard' ? 'ACTIVE' : 'TERTIARY'}
               as="a"
               href="#"
               radius="rounded"
@@ -56,7 +55,7 @@ export const Default = () => {
           </NavItem>
           <NavItem id="projects" title="Projects" onClick={onClick}>
             <Button
-              appearance={active === 'projects' ? 'ACTIVE' : ''}
+              appearance={active === 'projects' ? 'ACTIVE' : 'TERTIARY'}
               as="a"
               href="#"
               radius="rounded"
@@ -68,7 +67,7 @@ export const Default = () => {
           </NavItem>
           <NavItem id="notes" title="Notes" onClick={onClick}>
             <Button
-              appearance={active === 'notes' ? 'ACTIVE' : ''}
+              appearance={active === 'notes' ? 'ACTIVE' : 'TERTIARY'}
               as="a"
               href="#"
               radius="rounded"
@@ -80,7 +79,7 @@ export const Default = () => {
           </NavItem>
           <NavItem id="support" title="Support" onClick={onClick}>
             <Button
-              appearance={active === 'support' ? 'ACTIVE' : ''}
+              appearance={active === 'support' ? 'ACTIVE' : 'TERTIARY'}
               as="a"
               href="#"
               radius="rounded"

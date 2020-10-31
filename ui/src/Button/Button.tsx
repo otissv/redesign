@@ -33,8 +33,6 @@ export const Button: FC<ButtonInterface> = function Button({
 
   const handleOnClick = React.useCallback(
     function handleOnClick(e: any) {
-      e.preventDefault()
-
       onClick(e)
     },
     [onClick]

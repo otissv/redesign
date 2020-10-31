@@ -1,7 +1,6 @@
 export * from './buildCssUtilities'
 export * from './createStyleString'
 export * from './cssProps'
-export * from './getAlias'
 export * from './getBackgroundColor'
 export * from './getBorder'
 export * from './isComponentDisabled'

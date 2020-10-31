@@ -1,67 +1,25 @@
-function _defineProperty(obj, key, value) {
-    if (key in obj) {
-        Object.defineProperty(obj, key, {
-            value: value,
-            enumerable: true,
-            configurable: true,
-            writable: true
-        });
-    } else {
-        obj[key] = value;
-    }
-    return obj;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createTheme = void 0;
+var tslib_1 = require("tslib");
+var border_1 = require("../border");
+var color_1 = require("../color");
+var elevate_1 = require("../elevate");
+var font_1 = require("../font");
+var radius_1 = require("../radius");
+var scrollbar_1 = require("../scrollbar");
+var transition_1 = require("../transition");
+var unit_1 = require("../unit");
+var utility_1 = require("../utility");
+var global_1 = require("../global");
+var mediaQueries_1 = require("../mediaQueries");
+function createTheme(partialTheme) {
+    if (partialTheme === void 0) { partialTheme = {}; }
+    var _color = color_1.colorTheme(partialTheme);
+    var _unit = unit_1.unitTheme(partialTheme);
+    var defaultTheme = tslib_1.__assign(tslib_1.__assign({}, partialTheme), { color: _color, unit: _unit });
+    var baseTheme = tslib_1.__assign(tslib_1.__assign({}, defaultTheme), { border: border_1.borderTheme(defaultTheme), color: _color, elevate: elevate_1.elevateTheme(defaultTheme), font: font_1.fontTheme(defaultTheme), mediaQueries: mediaQueries_1.mediaQueriesTheme(defaultTheme), radius: radius_1.radiusTheme(defaultTheme), scrollbar: scrollbar_1.scrollbarTheme(defaultTheme), transition: transition_1.transitionTheme(defaultTheme) });
+    return tslib_1.__assign(tslib_1.__assign({}, baseTheme), { global: global_1.globalTheme(baseTheme), utility: utility_1.utilityTheme(baseTheme) });
 }
-function _objectSpread(target) {
-    for(var i = 1; i < arguments.length; i++){
-        var source = arguments[i] != null ? arguments[i] : {
-        };
-        var ownKeys = Object.keys(source);
-        if (typeof Object.getOwnPropertySymbols === "function") {
-            ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym) {
-                return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-            }));
-        }
-        ownKeys.forEach(function(key) {
-            _defineProperty(target, key, source[key]);
-        });
-    }
-    return target;
-}
-import { borderTheme } from '../border';
-import { colorTheme } from '../color';
-import { elevateTheme } from '../elevate';
-import { fontTheme } from '../font';
-import { radiusTheme } from '../radius';
-import { scrollbarTheme } from '../scrollbar';
-import { transitionTheme } from '../transition';
-import { unitTheme } from '../unit';
-import { utilityTheme } from '../utility';
-import { globalTheme } from '../global';
-import { mediaQueriesTheme } from '../mediaQueries';
-export function createTheme(param) {
-    var partialTheme = param === void 0 ? {
-    } : param;
-    var _color = colorTheme(partialTheme);
-    var _unit = unitTheme(partialTheme);
-    var defaultTheme = _objectSpread({
-    }, partialTheme, {
-        color: _color,
-        unit: _unit
-    });
-    var baseTheme = _objectSpread({
-    }, defaultTheme, {
-        border: borderTheme(defaultTheme),
-        color: _color,
-        elevate: elevateTheme(defaultTheme),
-        font: fontTheme(defaultTheme),
-        mediaQueries: mediaQueriesTheme(defaultTheme),
-        radius: radiusTheme(defaultTheme),
-        scrollbar: scrollbarTheme(defaultTheme),
-        transition: transitionTheme(defaultTheme)
-    });
-    return _objectSpread({
-    }, baseTheme, {
-        global: globalTheme(baseTheme),
-        utility: utilityTheme(baseTheme)
-    });
-}
+exports.createTheme = createTheme;
+//# sourceMappingURL=theme.js.map

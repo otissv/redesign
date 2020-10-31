@@ -1,4 +1,5 @@
 export interface ColorInterface {
+  defaults?: { [key: string]: string }
   text: string
   textInvert: string
   transparent: string

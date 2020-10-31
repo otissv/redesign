@@ -11,4 +11,7 @@ export interface IconInterface extends ThemeComponentInterface {
   viewBox?: string
   width?: string
   title?: string
+  fill?: string | 'currentColor'
+  stroke?: string | 'currentColor'
+  strokeWidth?: number
 }

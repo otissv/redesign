@@ -28,7 +28,6 @@ export const Typography: FC<TypographyInterface> = function Typography({
     typographyTransformTheme,
     css,
   ]
-
   const attributes = React.useMemo(
     () => ({
       ...(as === 'hr'

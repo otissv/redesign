@@ -1,12 +1,12 @@
 {
   "include": [
-    "src",
+    "src/**/*",
     "types",
     "test"
   ],
   "compilerOptions": {
     "target": "es5",
-    "module": "esnext",
+    "module": "commonjs",
     "lib": [
       "dom",
       "esnext"
@@ -14,7 +14,8 @@
     "importHelpers": true,
     "declaration": true,
     "sourceMap": true,
-    "rootDir": "./src",
+    "rootDir": "src",
+    "outDir": "build",
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,

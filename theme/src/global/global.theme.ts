@@ -1,6 +1,6 @@
 import merge from 'deepmerge'
 import { PartialGlobalInterface, GlobalInterface } from './global.types'
-import { maybe } from '../utils'
+import { maybe } from '../utils/maybe'
 import { PartialThemeInterface } from '../theme'
 
 export function globalTheme<
@@ -53,13 +53,13 @@ export function globalTheme<
       webkitFontFeatureSettings: `'kern', 'liga', 'clig', 'calt'`,
       fontFeatureSettings: `'kern', 'liga', 'clig', 'calt'`,
 
-      fontFamily: font.sans,
+      fontFamily: font.family.sans,
       fontSize: font.size.default,
       fontSmooth: font.smooth,
     },
 
     a: {
-      fontFamily: font.sans,
+      fontFamily: font.family.sans,
       fontSize: font.size.default,
       touchAction: 'manipulation',
       fontSmooth: font.smooth,
@@ -148,7 +148,7 @@ export function globalTheme<
 
     code: {
       fontSize: font.small,
-      fontFamily: font.code,
+      fontFamily: font.family.code,
       lineHeight: 1.3,
       backgroundColor: color.grey_200,
       color: color.accent,
@@ -222,9 +222,9 @@ export function globalTheme<
       margin: 0,
       padding: 0,
       fontWeight: 'bold',
-      lineHeight: font.lineHeight[2],
-      fontFamily: font.sans,
-      fontSize: font.size[8],
+      lineHeight: font.lineHeight[1],
+      fontFamily: font.family.sans,
+      fontSize: font.size[10],
 
       fontSmooth: font.smooth,
     },
@@ -234,8 +234,8 @@ export function globalTheme<
       margin: 0,
       padding: 0,
       fontWeight: 'bold',
-      lineHeight: font.lineHeight[2],
-      fontFamily: font.sans,
+      lineHeight: font.lineHeight[1],
+      fontFamily: font.family.sans,
       fontSize: font.size[7],
       fontSmooth: font.smooth,
     },
@@ -244,8 +244,8 @@ export function globalTheme<
       margin: 0, // margin: `0  0 ${unit.default} 0`,
       padding: 0,
       fontWeight: 'bold',
-      lineHeight: font.lineHeight[2],
-      fontFamily: font.sans,
+      lineHeight: font.lineHeight[1],
+      fontFamily: font.family.sans,
       fontSize: font.size[6],
       fontSmooth: font.smooth,
     },
@@ -254,18 +254,18 @@ export function globalTheme<
       margin: 0, // margin: `0  0 ${unit.default} 0`,
       padding: 0,
       fontWeight: 'bold',
-      lineHeight: font.lineHeight[2],
-      fontFamily: font.sans,
+      lineHeight: font.lineHeight[1],
+      fontFamily: font.family.sans,
       fontSmooth: font.smooth,
-      fontSize: font.size[5],
+      fontSize: font.size[4],
     },
 
     h5: {
       margin: 0, // margin: `0  0 ${unit.default} 0`,
       padding: 0,
       fontWeight: 'bold',
-      lineHeight: font.lineHeight[2],
-      fontFamily: font.sans,
+      lineHeight: font.lineHeight[1],
+      fontFamily: font.family.sans,
       fontSize: font.size[4],
       fontSmooth: font.smooth,
     },
@@ -274,8 +274,8 @@ export function globalTheme<
       margin: 0, // margin: `0  0 ${unit.default} 0`,
       padding: 0,
       fontWeight: 'bold',
-      lineHeight: font.lineHeight[2],
-      fontFamily: font.sans,
+      lineHeight: font.lineHeight[1],
+      fontFamily: font.family.sans,
       fontSize: font.size[3],
       fontSmooth: font.smooth,
     },
@@ -319,7 +319,7 @@ export function globalTheme<
 
     kbd: {
       fontSize: font.small,
-      fontFamily: font.code,
+      fontFamily: font.family.code,
       lineHeight: 1.3,
     },
 
@@ -394,7 +394,7 @@ export function globalTheme<
 
     p: {
       fontSize: font.size.default,
-      fontFamily: font.sans,
+      fontFamily: font.family.sans,
       fontSmooth: font.smooth,
       margin: 0, // margin: `0  0 ${unit.default} 0`,
       padding: 0,
@@ -408,7 +408,7 @@ export function globalTheme<
       color: color.text,
       letterSpacing: `${font.letterSpacing} !important`,
       fontSize: font.small,
-      fontFamily: font.code,
+      fontFamily: font.family.code,
       // lineHeight: font.lineHeight[2],
       // fontSize: 0.85rem;
       // lineHeight: 1.3,
@@ -456,7 +456,7 @@ export function globalTheme<
 
     samp: {
       fontSize: font.small,
-      fontFamily: font.code,
+      fontFamily: font.family.code,
       lineHeight: 1.3,
     },
 
@@ -575,7 +575,7 @@ export function globalTheme<
       backgroundColor: color.grey_200,
       color: color.accent,
       borderRadius: '3px',
-      fontFamily: font.code,
+      fontFamily: font.family.code,
       padding: `${unit[1]} ${unit[2]}`,
 
       '&:before': {

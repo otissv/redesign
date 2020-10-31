@@ -5,7 +5,7 @@ import { Base, useTheme } from '@redesign-system/ui-core'
 import { DropdownInterface } from './dropdown.types'
 import { dropdownTheme } from './dropdown.theme'
 
-import { useBoolean } from '../useBoolean'
+import { useBoolean } from '../../../ui-core/src/useBoolean'
 
 export function useDropdown(initialState = false) {
   const { boolean: opened, ...state } = useBoolean(initialState)

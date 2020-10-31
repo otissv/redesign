@@ -1,193 +1,96 @@
-import facepaint from 'facepaint'
+import { PartialUtilityInterface, UtilityInterface } from './utility.types'
+import { maybe } from '../utils/maybe'
 
-import { BorderInterface } from '../border'
-import { ElevateInterface } from '../elevate'
-import { ColorInterface } from '../color'
-
-import {
-  RADIUS_CIRCLE,
-  RADIUS_NONE,
-  RADIUS_ROUND,
-  RADIUS_ROUNDED,
-  RadiusInterface,
-} from '../radius'
-import {
-  PartialUtilityInterface,
-  UtilityInterface,
-  FlexDirectionTypes,
-  FlexContentTypes,
-  FlexItemsTypes,
-  FlexSelfTypes,
-  FlexWrapTypes,
-} from './utility.types'
-import { maybeString, maybe, toUpperFirst, toCamel } from '../utils'
-import { themeDefaults } from '../defaults'
-
-import { UnitInterface, UnitPositionsInterface } from '../unit'
 import { PartialThemeInterface } from '../theme'
-import { MediaQueriesInterface } from '../mediaQueries'
 
-const propCase = (key: string) => toCamel(key).trim()
-
-export const getColor = (color: ColorInterface) => (value: string) => ({
-  color: color[value as keyof ColorInterface] || value,
-})
-export const getBackground = (color: ColorInterface) => (value: string) => ({
-  background: color[value as keyof ColorInterface] || value,
-})
-
-export const getBorder = (border: BorderInterface) => (value: string) => ({
-  border: border[value as keyof BorderInterface] || value,
-})
-export const getBorderBottom = (border: BorderInterface) => (
-  value: string
-) => ({ borderBottom: border[value as keyof BorderInterface] || border })
-export const getBorderLeft = (border: BorderInterface) => (value: string) => ({
-  borderLeft: border[value as keyof BorderInterface] || value,
-})
-export const getBorderRight = (border: BorderInterface) => (value: string) => ({
-  borderRight: border[value as keyof BorderInterface] || value,
-})
-export const getBorderTop = (border: BorderInterface) => (value: string) => ({
-  borderTop: border[value as keyof BorderInterface] || value,
-})
-export const getBorderY = (border: BorderInterface) => (value: string) => ({
-  borderTop: border[value as keyof BorderInterface] || value,
-  borderBottom: border[value as keyof BorderInterface] || value,
-})
-export const getBorderX = (border: BorderInterface) => (value: string) => ({
-  borderRight: border[value as keyof BorderInterface] || value,
-  borderLeft: border[value as keyof BorderInterface] || value,
-})
-
-export const getRadius = (radius: RadiusInterface) => (
-  value: keyof RadiusInterface
-) => ({ borderRadius: getRadiuses(radius)(value) })
-export const getBorderBottomRadius = (radius: RadiusInterface) => (
-  value: keyof RadiusInterface
-) => ({
-  borderBottomRadius: getRadiuses(radius)(value),
-})
-export const getBorderLeftRadius = (radius: RadiusInterface) => (
-  value: keyof RadiusInterface
-) => ({
-  borderLeftRadius: getRadiuses(radius)(value),
-})
-export const getBorderRightRadius = (radius: RadiusInterface) => (
-  value: keyof RadiusInterface
-) => ({
-  borderRightRadius: getRadiuses(radius)(value),
-})
-export const getBorderTopRadius = (radius: RadiusInterface) => (
-  value: keyof RadiusInterface
-) => ({
-  borderTopRadius: getRadiuses(radius)(value),
-})
-export const getBorderYRadius = (radius: RadiusInterface) => (
-  value: keyof RadiusInterface
-) => ({
-  borderTopRadius: getRadiuses(radius)(value),
-  borderBottomRadius: getRadiuses(radius)(value),
-})
-export const getBorderXRadius = (radius: RadiusInterface) => (
-  value: keyof RadiusInterface
-) => ({
-  borderRightRadius: getRadiuses(radius)(value),
-  borderLeftRadius: getRadiuses(radius)(value),
-})
-
-export const getElevate = (elevate: ElevateInterface) => (
-  value: string | keyof ElevateInterface
-) => {
-  const elevateValue = typeof value === 'number' ? value : parseInt(value, 10)
-
-  return {
-    boxShadow: elevate[elevateValue as keyof ElevateInterface],
-  }
-}
-export const getCentered = () => ({ margin: '0 auto' })
-export const getDisplay = (value: string) => ({ display: value })
-export const getFlex = (value: string) => ({ flex: value })
-export const getFlexGrow = (value: number) => ({ flexGrow: value })
-export const getOrder = (value: number) => ({ order: value })
-export const getFlexShrink = (value: number) => ({ flexShrink: value })
-export const getFlexDirection = (value: FlexDirectionTypes) => ({
-  flexDirection: value,
-})
-export const getFlexWrap = (value: FlexWrapTypes) => ({
-  flexWrap: value,
-})
-export const getFlexBasis = (value: string | number) => ({
-  flexBasis: value,
-})
-export const getJustifyContent = (value: FlexContentTypes) => ({
-  justifyContent: value,
-})
-export const getJustifyItems = (value: FlexContentTypes) => ({
-  justifyItems: value,
-})
-export const getJustifySelf = (value: FlexSelfTypes) => ({
-  justifySelf: value,
-})
-export const getAlignContent = (value: FlexContentTypes) => ({
-  alignContent: value,
-})
-export const getAlignItems = (value: FlexItemsTypes) => ({
-  alignItems: value,
-})
-export const getAlignSelf = (value: FlexSelfTypes) => ({
-  alignSelf: value,
-})
-export const getHeight = (unit: UnitInterface) => (
-  value: string | keyof UnitInterface
-) => ({
-  height: unit[value as keyof UnitInterface] || value,
-})
-export const getWidth = (unit: UnitInterface) => (
-  value: string | keyof UnitInterface
-) => ({
-  width: unit[value as keyof UnitInterface] || value,
-})
-
-export const getMaxHeight = (unit: UnitInterface) => (
-  value: string | keyof UnitInterface
-) => ({
-  maxHeight: unit[value as keyof UnitInterface] || value,
-})
-export const getMaxWidth = (unit: UnitInterface) => (
-  value: string | keyof UnitInterface
-) => ({
-  maxWidth: unit[value as keyof UnitInterface] || value,
-})
-
-export const getTextAlign = (value: string) => ({ textAlign: value })
-
-export const getTruncate = () => ({
-  overflow: 'hidden',
-  whiteSpace: 'nowrap',
-  textOverflow: 'ellipsis',
-})
-
-export const getMediaQuires = (mediaQuires: MediaQueriesInterface) => (value: {
-  [key: string]: any
-}) => {
-  const { sm, md, lg, xl, ...breakpoints } = mediaQuires
-
-  return facepaint(
-    [
-      `@media(min-width: ${sm}px`,
-      `@media(min-width: ${md}px`,
-      `@media(min-width: ${lg}px`,
-      `@media(min-width: ${xl}px`,
-      ...Object.values(breakpoints).map(b => `@media(min-width: ${b}px`),
-    ],
-    {
-      literal: true,
-    }
-  )(value)[0]
-}
-
-export const getOverflow = (value: string) => ({ overflow: value })
+import {
+  unitPositions,
+  getColor,
+  getBackground,
+  getBorder,
+  getBorderBottom,
+  getBorderLeft,
+  getBorderRight,
+  getBorderTop,
+  getBorderY,
+  getBorderX,
+  getRadius,
+  getBorderBottomRadius,
+  getBorderLeftRadius,
+  getBorderRightRadius,
+  getBorderTopRadius,
+  getBorderYRadius,
+  getBorderXRadius,
+  getDisplay,
+  getBackgroundAttachment,
+  getBackgroundClip,
+  getBackgroundColor,
+  getBackgroundPosition,
+  getBackgroundRepeat,
+  getBackgroundSize,
+  getBackgroundImage,
+  getCentered,
+  getFlex,
+  getFlexGrow,
+  getOrder,
+  getFlexShrink,
+  getFlexDirection,
+  getFlexWrap,
+  getFlexBasis,
+  getJustifyContent,
+  getJustifyItems,
+  getJustifySelf,
+  getAlignContent,
+  getAlignSelf,
+  getAlignItems,
+  getElevate,
+  getHeight,
+  getWidth,
+  getMaxHeight,
+  getMaxWidth,
+  getWidthHeight,
+  getTextAlign,
+  getTruncate,
+  getWordBreak,
+  getListStyle,
+  getListPosition,
+  getTextDecoration,
+  getTextTransform,
+  getVerticalAlign,
+  getWhiteSpace,
+  getMediaQuires,
+  getPosition,
+  getBottom,
+  getLeft,
+  getRight,
+  getFloat,
+  getOverflow,
+  getFontSize,
+  getLineHeight,
+  getLetterSpacing,
+  getFontWeight,
+  getClearFix,
+  getOverflowX,
+  getOverflowY,
+  getOverflowScrolling,
+  getOverflowWrap,
+  getFontFamily,
+  getBorderWidth,
+  getBorderStyle,
+  getBorderColor,
+  getZIndex,
+  getObjectFit,
+  getObjectPosition,
+  getVisibility,
+  getCursor,
+  getAppearance,
+  getPointerEvents,
+  getResize,
+  getUserSelect,
+  getTransition,
+  getTransform,
+  getBoxSizing,
+} from './utility.helpers'
 
 export function utilityTheme<
   P extends PartialThemeInterface,
@@ -198,22 +101,59 @@ export function utilityTheme<
   const hostColor = maybeTheme(theme.color)
   const hostBorder = maybeTheme(theme.border)
   const hostElevate = maybeTheme(theme.elevate)
+  const hostFont = maybeTheme(theme.font)
   const hostRadius = maybeTheme(theme.radius)
   const hostUnit = maybeTheme(theme.unit)
   const hostUtility = maybeTheme(theme.utility)
   const hostMediaQueries = maybeTheme(theme.mediaQueries)
 
   const defaults: UtilityInterface = {
+    /*
+     * Margin
+     */
     ...unitPositions({ unit: hostUnit, style: 'margin' }),
-    ...unitPositions({ unit: hostUnit, style: 'padding' }),
     ...unitPositions({ unit: hostUnit, style: 'm' }),
+
+    /*
+     * Padding
+     */
+    ...unitPositions({ unit: hostUnit, style: 'padding' }),
     ...unitPositions({ unit: hostUnit, style: 'p' }),
 
+    /*
+     * Color
+     */
     color: getColor(hostColor),
-    c: getColor(hostColor),
+    cl: getColor(hostColor),
+
+    /*
+     * Display
+     */
+    display: getDisplay,
+    d: getDisplay,
+
+    /*
+     * Background
+     */
     background: getBackground(hostColor),
     bg: getBackground(hostColor),
-
+    backgroundAttachment: getBackgroundAttachment,
+    bga: getBackgroundAttachment,
+    backgroundClip: getBackgroundClip,
+    bgl: getBackgroundClip,
+    backgroundColor: getBackgroundColor,
+    bgc: getBackgroundColor(hostColor),
+    backgroundPosition: getBackgroundPosition,
+    bgp: getBackgroundPosition,
+    backgroundRepeat: getBackgroundRepeat,
+    bgr: getBackgroundRepeat,
+    backgroundSize: getBackgroundSize,
+    bgs: getBackgroundSize,
+    backgroundImage: getBackgroundImage,
+    bgi: getBackgroundImage,
+    /*
+     * Border
+     */
     border: getBorder(hostBorder),
     borderBottom: getBorderBottom(hostBorder),
     borderLeft: getBorderLeft(hostBorder),
@@ -221,13 +161,19 @@ export function utilityTheme<
     borderTop: getBorderTop(hostBorder),
     borderY: getBorderY(hostBorder),
     borderX: getBorderX(hostBorder),
-    b: getBorder(hostBorder),
-    bb: getBorderBottom(hostBorder),
-    bl: getBorderLeft(hostBorder),
-    br: getBorderRight(hostBorder),
-    bt: getBorderTop(hostBorder),
-    bx: getBorderX(hostBorder),
-    by: getBorderY(hostBorder),
+    borderColor: getBorderColor(hostColor),
+    borderWidth: getBorderWidth,
+    borderStyle: getBorderStyle,
+    bd: getBorder(hostBorder),
+    bdb: getBorderBottom(hostBorder),
+    bdl: getBorderLeft(hostBorder),
+    bdr: getBorderRight(hostBorder),
+    bdt: getBorderTop(hostBorder),
+    bdx: getBorderX(hostBorder),
+    bdy: getBorderY(hostBorder),
+    bdc: getBorderColor(hostColor),
+    bdw: getBorderWidth,
+    bds: getBorderStyle,
 
     radius: getRadius(hostRadius),
     borderBottomRadius: getBorderBottomRadius(hostRadius),
@@ -244,23 +190,39 @@ export function utilityTheme<
     ry: getBorderYRadius(hostRadius),
     rx: getBorderXRadius(hostRadius),
 
-    display: getDisplay,
-    d: getDisplay,
+    /*
+     * Elevate
+     */
 
+    elevate: getElevate(hostElevate),
+    e: getElevate(hostElevate),
+    boxSizing: getBoxSizing,
+    bs: getBoxSizing,
+
+    /*
+     * Centered
+     */
+    centered: getCentered,
+    ct: getCentered,
+
+    /*
+     * Flex
+     */
     flex: getFlex,
-    f: getFlex,
-    flexGrow: getFlex,
-    fg: getFlex,
+    fl: getFlex,
+    flexGrow: getFlexGrow,
+    flg: getFlexGrow,
+    flexShrink: getFlexShrink,
+    fls: getFlexShrink,
+    flexDirection: getFlexDirection,
+    fld: getFlexDirection,
+    flexWrap: getFlexWrap,
+    flw: getFlexWrap,
+    flexBasis: getFlexBasis,
+    flb: getFlexBasis,
+
     order: getOrder,
     od: getOrder,
-    flexShrink: getFlexShrink,
-    fs: getFlexShrink,
-    flexDirection: getFlexDirection,
-    fd: getFlexDirection,
-    flexWrap: getFlexWrap,
-    fw: getFlexWrap,
-    flexBasis: getFlexBasis,
-    fb: getFlexBasis,
 
     justifyContent: getJustifyContent,
     jc: getJustifyContent,
@@ -276,140 +238,130 @@ export function utilityTheme<
     alignSelf: getAlignSelf,
     af: getAlignSelf,
 
-    elevate: getElevate(hostElevate),
-    e: getElevate(hostElevate),
-
-    centered: getCentered,
-    ct: getCentered,
-
-    heightSize: getHeight(hostUnit),
+    /*
+     * Width / Height
+     */
     h: getHeight(hostUnit),
-    widthSize: getWidth(hostUnit),
     w: getWidth(hostUnit),
     maxHeight: getMaxHeight(hostUnit),
     mh: getMaxHeight(hostUnit),
     maxWidth: getMaxWidth(hostUnit),
     mw: getMaxWidth(hostUnit),
+    wh: getWidthHeight(hostUnit),
 
+    /*
+     * Text
+     */
     textAlign: getTextAlign,
     ta: getTextAlign,
     truncate: getTruncate,
-    tr: getTruncate,
+    tc: getTruncate,
+    wordBreak: getWordBreak,
+    wb: getWordBreak,
+    listStyle: getListStyle,
+    lt: getListStyle,
+    listPosition: getListPosition,
+    lp: getListPosition,
+    textDecoration: getTextDecoration,
+    td: getTextDecoration,
+    tt: getTextTransform,
+    verticalAlign: getVerticalAlign,
+    va: getVerticalAlign,
+    whiteSpace: getWhiteSpace,
 
+    /*
+     * Media
+     */
     mediaQuires: getMediaQuires(hostMediaQueries),
     mq: getMediaQuires(hostMediaQueries),
 
+    /*
+     * Position
+     */
+    position: getPosition,
+    ps: getPosition,
+    top: getBorderTop,
+    bottom: getBottom,
+    left: getLeft,
+    right: getRight,
+
+    /*
+     * Float
+     */
+    float: getFloat,
+    ft: getFloat,
+    clearFix: getClearFix,
+    cf: getClearFix,
+
+    /*
+     * Overflow
+     */
     overflow: getOverflow,
     of: getOverflow,
+    overflowX: getOverflowX,
+    ox: getOverflowX,
+    overflowY: getOverflowY,
+    oy: getOverflowY,
+    overflowScrolling: getOverflowScrolling,
+    os: getOverflowScrolling,
+    overflowWrap: getOverflowWrap,
+    ow: getOverflowWrap,
+    fontFamily: getFontFamily(hostFont),
+    fontSize: getFontSize(hostFont),
+    fs: getFontSize(hostFont),
+    lineHeight: getLineHeight(hostFont),
+    lh: getLineHeight(hostFont),
+    letterSpacing: getLetterSpacing,
+    ls: getLetterSpacing(hostFont),
+    fontWeight: getFontWeight(hostFont),
+    fw: getFontWeight(hostFont),
+
+    /*
+     * Z Index
+     */
+    zIndex: getZIndex,
+    zi: getZIndex,
+
+    /*
+     * Object
+     */
+    objectFit: getObjectFit,
+    ot: getObjectFit,
+    objectPosition: getObjectPosition,
+    op: getObjectPosition,
+
+    /*
+     * Visibility
+     */
+    visibility: getVisibility,
+
+    /*
+     * Interactivity
+     */
+    cursor: getCursor,
+    cr: getCursor,
+    appearance: getAppearance,
+    ap: getAppearance,
+    pointerEvents: getPointerEvents,
+    pe: getPointerEvents,
+    resize: getResize,
+    rs: getResize,
+    userSelect: getUserSelect,
+    us: getUserSelect,
+
+    /*
+     * Transition
+     */
+    transition: getTransition,
+    tr: getTransition,
+
+    /*
+     * Transforms
+     */
+    transform: getTransform,
+    tf: getTransform,
+
     ...hostUtility,
   }
   return defaults as T
-}
-
-export const isValidStringValue = (value: any) =>
-  typeof value === 'string' && value.trim() !== ''
-
-export const isValidNumberValue = (value: any) => typeof value === 'number'
-
-export const isValidUnitValue = (value: any) => {
-  return isValidStringValue(value) && Boolean(value.match(/%|px|rem|em|auto/))
-}
-
-export function getRadiuses(radius: RadiusInterface = themeDefaults.radius) {
-  return (value: keyof RadiusInterface | string) => {
-    switch (value) {
-      case 'circle':
-        return maybeString(radius.circle) ?? RADIUS_CIRCLE
-      case 'none':
-        return maybeString(radius.none) ?? RADIUS_NONE
-      case 'round':
-        return maybeString(radius.round) ?? RADIUS_ROUND
-      case 'rounded':
-        return maybeString(radius.rounded) ?? RADIUS_ROUNDED
-
-      default:
-        return value || 0
-    }
-  }
-}
-
-export function allPositions(unit: UnitInterface) {
-  return (value: string | number, prop: string) => {
-    const propsList = prop.split(';')
-
-    switch (true) {
-      case value === 'default':
-        return propsList.reduce((acc: any, key: string) => {
-          return {
-            ...acc,
-            [propCase(key)]: unit.default,
-          }
-        }, {})
-
-      case isValidNumberValue(value):
-        return propsList.reduce((acc: any, key: string) => {
-          return {
-            ...acc,
-            [propCase(key)]: unit[value as keyof UnitInterface],
-          }
-        }, {})
-
-      case isValidUnitValue(value) && isValidStringValue(value): {
-        return propsList.reduce((acc: any, key: string) => {
-          return { ...acc, [propCase(key)]: value }
-        }, {})
-      }
-
-      default: {
-        return ''
-      }
-    }
-  }
-}
-
-export function unitPositions({ unit, style }: UnitPositionsInterface) {
-  const unitsReducer = (
-    accumulator: { [key: string]: any },
-    key: string
-  ): any => {
-    if (key === 'default') return accumulator
-
-    const prop = `${style}${toUpperFirst(key)}`
-
-    return {
-      ...accumulator,
-      [prop]: (value: string) => {
-        if (!isValidStringValue(value)) return {}
-        let positions = value.split(' ')
-
-        return Object.keys(positions).reduce((accum, pos: string) => {
-          const index = parseInt(pos, 10)
-          return {
-            ...accum,
-            [toCamel(`${style}-${positions[index]}`)]: unit[
-              key as keyof UnitInterface
-            ],
-          }
-        }, {})
-      },
-    }
-  }
-
-  const getAllPositions = allPositions(unit)
-
-  const initialStyles = {
-    [style]: (value: string) => getAllPositions(value, style),
-    [`${style}Bottom`]: (value: string) =>
-      getAllPositions(value, `${style}Bottom`),
-    [`${style}Left`]: (value: string) => getAllPositions(value, `${style}Left`),
-    [`${style}Right`]: (value: string) =>
-      getAllPositions(value, `${style}Right`),
-    [`${style}Top`]: (value: string) => getAllPositions(value, `${style}Top`),
-    [`${style}X`]: (value: string) =>
-      getAllPositions(value, `${style}Right; ${style}Left`),
-    [`${style}Y`]: (value: string) =>
-      getAllPositions(value, `${style}Bottom; ${style}Top`),
-  }
-
-  return Object.keys(unit).reduce(unitsReducer, initialStyles)
 }

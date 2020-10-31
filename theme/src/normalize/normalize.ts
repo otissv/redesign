@@ -11,7 +11,7 @@ export function normalizeTheme() {
      */
 
     html {
-      line-height: 1.15; /* 1 */
+      line-height: 1.5; /* 1 */
       -webkit-text-size-adjust: 100%; /* 2 */
     }
 

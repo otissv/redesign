@@ -1,6 +1,6 @@
 import merge from 'deepmerge'
 
-import { maybe } from '../utils'
+import { maybe } from '../utils/maybe'
 import {
   RadiusInterface,
   RADIUS_CIRCLE,

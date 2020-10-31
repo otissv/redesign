@@ -1,7 +1,6 @@
-import { UtilityInterface } from '@redesign-system/theme'
+import { UtilityInterface, getAlias } from '@redesign-system/theme'
 
 import { BaseInterface } from '../Base'
-import { getAlias } from './getAlias'
 
 export const utilityStyles = (props: BaseInterface) => {
   const initialTheme: Partial<BaseInterface> = {}

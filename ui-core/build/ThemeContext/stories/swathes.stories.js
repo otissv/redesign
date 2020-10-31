@@ -1,56 +1,23 @@
-function _arrayWithHoles(arr) {
-    if (Array.isArray(arr)) return arr;
-}
-function _iterableToArrayLimit(arr, i) {
-    var _arr = [];
-    var _n = true;
-    var _d = false;
-    var _e = undefined;
-    try {
-        for(var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true){
-            _arr.push(_s.value);
-            if (i && _arr.length === i) break;
-        }
-    } catch (err) {
-        _d = true;
-        _e = err;
-    } finally{
-        try {
-            if (!_n && _i["return"] != null) _i["return"]();
-        } finally{
-            if (_d) throw _e;
-        }
-    }
-    return _arr;
-}
-function _nonIterableRest() {
-    throw new TypeError("Invalid attempt to destructure non-iterable instance");
-}
-function _slicedToArray(arr, i) {
-    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
-}
-import React from 'react';
-import { theme, Box, Swatch } from './story.components';
-import { ThemeProvider } from '../ThemeProvider';
-export default {
-    title: 'Theme/Swatches'
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Swatches = void 0;
+var tslib_1 = require("tslib");
+var react_1 = tslib_1.__importDefault(require("react"));
+var story_components_1 = require("./story.components");
+var ThemeProvider_1 = require("../ThemeProvider");
+exports.default = {
+    title: 'Theme/Swatches',
 };
-export var Swatches = function() {
-    return React.createElement(ThemeProvider, null, React.createElement(Box, {
-        display: "flex",
-        flexWrap: "wrap"
-    }, Object.entries(theme.color).map(function(param) {
-        var _param = _slicedToArray(param, 2), key = _param[0], color = _param[1];
-        return React.createElement(Box, {
-            key: key,
-            mx: 3,
-            mb: 8,
-            textAlign: "center",
-            alignItems: "center"
-        }, key, React.createElement(Swatch, {
-            css: {
-                background: color
-            }
-        }), color);
-    })));
+exports.Swatches = function () {
+    return (react_1.default.createElement(ThemeProvider_1.ThemeProvider, null,
+        react_1.default.createElement(story_components_1.Box, { display: "flex", flexWrap: "wrap" }, Object.entries(story_components_1.theme.color).map(function (_a) {
+            var key = _a[0], color = _a[1];
+            return (react_1.default.createElement(story_components_1.Box, { key: key, mx: 3, mb: 8, textAlign: "center", alignItems: "center" },
+                key,
+                react_1.default.createElement(story_components_1.Swatch, { css: {
+                        background: color,
+                    } }),
+                color));
+        }))));
 };
+//# sourceMappingURL=swathes.stories.js.map

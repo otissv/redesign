@@ -1,4 +1,7 @@
-export var unitlessKeys = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.unitlessKeys = void 0;
+exports.unitlessKeys = {
     animationIterationCount: 1,
     borderImageOutset: 1,
     borderImageSlice: 1,
@@ -44,5 +47,6 @@ export var unitlessKeys = {
     strokeDashoffset: 1,
     strokeMiterlimit: 1,
     strokeOpacity: 1,
-    strokeWidth: 1
+    strokeWidth: 1,
 };
+//# sourceMappingURL=unitless.js.map

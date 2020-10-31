@@ -1,6 +1,7 @@
 import merge from 'deepmerge'
 
-import { toCamel, toUpperFirst, maybe } from '../utils'
+import { toCamel, toUpperFirst } from '../utils/textTransform'
+import { maybe } from '../utils/maybe'
 import {
   BorderInterface,
   BORDER_NONE,

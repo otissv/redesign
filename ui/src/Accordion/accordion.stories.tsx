@@ -1,12 +1,10 @@
 import React from 'react'
-import { ThemeProvider } from '@redesign-system/ui-core'
+import { ThemeProvider, useString } from '@redesign-system/ui-core'
 
 import { Accordion } from './Accordion'
 import { AccordionButton } from './AccordionButton'
 import { AccordionContent } from './AccordionContent'
 import { AccordionItem } from './AccordionItem'
-
-import { useString } from '../useString'
 
 export default {
   title: 'Components/Accordion',

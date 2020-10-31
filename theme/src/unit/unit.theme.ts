@@ -20,6 +20,12 @@ export function unitTheme<
     8: '64px',
     9: '96px',
     10: '128px',
+    11: '192px',
+    12: '256px',
+    13: '384px',
+    14: '512px',
+    15: '768px',
+    16: '1024px',
     default: '24px',
   }
 

@@ -4,7 +4,7 @@ import {
   PartialScrollbarInterface,
 } from './scrollbar.types'
 import { PartialThemeInterface } from '../theme'
-import { maybe } from '../utils'
+import { maybe } from '../utils/maybe'
 
 export function scrollbarTheme<
   P extends PartialThemeInterface,

@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
+import { useTimeRemaining } from '@redesign-system/ui-core'
 
-import { useTimeRemaining } from '../useTimeRemaining'
 import { TimerInterface } from './timer.types'
 
 export const Timer: FC<TimerInterface> = function Countdown({

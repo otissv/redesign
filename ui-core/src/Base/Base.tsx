@@ -1,5 +1,6 @@
 import React, { FC, createElement, cloneElement } from 'react'
 import { css as emotionCss } from 'emotion'
+import { animate } from 'popmotion'
 
 import {
   BaseInterface,
@@ -19,20 +20,49 @@ function CreateComponent({ tag = 'div', children, ...props }: any) {
   )
 }
 
-/**
- Base component to build components upon.
- 
- ##Installation
- Install the ui-core and its peer dependencies into your project
- `npm install @redesign-system/theme emotion react`  
- or  
- `yarn add @redesign-system/theme emotion react`  
+function useAnimation({ animate: active = '', animations }: any) {
+  const currentAnimation = React.useRef<string>()
 
- ## Default
+  function reducer(
+    state: { [key: string]: string | number },
+    action: { type: string; value: string | number }
+  ) {
+    return {
+      ...state,
+      [action.type]: action.value,
+    }
+  }
 
- */
-export const Base: FC<BaseInterface> = function Base(props) {
+  const [styles, dispatch] = React.useReducer(reducer, {})
+
+  React.useEffect(() => {
+    if (!animations || currentAnimation.current === active) {
+      return
+    }
+
+    for (let key of Object.keys(animations[active] || {})) {
+      const prop = animations[active][key]
+      ;(animate as any)({
+        ...prop,
+        onUpdate: (value: string | number) => {
+          dispatch({
+            type: key,
+            value,
+          })
+        },
+      })
+    }
+
+    currentAnimation.current = active
+  }, [active, animations])
+
+  return styles
+}
+
+export const BaseComponent: FC<BaseInterface> = function Base(props) {
   const {
+    animate: active = '',
+    animations,
     as: tag,
     children,
     childrenCss,
@@ -61,16 +91,21 @@ export const Base: FC<BaseInterface> = function Base(props) {
     ...(Array.isArray(__ignore) ? __ignore : [__ignore]),
   ]
 
+  const animationStyles = useAnimation({
+    animate: active,
+    animations,
+  })
+
   const attributes = Object.entries(propsRest).reduce(
     (acc: any, [key, value]: any) => {
       return ignore.includes(key) || typeof value === 'undefined'
         ? acc
         : {
             ...acc,
-            [key]: value,
+            [key]: key === 'style' ? { ...acc.style, ...value } : value,
           }
     },
-    {}
+    { style: animationStyles || {} }
   )
 
   // clone children props and css
@@ -92,6 +127,10 @@ export const Base: FC<BaseInterface> = function Base(props) {
                 {
                   ...child.props,
                   ...(childProps || {}),
+                  style: {
+                    ...child.props?.style,
+                    ...(childProps?.style || {}),
+                  },
                   css: [
                     child.props.css || '',
                     childProps?.css || '',
@@ -117,4 +156,11 @@ export const Base: FC<BaseInterface> = function Base(props) {
   )
 }
 
-Base.displayName = 'Base'
+export const Base = React.forwardRef<HTMLButtonElement, BaseInterface>(
+  (props, ref) => {
+    const { theme, ...propsRest } = props
+    return <BaseComponent theme={theme} ref={ref} {...propsRest} />
+  }
+)
+
+BaseComponent.displayName = 'Base'

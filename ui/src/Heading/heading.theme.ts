@@ -4,14 +4,11 @@ import { HeadingInterface } from './heading.types'
 
 export function headingTheme(props: HeadingInterface) {
   const {
-    theme: { color, Heading },
+    theme: { Heading },
   } = props
 
   return {
     position: 'relative',
-    display: 'flex',
-    flexDirection: 'column',
-    color: color.white,
     ...(isFunction(Heading) ? Heading(props)?.default : Heading?.default),
   }
 }
@@ -22,8 +19,9 @@ export function headingTitleTheme(props: HeadingInterface) {
   } = props
 
   return {
+    lineHeight: 1,
+    display: 'inline-block',
     textTransform: 'inherit',
-    textAlign: 'left',
     wordBreak: 'keep-all',
     ...(isFunction(HeadingTitle)
       ? HeadingTitle(props)?.title

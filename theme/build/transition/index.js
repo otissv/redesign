@@ -1,2 +1,6 @@
-export * from './transition.theme';
-export * from './transition.types';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+tslib_1.__exportStar(require("./transition.theme"), exports);
+tslib_1.__exportStar(require("./transition.types"), exports);
+//# sourceMappingURL=index.js.map

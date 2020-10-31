@@ -32,7 +32,7 @@ export const Heading = () => (
     <Section
       heading={{
         title: {
-          as: 'h3',
+          as: 'h1',
           children: 'Section Title',
         },
         secondaryTitle: 'Sub heading',

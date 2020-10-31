@@ -1,11 +1,9 @@
 import React, { FC, Fragment } from 'react'
-import { Base, useTheme } from '@redesign-system/ui-core'
+import { Base, useTheme, useViewport } from '@redesign-system/ui-core'
 
 import { AppBarInterface } from './appBar.types'
 import { appBarTheme, appBarAppearanceTheme } from './appBar.theme'
 import { AppBarPanel } from './AppBarPanel'
-
-import { useViewport } from '../useViewport'
 
 export function useAppBar(
   {

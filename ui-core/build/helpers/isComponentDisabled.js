@@ -1,5 +1,16 @@
-import { DISABLED, PRIMARY_DISABLED, SECONDARY_DISABLED, TERTIARY_DISABLED } from '@redesign-system/theme';
-export function isComponentDisabled(param) {
-    var appearance = param.appearance, disabled = param.disabled;
-    return disabled || appearance === DISABLED || appearance === PRIMARY_DISABLED || appearance === SECONDARY_DISABLED || appearance === TERTIARY_DISABLED ? true : undefined;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.isComponentDisabled = void 0;
+var theme_1 = require("@redesign-system/theme");
+function isComponentDisabled(_a) {
+    var appearance = _a.appearance, disabled = _a.disabled;
+    return disabled ||
+        appearance === theme_1.DISABLED ||
+        appearance === theme_1.PRIMARY_DISABLED ||
+        appearance === theme_1.SECONDARY_DISABLED ||
+        appearance === theme_1.TERTIARY_DISABLED
+        ? true
+        : undefined;
 }
+exports.isComponentDisabled = isComponentDisabled;
+//# sourceMappingURL=isComponentDisabled.js.map

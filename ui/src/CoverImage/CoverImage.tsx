@@ -45,7 +45,10 @@ export const CoverImage: FC<CoverImageInterface> = function CoverImage({
       {...propsRest}
     >
       <Maybe check={Boolean(overlay)}>
-        <Overlay className="overlay" color={overlay} />
+        <Either check={typeof overlay === 'string'}>
+          <Overlay className="overlay" color={overlay as string} />
+          <Overlay className="overlay" {...(overlay as any)} />
+        </Either>
       </Maybe>
       <CoverImageContent {...content}>{children}</CoverImageContent>
       <Maybe check={Boolean(caption)}>

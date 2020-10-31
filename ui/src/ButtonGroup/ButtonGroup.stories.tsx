@@ -1,3 +1,5 @@
+import { ThemeProvider, useString } from '@redesign-system/ui-core'
+
 import React from 'react'
 import { HomeIcon } from '@redesign-system/material-icons/HomeIcon'
 import { ContentCopyIcon } from '@redesign-system/material-icons/ContentCopyIcon'
@@ -5,10 +7,8 @@ import { DeleteAlertIcon } from '@redesign-system/material-icons/DeleteAlertIcon
 
 import { ButtonGroupButton } from './ButtonGroupButton'
 import { ButtonGroup } from './ButtonGroup'
-import { ThemeProvider } from '@redesign-system/ui-core'
 import { ButtonGroupButtonIcon } from './ButtonGroupButtonIcon'
 import { Box } from '../Box'
-import { useString } from '../useString'
 
 export default {
   title: 'Components/ButtonGroup',

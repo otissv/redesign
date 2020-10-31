@@ -6,7 +6,6 @@ import { Base } from '../../Base'
 export const theme: any = createTheme()
 
 export function Box(props: any) {
-  console.log(theme)
   return <Base theme={theme} {...props}></Base>
 }
 

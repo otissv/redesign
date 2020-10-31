@@ -48,6 +48,8 @@ async function createPackageJson(paths) {
       publishConfig: {
         access: 'public',
       },
+      ...(pkg.peerDependencies ? { peerDependencies: pkg.peerDependencies } : {}),
+      ...(pkg.peerDependencies ? { dependencies: pkg.dependencies } : {}),
     }
 
     await writeFile(`./dist/package.json`, JSON.stringify(npmPkg, null, 2), {

@@ -36,7 +36,7 @@ export const Heading: FC<HeadingInterface> = function Heading({
       {...propsRest}
     >
       <Maybe check={Boolean(image)}>
-        <img {...image} alt={(image as any).alt} />
+        <img {...image} alt={(image as any)?.alt} />
       </Maybe>
 
       <Maybe check={Boolean(title)}>

@@ -1,9 +1,9 @@
 import React from 'react'
 import { ThemeProvider } from '@redesign-system/ui-core'
+import { useBoolean } from '@redesign-system/ui-core/useBoolean'
 
 import { Alert } from './Alert'
 import { Box } from '../Box'
-import { useBoolean } from '../useBoolean'
 import { Close as CloseComponent } from '../Close'
 
 export default {

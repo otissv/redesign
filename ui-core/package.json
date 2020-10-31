@@ -1,20 +1,16 @@
 {
+  "private": true,
   "name": "@redesign-system/ui-core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
-  "main": "build/index.js",
-  "typings": "build/index.d.ts",
-  "module": "build/redesign-ui-core.esm.js",
-  "files": [
-    "build"
-  ],
+  "typings": "index.d.ts",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "start": "start-storybook -p 6007",
     "dev": "tsdx watch",
-    "build": "tsdx lint && swc src -d build",
+    "build": "npm run lint && node ../scripts",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
     "prepare": "npm run build",
@@ -38,13 +34,11 @@
   },
   "author": "Otis Virginie",
   "peerDependencies": {
-    "@redesign-system/theme": ">=0",
     "emotion": ">=10",
     "react": ">=16"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
-    "@redesign-system/theme": "^0.0.1",
     "@storybook/addon-a11y": "^6.1.0-alpha.26",
     "@storybook/addon-actions": "^6.1.0-alpha.26",
     "@storybook/addon-docs": "^6.1.0-alpha.26",
@@ -67,5 +61,9 @@
     "tsdx": "^0.13.2",
     "tslib": "^2.0.1",
     "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@redesign-system/theme": "^0.0.3",
+    "popmotion": "^9.0.0"
   }
 }

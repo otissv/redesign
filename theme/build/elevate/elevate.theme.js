@@ -1,16 +1,21 @@
-import merge from 'deepmerge';
-import { maybe } from '../utils';
-import { ELEVATE_0, ELEVATE_1, ELEVATE_2, ELEVATE_3, ELEVATE_4, ELEVATE_5 } from './elevate.types';
-export function elevateTheme(theme) {
-    var elevate = maybe({
-    })(theme === null || theme === void 0 ? void 0 : theme.elevate);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.elevateTheme = void 0;
+var tslib_1 = require("tslib");
+var deepmerge_1 = tslib_1.__importDefault(require("deepmerge"));
+var maybe_1 = require("../utils/maybe");
+var elevate_types_1 = require("./elevate.types");
+function elevateTheme(theme) {
+    var elevate = maybe_1.maybe({})(theme === null || theme === void 0 ? void 0 : theme.elevate);
     var defaults = {
-        0: ELEVATE_0,
-        1: ELEVATE_1,
-        2: ELEVATE_2,
-        3: ELEVATE_3,
-        4: ELEVATE_4,
-        5: ELEVATE_5
+        0: elevate_types_1.ELEVATE_0,
+        1: elevate_types_1.ELEVATE_1,
+        2: elevate_types_1.ELEVATE_2,
+        3: elevate_types_1.ELEVATE_3,
+        4: elevate_types_1.ELEVATE_4,
+        5: elevate_types_1.ELEVATE_5,
     };
-    return merge(defaults, elevate);
+    return deepmerge_1.default(defaults, elevate);
 }
+exports.elevateTheme = elevateTheme;
+//# sourceMappingURL=elevate.theme.js.map

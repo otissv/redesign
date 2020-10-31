@@ -1,24 +1,25 @@
-import merge from 'deepmerge';
-import { maybe } from '../utils';
-export function globalTheme(theme) {
-    var maybeTheme = maybe({
-    });
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.globalTheme = void 0;
+var tslib_1 = require("tslib");
+var deepmerge_1 = tslib_1.__importDefault(require("deepmerge"));
+var maybe_1 = require("../utils/maybe");
+function globalTheme(theme) {
+    var maybeTheme = maybe_1.maybe({});
     var global = maybeTheme(theme === null || theme === void 0 ? void 0 : theme.global);
     var color = maybeTheme(theme === null || theme === void 0 ? void 0 : theme.color);
     var font = maybeTheme(theme === null || theme === void 0 ? void 0 : theme.font);
     var border = maybeTheme(theme === null || theme === void 0 ? void 0 : theme.border);
     var unit = maybeTheme(theme === null || theme === void 0 ? void 0 : theme.unit);
-    var scrollbar = maybe({
-        corner: {
-            backgroundColor: ''
-        },
+    var scrollbar = maybe_1.maybe({
+        corner: { backgroundColor: '' },
         thumb: {
             outline: 'transparent',
             transition: '',
             hover: {
-                backgroundColor: ''
-            }
-        }
+                backgroundColor: '',
+            },
+        },
     })(theme === null || theme === void 0 ? void 0 : theme.scrollbar);
     var defaults = {
         html: {
@@ -30,28 +31,28 @@ export function globalTheme(theme) {
             height: '100%',
             background: color.background,
             color: color.text,
-            letterSpacing: "".concat(font.letterSpacing, " !important")
+            letterSpacing: font.letterSpacing + " !important",
         },
         body: {
             height: '100%',
             background: color.background,
             color: color.text,
-            letterSpacing: "".concat(font.letterSpacing, " !important"),
+            letterSpacing: font.letterSpacing + " !important",
             margin: 0,
             padding: 0,
             fontWeight: font.weight.default,
             wordWrap: 'break-word',
             fontKerning: 'normal',
-            mozFontFeatureSettings: '\'kern\', \'liga\', \'clig\', \'calt\'',
-            msFontFeatureSettings: '\'kern\', \'liga\', \'clig\', \'calt\'',
-            webkitFontFeatureSettings: '\'kern\', \'liga\', \'clig\', \'calt\'',
-            fontFeatureSettings: '\'kern\', \'liga\', \'clig\', \'calt\'',
-            fontFamily: font.sans,
+            mozFontFeatureSettings: "'kern', 'liga', 'clig', 'calt'",
+            msFontFeatureSettings: "'kern', 'liga', 'clig', 'calt'",
+            webkitFontFeatureSettings: "'kern', 'liga', 'clig', 'calt'",
+            fontFeatureSettings: "'kern', 'liga', 'clig', 'calt'",
+            fontFamily: font.family.sans,
             fontSize: font.size.default,
-            fontSmooth: font.smooth
+            fontSmooth: font.smooth,
         },
         a: {
-            fontFamily: font.sans,
+            fontFamily: font.family.sans,
             fontSize: font.size.default,
             touchAction: 'manipulation',
             fontSmooth: font.smooth,
@@ -60,40 +61,40 @@ export function globalTheme(theme) {
             textDecoration: 'none',
             color: color.linkText,
             'a:active': {
-                outlineWidth: 0
+                outlineWidth: 0,
             },
             'a:hover': {
-                outlineWidth: 0
-            }
+                outlineWidth: 0,
+            },
         },
         abbr: {
             borderBottom: '1px dotted hsla(0, 0%, 0%, 0.5)',
-            cursor: 'help'
+            cursor: 'help',
         },
         'abbr[title]': {
             textDecoration: 'underline dotted',
             borderBottom: "1px dotted hsla(0, 0%, 0%, 0.5)",
-            cursor: 'help'
+            cursor: 'help',
         },
         address: {
             // margin: 0, // margin: `0  0 ${unit.default} 0`,
             margin: 0,
-            padding: 0
+            padding: 0,
         },
         article: {
-            display: 'block'
+            display: 'block',
         },
         area: {
-            touchAction: 'manipulation'
+            touchAction: 'manipulation',
         },
         aside: {
-            display: 'block'
+            display: 'block',
         },
         audio: {
-            display: 'inline-block'
+            display: 'inline-block',
         },
         b: {
-            fontWeight: 'bold'
+            fontWeight: 'bold',
         },
         blockquote: {
             margin: 0,
@@ -109,178 +110,178 @@ export function globalTheme(theme) {
             lineHeight: font.lineHeight.default,
             color: color.grey_500,
             fontStyle: 'italic',
-            borderLeft: "0.32813rem solid ".concat(color.text)
+            borderLeft: "0.32813rem solid " + color.text,
         },
         button: {
             font: 'inherit',
             fontSmooth: font.smooth,
             margin: 0,
             overflow: 'visible',
-            touchAction: 'manipulation'
+            touchAction: 'manipulation',
         },
         canvas: {
-            display: 'inline-block'
+            display: 'inline-block',
         },
         code: {
             fontSize: font.small,
-            fontFamily: font.code,
+            fontFamily: font.family.code,
             lineHeight: 1.3,
             backgroundColor: color.grey_200,
             color: color.accent,
             borderRadius: '3px',
-            padding: "".concat(unit[1], " ").concat(unit[2]),
+            padding: unit[1] + " " + unit[2],
             '&:before': {
                 letterSpacing: -unit[1],
-                content: '""'
+                content: '""',
             },
             '&:after': {
                 letterSpacing: -unit[1],
-                content: '""'
-            }
+                content: '""',
+            },
         },
         dd: {
             margin: 0,
-            padding: 0
+            padding: 0,
         },
         details: {
-            display: 'block'
+            display: 'block',
         },
         dfn: {
-            fontStyle: 'italic'
+            fontStyle: 'italic',
         },
         dl: {
             // margin: 0, // margin: `0  0 ${unit.default} 0`,
             margin: 0,
-            padding: 0
+            padding: 0,
         },
         dt: {
-            fontWeight: 'bold'
+            fontWeight: 'bold',
         },
         figcaption: {
             display: 'block',
             // margin: 0, // margin: `0  0 ${unit.default} 0`,
             margin: 0,
-            padding: '0'
+            padding: '0',
         },
         fieldset: {
             border: 'none',
             margin: 0,
-            padding: 0
+            padding: 0,
         },
         figure: {
             display: 'block',
             // margin: '1em 40px',
-            margin: 0
+            margin: 0,
         },
         footer: {
-            display: 'block'
+            display: 'block',
         },
         form: {
             // margin: 0, // margin: `0  0 ${unit.default} 0`,
             margin: 0,
-            padding: 0
+            padding: 0,
         },
         h1: {
             // margin: 0, // margin: `0  0 ${unit.default} 0`,
             margin: 0,
             padding: 0,
             fontWeight: 'bold',
-            lineHeight: font.lineHeight[2],
-            fontFamily: font.sans,
-            fontSize: font.size[8],
-            fontSmooth: font.smooth
+            lineHeight: font.lineHeight[1],
+            fontFamily: font.family.sans,
+            fontSize: font.size[10],
+            fontSmooth: font.smooth,
         },
         h2: {
             // margin: 0, // margin: `0  0 ${unit.default} 0`,
             margin: 0,
             padding: 0,
             fontWeight: 'bold',
-            lineHeight: font.lineHeight[2],
-            fontFamily: font.sans,
+            lineHeight: font.lineHeight[1],
+            fontFamily: font.family.sans,
             fontSize: font.size[7],
-            fontSmooth: font.smooth
+            fontSmooth: font.smooth,
         },
         h3: {
             margin: 0,
             padding: 0,
             fontWeight: 'bold',
-            lineHeight: font.lineHeight[2],
-            fontFamily: font.sans,
+            lineHeight: font.lineHeight[1],
+            fontFamily: font.family.sans,
             fontSize: font.size[6],
-            fontSmooth: font.smooth
+            fontSmooth: font.smooth,
         },
         h4: {
             margin: 0,
             padding: 0,
             fontWeight: 'bold',
-            lineHeight: font.lineHeight[2],
-            fontFamily: font.sans,
+            lineHeight: font.lineHeight[1],
+            fontFamily: font.family.sans,
             fontSmooth: font.smooth,
-            fontSize: font.size[5]
+            fontSize: font.size[4],
         },
         h5: {
             margin: 0,
             padding: 0,
             fontWeight: 'bold',
-            lineHeight: font.lineHeight[2],
-            fontFamily: font.sans,
+            lineHeight: font.lineHeight[1],
+            fontFamily: font.family.sans,
             fontSize: font.size[4],
-            fontSmooth: font.smooth
+            fontSmooth: font.smooth,
         },
         h6: {
             margin: 0,
             padding: 0,
             fontWeight: 'bold',
-            lineHeight: font.lineHeight[2],
-            fontFamily: font.sans,
+            lineHeight: font.lineHeight[1],
+            fontFamily: font.family.sans,
             fontSize: font.size[3],
-            fontSmooth: font.smooth
+            fontSmooth: font.smooth,
         },
         header: {
-            display: 'block'
+            display: 'block',
         },
         hr: {
             boxSizing: 'content-box',
             height: 0,
             overflow: 'visible',
             border: border.thin,
-            margin: "calc(".concat(unit.default, " - 1px) 0"),
-            textShadow: 'none'
+            margin: "calc(" + unit.default + " - 1px) 0",
+            textShadow: 'none',
         },
         hgroup: {
             margin: 0,
-            padding: 0
+            padding: 0,
         },
         iframe: {
             margin: 0,
-            padding: 0
+            padding: 0,
         },
         img: {
             borderStyle: 'none',
             padding: 0,
             margin: 0,
-            maxWidth: '100%'
+            maxWidth: '100%',
         },
         input: {
             font: 'inherit',
             margin: 0,
             overflow: 'visible',
-            touchAction: 'manipulation'
+            touchAction: 'manipulation',
         },
         kbd: {
             fontSize: font.small,
-            fontFamily: font.code,
-            lineHeight: 1.3
+            fontFamily: font.family.code,
+            lineHeight: 1.3,
         },
         label: {
-            touchAction: 'manipulation'
+            touchAction: 'manipulation',
         },
         legend: {
             color: 'inherit',
             display: 'table',
             maxWidth: '100%',
             padding: 0,
-            whiteSpace: 'normal'
+            whiteSpace: 'normal',
         },
         li: {
             paddingLeft: 0,
@@ -288,53 +289,53 @@ export function globalTheme(theme) {
                 // marginTop: `calc(${unit.default} / 2)`,
                 // marginLeft: unit.default,
                 // marginBottom: `calc(${unit.default} / 2)`,
-                margin: 0
+                margin: 0,
             },
             ul: {
                 // marginTop: `calc(${unit.default} / 2)`,
                 // marginLeft: unit.default,
                 // marginBottom: `calc(${unit.default} / 2)`,
-                margin: 0
+                margin: 0,
             },
             '> p': {
                 // marginBottom: 'calc(${unit.default} / 2)',
-                margin: 0
-            }
+                margin: 0,
+            },
         },
         main: {
-            display: 'block'
+            display: 'block',
         },
         mark: {
             backgroundColor: '#ff0',
-            color: '#000'
+            color: '#000',
         },
         menu: {
-            display: 'block'
+            display: 'block',
         },
         nav: {
-            display: 'block'
+            display: 'block',
         },
         noscript: {
             margin: 0,
-            padding: 0
+            padding: 0,
         },
         ol: {
             margin: 0,
             padding: 0,
             listStylePosition: 'outside',
-            listStyleImage: 'none'
+            listStyleImage: 'none',
         },
         optgroup: {
             font: 'inherit',
             fontWeight: 700,
-            margin: 0
+            margin: 0,
         },
         p: {
             fontSize: font.size.default,
-            fontFamily: font.sans,
+            fontFamily: font.family.sans,
             fontSmooth: font.smooth,
             margin: 0,
-            padding: 0
+            padding: 0,
         },
         pre: {
             height: '100%',
@@ -342,9 +343,9 @@ export function globalTheme(theme) {
             padding: unit.default,
             background: color.background,
             color: color.text,
-            letterSpacing: "".concat(font.letterSpacing, " !important"),
+            letterSpacing: font.letterSpacing + " !important",
             fontSize: font.small,
-            fontFamily: font.code,
+            fontFamily: font.family.code,
             // lineHeight: font.lineHeight[2],
             // fontSize: 0.85rem;
             // lineHeight: 1.3,
@@ -356,80 +357,80 @@ export function globalTheme(theme) {
                 lineHeight: font.lineHeight.default,
                 color: color.text,
                 '&:before': {
-                    content: '""'
+                    content: '""',
                 },
                 '&:after': {
-                    content: '""'
-                }
+                    content: '""',
+                },
             },
             tt: {
                 '&:before': {
-                    content: '""'
+                    content: '""',
                 },
                 '&:after': {
-                    content: '""'
-                }
-            }
+                    content: '""',
+                },
+            },
         },
         q: {
             fontStyle: 'italic',
             '&:before': {
-                content: 'open-quote'
+                content: 'open-quote',
             },
             '&:after': {
-                content: 'open-quote'
-            }
+                content: 'open-quote',
+            },
         },
         progress: {
-            display: 'inline-block'
+            display: 'inline-block',
         },
         samp: {
             fontSize: font.small,
-            fontFamily: font.code,
-            lineHeight: 1.3
+            fontFamily: font.family.code,
+            lineHeight: 1.3,
         },
         section: {
-            display: 'block'
+            display: 'block',
         },
         select: {
             font: 'inherit',
             margin: 0,
             textTransform: 'none',
-            touchAction: 'manipulation'
+            touchAction: 'manipulation',
         },
         small: {
-            fontSize: font.size[2]
+            fontSize: font.size[2],
         },
         strong: {
-            fontWeight: 'bold'
+            fontWeight: 'bold',
         },
         sub: {
             fontSize: '75%',
             lineHeight: 0,
             position: 'relative',
             verticalAlign: 'baseline',
-            bottom: '-0.25em'
+            bottom: '-0.25em',
         },
         sup: {
             fontSize: '75%',
             lineHeight: 0,
             position: 'relative',
             verticalAlign: 'baseline',
-            top: '-0.5em'
+            top: '-0.5em',
         },
         summary: {
             display: 'block',
-            touchAction: 'manipulation'
+            touchAction: 'manipulation',
         },
         'svg:not(:root)': {
-            overflow: 'hidden'
+            overflow: 'hidden',
         },
         table: {
             padding: 0,
             fontSize: font.size.default,
             lineHeight: font.lineHeight[2],
             borderCollapse: 'collapse',
-            width: '100%'
+            width: '100%',
         },
         td: {
             textAlign: 'left',
@@ -443,20 +444,20 @@ export function globalTheme(theme) {
             paddingTop: unit[3],
             paddingBottom: unit[3],
             '&:first-child': {
-                paddingLeft: 0
+                paddingLeft: 0,
             },
             '&:last-child': {
-                paddingRight: 0
-            }
+                paddingRight: 0,
+            },
         },
         template: {
-            display: 'none'
+            display: 'none',
         },
         textarea: {
             font: 'inherit',
             margin: 0,
             overflow: 'auto',
-            touchAction: 'manipulation'
+            touchAction: 'manipulation',
         },
         th: {
             fontWeight: 'bold',
@@ -471,126 +472,128 @@ export function globalTheme(theme) {
             paddingTop: unit[3],
             paddingBottom: unit[3],
             '&:first-child': {
-                paddingLeft: 0
+                paddingLeft: 0,
             },
             '&:last-child': {
-                paddingRight: 0
-            }
+                paddingRight: 0,
+            },
         },
         thead: {
-            textAlign: 'left'
+            textAlign: 'left',
         },
         tt: {
             backgroundColor: color.grey_200,
             color: color.accent,
             borderRadius: '3px',
-            fontFamily: font.code,
-            padding: "".concat(unit[1], " ").concat(unit[2]),
+            fontFamily: font.family.code,
+            padding: unit[1] + " " + unit[2],
             '&:before': {
                 letterSpacing: -unit[1],
-                content: '""'
+                content: '""',
             },
             '&:after': {
                 letterSpacing: -unit[1],
-                content: '""'
-            }
+                content: '""',
+            },
         },
         ul: {
             margin: 0,
             padding: 0,
             listStylePosition: 'outside',
-            listStyleImage: 'none'
+            listStyleImage: 'none',
         },
         '[hidden]': {
-            display: 'none'
+            display: 'none',
         },
         '[type="button"]': {
             webkitAppearance: 'button',
             '&::-moz-focus-inner': {
                 borderStyle: 'none',
-                padding: 0
+                padding: 0,
             },
             ':-moz-focusring': {
-                outline: "1px solid ".concat(color.outline)
-            }
+                outline: "1px solid " + color.outline,
+            },
         },
         '[type="checkbox"]': {
             boxSizing: 'border-box',
-            padding: 0
+            padding: 0,
         },
         '[type="number"]::-webkitOuterSpinButton': {
-            height: 'auto'
+            height: 'auto',
         },
         '[type="radio"]': {
             boxSizing: 'border-box',
-            padding: 0
+            padding: 0,
         },
         '[type="reset"]': {
             webkitAppearance: 'button',
             '&::-moz-focus-inner': {
                 borderStyle: 'none',
-                padding: 0
+                padding: 0,
             },
             ':-moz-focusring': {
-                outline: '1px solid ButtonText'
-            }
+                outline: '1px solid ButtonText',
+            },
         },
         '[type="search"]': {
             webkitAppearance: 'textfield',
             outlineOffset: '-2px',
             '&::-webkitSearch-cancel-button': {
-                webkitAppearance: 'none'
+                webkitAppearance: 'none',
             },
             '&::-webkitSearch-decoration': {
-                webkitAppearance: 'none'
-            }
+                webkitAppearance: 'none',
+            },
         },
         '[type="submit"]': {
             webkitAppearance: 'button',
             '&::-moz-focus-inner': {
                 borderStyle: 'none',
-                padding: 0
+                padding: 0,
             },
             ':-moz-focusring': {
-                outline: '1px solid ButtonText'
-            }
+                outline: '1px solid ButtonText',
+            },
         },
         '*': {
-            boxSizing: 'inherit'
+            boxSizing: 'inherit',
         },
         '*:before': {
-            boxSizing: 'inherit'
+            boxSizing: 'inherit',
         },
         '*:after': {
-            boxSizing: 'inherit'
+            boxSizing: 'inherit',
         },
         '::selection': {
             background: color.active,
-            color: '#ffffff'
+            color: '#ffffff',
         },
         '::WebkitInputPlaceholder': {
             color: 'inherit',
-            opacity: 0.54
+            opacity: 0.54,
         },
         '::WebkitFileUploadButton': {
             webkitAppearance: 'button',
-            font: 'inherit'
+            font: 'inherit',
         },
         '*::WebkitScrollbar': {
             width: scrollbar.width,
-            height: scrollbar.height
+            height: scrollbar.height,
         },
         '*::WebkitScrollbar-corner': {
-            backgroundColor: scrollbar.corner.backgroundColor
+            backgroundColor: scrollbar.corner.backgroundColor,
         },
         '*::WebkitScrollbar-thumb': {
             backgroundColor: scrollbar.thumb.backgroundColor,
             outline: scrollbar.thumb.outline,
-            transition: scrollbar.thumb.transition
+            transition: scrollbar.thumb.transition,
         },
         '*::Webkit-scrollbar-thumb:hover': {
-            backgroundColor: scrollbar.thumb.hover.backgroundColor
-        }
+            backgroundColor: scrollbar.thumb.hover.backgroundColor,
+        },
     };
-    return merge(defaults, global);
+    return deepmerge_1.default(defaults, global);
 }
+exports.globalTheme = globalTheme;
+//# sourceMappingURL=global.theme.js.map

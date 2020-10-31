@@ -9,7 +9,6 @@ export function sectionTheme(props: SectionInterface) {
 
   return {
     position: 'relative',
-    padding: '10px 12px',
     display: 'flex',
     flexDirection: 'column',
     ...(isFunction(Section) ? Section(props)?.default : Section?.default),

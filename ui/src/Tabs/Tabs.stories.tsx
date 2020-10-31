@@ -1,15 +1,15 @@
 import React from 'react'
+
+import { ThemeProvider, useString } from '@redesign-system/ui-core'
 import { HomeIcon } from '@redesign-system/material-icons/'
 import { ContentCopyIcon } from '@redesign-system/material-icons/'
 import { DeleteAlertIcon } from '@redesign-system/material-icons/'
 
-import { ThemeProvider } from '@redesign-system/ui-core'
 import { TabList } from './TabList'
 import { Tabs } from './Tabs'
 import { TabButton } from './TabButton'
 import { TabButtonIcon } from './TabButtonIcon'
 import { TabPanel } from './TabPanel'
-import { useString } from '../useString'
 
 export default {
   title: 'Components/Tabs',

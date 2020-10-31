@@ -6,8 +6,6 @@ export default {
   title: 'Theme/Utility',
 }
 
-console.log(theme)
-
 export const Utility = () => {
   return (
     <ThemeProvider>

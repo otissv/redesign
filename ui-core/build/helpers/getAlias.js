@@ -1,4 +1,7 @@
-export function getAlias(style) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getAlias = void 0;
+function getAlias(style) {
     var alias = {
         m: 'margin',
         mt: 'marginTop',
@@ -75,7 +78,9 @@ export function getAlias(style) {
         ta: 'textAlign',
         tr: 'truncate',
         mq: 'mediaQuires',
-        of: 'overflow'
+        of: 'overflow',
     };
     return alias[style] || style;
 }
+exports.getAlias = getAlias;
+//# sourceMappingURL=getAlias.js.map

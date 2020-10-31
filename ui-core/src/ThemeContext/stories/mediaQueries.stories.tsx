@@ -42,24 +42,21 @@ export const Example = () => {
   }
 
   const mq = {
-    color: ['blue', 'blue', 'blue', 'blue'],
-    background: ['green', 'pink', 'yellow', 'purple'],
+    sm: {
+      color: 'blue',
+      background: 'green',
+    },
+    md: {
+      fontSize: '48px',
+      color: 'white',
+      background: 'black',
+    },
   }
 
   return (
     <ThemeProvider>
-      <Box display="flex" flexWrap="wrap">
-        <Box css={boxCss} mq={mq}>
-          Media Queries
-        </Box>
-
-        <Box css={boxCss} mq={mq}>
-          Media Queries
-        </Box>
-
-        <Box css={boxCss} mq={mq}>
-          Media Queries
-        </Box>
+      <Box css={boxCss} mq={mq} radius="rounded">
+        Media Queries
       </Box>
     </ThemeProvider>
   )

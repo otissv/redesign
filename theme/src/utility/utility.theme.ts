@@ -90,6 +90,16 @@ import {
   getTransition,
   getTransform,
   getBoxSizing,
+  getFilter,
+  getFilterBlur,
+  getFilterBrightness,
+  getFilterContrast,
+  getFilterDropShadow,
+  getFilterGrayscale,
+  getFilterHueRotate,
+  getFilterOpacity,
+  getFilterSaturate,
+  getFilterSepia,
 } from './utility.helpers'
 
 export function utilityTheme<
@@ -105,9 +115,11 @@ export function utilityTheme<
   const hostRadius = maybeTheme(theme.radius)
   const hostUnit = maybeTheme(theme.unit)
   const hostUtility = maybeTheme(theme.utility)
-  const hostMediaQueries = maybeTheme(theme.mediaQueries)
+  const hostBreakpoints = maybeTheme(theme.breakpoints)
 
   const defaults: UtilityInterface = {
+    ...hostUtility,
+
     /*
      * Margin
      */
@@ -272,8 +284,16 @@ export function utilityTheme<
     /*
      * Media
      */
-    mediaQuires: getMediaQuires(hostMediaQueries),
-    mq: getMediaQuires(hostMediaQueries),
+    mediaQuires: getMediaQuires(hostBreakpoints, hostUnit),
+    mq: getMediaQuires(hostBreakpoints, hostUnit),
+    sm: (value: { [key: string]: number | string }) =>
+      getMediaQuires(hostBreakpoints, hostUnit)(value),
+    md: (value: { [key: string]: number | string }) =>
+      getMediaQuires(hostBreakpoints, hostUnit)(value),
+    lg: (value: { [key: string]: number | string }) =>
+      getMediaQuires(hostBreakpoints, hostUnit)(value),
+    xl: (value: { [key: string]: number | string }) =>
+      getMediaQuires(hostBreakpoints, hostUnit)(value),
 
     /*
      * Position
@@ -361,7 +381,29 @@ export function utilityTheme<
     transform: getTransform,
     tf: getTransform,
 
-    ...hostUtility,
+    /*
+     * Filters
+     */
+    filter: getFilter,
+    filterBlur: getFilterBlur,
+    filterBrightness: getFilterBrightness,
+    filterContrast: getFilterContrast,
+    filterDropShadow: getFilterDropShadow,
+    filterGrayscale: getFilterGrayscale,
+    filterHueRotate: getFilterHueRotate,
+    filterOpacity: getFilterOpacity,
+    filterSaturate: getFilterSaturate,
+    filterSepia: getFilterSepia,
+    fr: getFilter,
+    frr: getFilterBlur,
+    frb: getFilterBrightness,
+    frc: getFilterContrast,
+    frd: getFilterDropShadow,
+    frg: getFilterGrayscale,
+    frh: getFilterHueRotate,
+    fro: getFilterOpacity,
+    frs: getFilterSaturate,
+    frp: getFilterSepia,
   }
   return defaults as T
 }

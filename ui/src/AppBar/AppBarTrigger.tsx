@@ -1,27 +1,30 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { MenuIcon } from '@redesign-system/material-icons/MenuIcon'
 import { MenuOpenIcon } from '@redesign-system/material-icons/MenuOpenIcon'
 
 import { appBarTriggerTheme } from './appBar.theme'
 import { Toggle } from '../Toggle'
+import { AppBarTriggerInterface } from './appBar.types'
 
-export function AppBarTrigger({
+export const AppBarTrigger: FC<AppBarTriggerInterface> = function AppBarTrigger({
   className = '',
   children,
   css = '',
   opened,
   onClick,
-  smallAppBar,
   onChange,
+  triggerOn,
+  triggerOff,
   ...propsRest
-}: any) {
+}) {
   const classNames = `AppBarTrigger ${className}`
-
   const cssList = [appBarTriggerTheme, css]
+  const triggerDefault = [
+    <MenuOpenIcon key={1} {...triggerOn} />,
+    <MenuIcon key={2} {...triggerOff} />,
+  ]
 
-  const triggerDefault = [<MenuOpenIcon key={1} />, <MenuIcon key={2} />]
-
-  return smallAppBar ? (
+  return (
     <Toggle
       className={classNames}
       id="1"
@@ -35,7 +38,7 @@ export function AppBarTrigger({
     >
       {children ? children : triggerDefault}
     </Toggle>
-  ) : null
+  )
 }
 
 AppBarTrigger.displayName = 'AppBarTrigger'

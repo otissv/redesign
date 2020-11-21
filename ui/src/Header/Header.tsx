@@ -43,3 +43,4 @@ export const Header: FC<HeaderInterface> = function Header({
     </CoverImage>
   )
 }
+Header.displayName = 'Header'

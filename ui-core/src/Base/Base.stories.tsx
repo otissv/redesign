@@ -12,8 +12,14 @@ const theme: any = createTheme()
 
 export const Default = () => (
   <ThemeProvider>
-    <Base w="100px" h="100px" theme={theme} color="white">
-      Base
+    <Base w="100px" h="100px" theme={theme} color="white" ff="serif">
+      serif
+    </Base>
+    <Base w="100px" h="100px" theme={theme} color="white" ff="sans">
+      sans
+    </Base>
+    <Base w="100px" h="100px" theme={theme} color="white" ff="mono">
+      mono
     </Base>
   </ThemeProvider>
 )

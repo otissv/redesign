@@ -1,6 +1,6 @@
 import { isFunction } from '@redesign-system/theme'
 
-import { AppBarInterface } from './appBar.types'
+import { AppBarInterface, AppBarNavInterface } from './appBar.types'
 
 import {
   ColorInterface,
@@ -25,19 +25,32 @@ const input = (color: ColorInterface) => ({
 
 export function appBarTheme(props: AppBarInterface) {
   const {
-    width,
-    theme: { color, AppBar },
+    theme: { mediaQueries, color, unit, AppBar },
   } = props
 
   return {
-    alignItems: 'center',
-    boxSizing: 'border-box',
-    display: 'flex',
-    flexShrink: 0,
-    minHeight: '56px',
     position: 'relative',
-    width: width || '100%',
+    width: '100%',
     zIndex: '1100',
+    padding: unit[4],
+
+    [mediaQueries.lg]: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      height: '56px',
+      // padding: unit[3],x
+    },
+
+    'ul.Nav': {
+      width: '100%',
+      flexDirection: 'column',
+      [mediaQueries.lg]: {
+        flexDirection: 'row',
+        height: '50px',
+        width: 'auto',
+        alignItems: 'center',
+      },
+    },
 
     '>button.Button, >a.Link': {
       minHeight: 'inherit',
@@ -52,6 +65,43 @@ export function appBarTheme(props: AppBarInterface) {
       ...input(color),
     },
     ...(isFunction(AppBar) ? AppBar(props)?.default : AppBar?.default),
+  }
+}
+
+export function appBarNavTheme(props: AppBarNavInterface) {
+  const {
+    theme: { AppBarNav },
+  } = props
+
+  return {
+    position: 'relative',
+    display: 'flex',
+    flex: 1,
+
+    ...(isFunction(AppBarNav)
+      ? AppBarNav(props)?.appearance
+      : AppBarNav?.appearance),
+  }
+}
+
+export function appBarContentTheme(props: AppBarInterface) {
+  const {
+    theme: { mediaQueries, unit, AppBarContent },
+  } = props
+
+  return {
+    position: 'relative',
+    padding: unit[1],
+    display: 'none',
+    alignItems: 'center',
+    flex: 1,
+    [mediaQueries.lg]: {
+      display: 'flex',
+    },
+
+    ...(isFunction(AppBarContent)
+      ? AppBarContent(props)?.appearance
+      : AppBarContent?.appearance),
   }
 }
 
@@ -136,36 +186,36 @@ export function appBarAppearanceTheme(props: AppBarInterface) {
   }
 }
 
-export function appBarFooterTheme(props: AppBarInterface) {
+export function appBarBrandTheme(props: AppBarInterface) {
   const {
-    theme: { unit, AppBarFooter },
+    theme: { AppBarBrand },
   } = props
 
   return {
-    padding: unit[1],
-
-    ...(isFunction(AppBarFooter)
-      ? AppBarFooter(props)?.appearance
-      : AppBarFooter?.appearance),
+    position: 'relative',
+    display: 'inline-flex',
+    ...(isFunction(AppBarBrand)
+      ? AppBarBrand(props)?.appearance
+      : AppBarBrand?.appearance),
   }
 }
 
 export function appBarPanelTheme(props: AppBarInterface) {
   const {
-    height,
     opened,
-    theme: { color, AppBarFooter },
+    theme: { mediaQueries, AppBarFooter },
   } = props
 
-  //TODO: get appearance
-
   return {
-    background: color.default,
-    color: '#fff',
-    display: 'flex',
+    position: 'relative',
+    display: opened ? 'flex' : 'none',
+
     flexDirection: 'column',
     zIndex: 9999,
-    height: opened ? height || 'auto' : '0px',
+
+    [mediaQueries.lg]: {
+      display: 'none',
+    },
 
     ...(isFunction(AppBarFooter)
       ? AppBarFooter(props)?.appearance
@@ -175,10 +225,14 @@ export function appBarPanelTheme(props: AppBarInterface) {
 
 export function appBarSearchTheme(props: AppBarInterface) {
   const {
-    theme: { AppBarSearch },
+    theme: { mediaQueries, AppBarSearch },
   } = props
 
   return {
+    position: 'relative',
+    [mediaQueries.lg]: {
+      display: 'inline-block',
+    },
     ...(isFunction(AppBarSearch)
       ? AppBarSearch(props)?.appearance
       : AppBarSearch?.appearance),
@@ -187,19 +241,35 @@ export function appBarSearchTheme(props: AppBarInterface) {
 
 export function appBarTriggerTheme(props: AppBarInterface) {
   const {
-    theme: { unit, AppBarTrigger },
+    theme: { mediaQueries, unit, AppBarTrigger },
   } = props
 
   return {
-    alignSelf: 'stretch',
-    display: 'flex',
-    justifyContent: 'center',
-    width: unit[7],
-    height: 'inherit',
-    input: {},
+    position: 'relative',
+    marginRight: unit[4],
+    display: 'inline-block',
 
+    [mediaQueries.lg]: {
+      display: 'none',
+    },
     ...(isFunction(AppBarTrigger)
       ? AppBarTrigger(props)?.appearance
       : AppBarTrigger?.appearance),
+  }
+}
+
+export function appBarFooterTheme(props: AppBarInterface) {
+  const {
+    theme: { font, unit, AppBarFooter },
+  } = props
+
+  return {
+    position: 'relative',
+    padding: unit[1],
+    lineHeight: font.lineHeight[4],
+
+    ...(isFunction(AppBarFooter)
+      ? AppBarFooter(props)?.appearance
+      : AppBarFooter?.appearance),
   }
 }

@@ -139,6 +139,17 @@ export function getAlias(style: string) {
     us: 'userSelect',
 
     tf: 'transform',
+
+    fr: 'filter',
+    frr: 'filterBlur',
+    frb: 'filterBrightness',
+    frc: 'filterContrast',
+    frd: 'filterDropShadow',
+    frf: 'filterGrayscale',
+    frh: 'filterHueRotate',
+    fro: 'filterOpacity',
+    fsr: 'filterSaturate',
+    frp: 'filterSepia',
   }
 
   return alias[style] || style

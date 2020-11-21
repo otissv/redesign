@@ -60,6 +60,7 @@ export const CoverImage: FC<CoverImageInterface> = function CoverImage({
     </Base>
   )
 }
+CoverImage.displayName = 'CoverImage'
 
 function CoverImageContent({
   as = 'div',
@@ -84,3 +85,4 @@ function CoverImageContent({
     </Base>
   )
 }
+CoverImageContent.displayName = 'CoverImageContent'

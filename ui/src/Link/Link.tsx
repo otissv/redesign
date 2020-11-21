@@ -28,3 +28,4 @@ export const Link: FC<LinkInterface> = function Link({
     </Typography>
   )
 }
+Link.displayName = 'Link'

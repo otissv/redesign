@@ -6,7 +6,6 @@ import {
   BorderInterface,
   BORDER_NONE,
   BORDER_STYLE,
-  BORDER_DASH,
   BORDER_THICK_WIDTH,
   BORDER_THICK_COLOR,
   BORDER_THIN_WIDTH,
@@ -26,29 +25,35 @@ export function borderTheme<
 
   const initialBorders: PartialThemeInterface = {}
 
-  const defaults: BorderInterface = {
-    none: BORDER_NONE,
-    style: BORDER_STYLE,
-    dash: BORDER_DASH,
+  const thickWidth = border.thickWidth || BORDER_THICK_WIDTH
+  const thickColor = border.thickColor || color[BORDER_THICK_COLOR]
+  const thinWidth = border.thinWidth || BORDER_THIN_WIDTH
+  const thinColor = border.thinColor || color[BORDER_THIN_COLOR]
 
-    thickWidth: BORDER_THICK_WIDTH,
-    thickColor: color[BORDER_THICK_COLOR],
-    thinWidth: BORDER_THIN_WIDTH,
-    thinColor: color[BORDER_THIN_COLOR],
+  const none = BORDER_NONE
+  const style = border.style || BORDER_STYLE
+
+  function getColor(value: string) {
+    return color[value] || value
+  }
+
+  const defaults: BorderInterface = {
+    none,
+    style,
+    thickWidth,
+    thickColor,
+    thinWidth,
+    thinColor,
 
     // thick
-    thick: `${BORDER_THICK_WIDTH} ${BORDER_STYLE} ${color[BORDER_THICK_COLOR]}`,
-    thickInvert: `${BORDER_THICK_WIDTH} ${BORDER_STYLE} ${color[BORDER_THICK_COLOR]}`,
-    thickDashed: `${BORDER_THICK_WIDTH} ${BORDER_DASH} ${color[BORDER_THICK_COLOR]}`,
-    thickDashedInvert: `${BORDER_THICK_WIDTH} ${BORDER_DASH} ${color[BORDER_THICK_COLOR]}`,
-    thickTransparent: `${BORDER_THICK_WIDTH} ${BORDER_STYLE} rgba(0, 0, 0, 0);`,
+    thick: `${thickWidth} ${style} ${getColor(thickColor)}`,
+    thickInvert: `${thickWidth} ${style} ${getColor(thickColor)}`,
+    thickTransparent: `${thickWidth} ${style} rgba(0, 0, 0, 0);`,
 
     // thin
-    thin: `${BORDER_THIN_WIDTH} ${BORDER_STYLE} ${color[BORDER_THIN_COLOR]}`,
-    thinDashed: `${BORDER_THIN_WIDTH} ${BORDER_DASH}  ${color[BORDER_THIN_COLOR]}`,
-    thinDashedInvert: `${BORDER_THIN_WIDTH} ${BORDER_DASH}  ${color[BORDER_THIN_COLOR]}`,
-    thinInvert: `${BORDER_THIN_WIDTH} ${BORDER_STYLE} ${color[BORDER_THIN_COLOR]}`,
-    thinTransparent: `${BORDER_THIN_WIDTH} ${BORDER_STYLE} rgba(0, 0, 0, 0);`,
+    thin: `${thinWidth} ${style} ${getColor(thinColor)}`,
+    thinInvert: `${thinWidth} ${style} ${getColor(thinColor)}`,
+    thinTransparent: `${thinWidth} ${style} rgba(0, 0, 0, 0);`,
 
     ...Object.keys(color).reduce((previous, key) => {
       const color_key = color[key as keyof ColorInterface]
@@ -57,11 +62,8 @@ export function borderTheme<
 
       return {
         ...previous,
-        // [key]: color_key,
-        [`thick${upperFirstKey}`]: `${BORDER_THICK_WIDTH} ${BORDER_STYLE} ${color_key}`,
-        [`thin${upperFirstKey}`]: `${BORDER_THIN_WIDTH} ${BORDER_STYLE} ${color_key}`,
-        [`thickDashed${upperFirstKey}`]: `${BORDER_THICK_WIDTH} ${BORDER_DASH} ${color_key}`,
-        [`thinDashed${upperFirstKey}`]: `${BORDER_THIN_WIDTH} ${BORDER_DASH} ${color_key}`,
+        [`thick${upperFirstKey}`]: `${thickWidth} ${style} ${color_key}`,
+        [`thin${upperFirstKey}`]: `${thinWidth} ${style} ${color_key}`,
       }
     }, initialBorders),
   }

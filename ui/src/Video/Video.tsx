@@ -63,4 +63,4 @@ export const Video: FC<VideoInterface> = function Video({
   )
 }
 
-export default Video
+Video.displayName = 'Video'

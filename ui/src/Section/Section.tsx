@@ -50,3 +50,4 @@ export const Section: FC<SectionInterface> = function Section({
     </Base>
   )
 }
+Section.displayName = 'Section'

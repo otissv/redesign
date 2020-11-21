@@ -852,6 +852,30 @@ export interface UtilityPropsInterface {
    */
   transform?: string
   tf?: string
+
+  /*
+   * Filters
+   */
+  filter?: string
+  filterBlur?: string
+  filterBrightness?: string
+  filterContrast?: string
+  filterDropShadow?: string
+  filterGrayscale?: string
+  filterHueRotate?: string
+  filterOpacity?: string
+  filterSaturate?: string
+  filterSepia?: string
+  fr?: string
+  frr?: string
+  frb?: string
+  frc?: string
+  frd?: string
+  frg?: string
+  frh?: string
+  fro?: string
+  frs?: string
+  frp?: string
 }
 
 export type TransitionTypes = TransitionInterface | string
@@ -1012,6 +1036,10 @@ export type BorderStyleTypes =
   | 'dotted'
   | 'double'
   | 'none'
+  | 'groove'
+  | 'outset'
+  | 'outset'
+  | 'ridge'
   | string
 
 export type ColorTypes =

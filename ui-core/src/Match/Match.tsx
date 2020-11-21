@@ -55,13 +55,13 @@ export const Match: FC<MatchInterface> = function Match({
       ...child.props,
       ...propsRest,
       style: {
-        ...child.props.style,
+        ...child.props?.style,
         ...propsRest?.style,
         ...styles,
       },
     }
 
-    const element = React.cloneElement(child, props, child.props.children)
+    const element = React.cloneElement(child, props, child.props?.children)
     elements.push(element)
   }
 

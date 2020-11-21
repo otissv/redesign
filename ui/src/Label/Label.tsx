@@ -10,6 +10,7 @@ export const Label: FC<LabelInterface> = function Label({
   className = '',
   css = '',
   required,
+  children,
   ...propsRest
 }) {
   const classNames = `Label ${className}`
@@ -17,8 +18,10 @@ export const Label: FC<LabelInterface> = function Label({
 
   return (
     <Fragment>
-      <Typography css={cssList} className={classNames} as={as} {...propsRest} />
-      <Maybe check={Boolean(required)}>*</Maybe>
+      <Typography css={cssList} className={classNames} as={as} {...propsRest}>
+        {children}
+        <Maybe check={Boolean(required)}>*</Maybe>
+      </Typography>
     </Fragment>
   )
 }

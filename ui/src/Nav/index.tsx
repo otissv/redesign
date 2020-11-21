@@ -1,4 +1,5 @@
 export * from './Nav'
 export * from './NavItem'
+export * from './NavItemButton'
 export * from './nav.theme'
 export * from './nav.types'

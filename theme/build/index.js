@@ -4,7 +4,6 @@ var tslib_1 = require("tslib");
 tslib_1.__exportStar(require("./appearance"), exports);
 tslib_1.__exportStar(require("./border"), exports);
 tslib_1.__exportStar(require("./color"), exports);
-tslib_1.__exportStar(require("./defaults"), exports);
 tslib_1.__exportStar(require("./elevate"), exports);
 tslib_1.__exportStar(require("./font"), exports);
 tslib_1.__exportStar(require("./global"), exports);

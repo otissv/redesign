@@ -1,6 +1,9 @@
 import React from 'react'
-import { Base } from '../Base'
 import { createTheme } from '@redesign-system/theme'
+
+import { ThemeProvider } from '../ThemeContext'
+
+import { Base } from '../Base'
 import { Match } from './Match'
 
 export default {
@@ -11,11 +14,21 @@ export default {
 const theme: any = createTheme()
 
 export const Default = () => (
-  <Match theme={theme} h="100px" w="100px" m={4} p={4} color="white" bg="grey">
-    <Base>Box</Base>
-    <Base>Box</Base>
-    <Base>Box</Base>
-  </Match>
+  <ThemeProvider>
+    <Match
+      theme={theme}
+      h="100px"
+      w="100px"
+      m={4}
+      p={4}
+      color="white"
+      bg="grey"
+    >
+      <Base>Box</Base>
+      <Base>Box</Base>
+      <Base>Box</Base>
+    </Match>
+  </ThemeProvider>
 )
 
 export const Animate = () => {
@@ -45,39 +58,41 @@ export const Animate = () => {
   }
 
   return (
-    <Match
-      animate={animate}
-      animations={animations}
-      theme={theme}
-      h="100px"
-      w="100px"
-      m={4}
-      p={4}
-      opacity="0.2"
-      color="white"
-      bg="grey"
-    >
-      <Base
-        onClick={() =>
-          setAnimate(animate !== 'moveRight' ? 'moveRight' : 'moveLeft')
-        }
+    <ThemeProvider>
+      <Match
+        animate={animate}
+        animations={animations}
+        theme={theme}
+        h="100px"
+        w="100px"
+        m={4}
+        p={4}
+        opacity="0.2"
+        color="white"
+        bg="grey"
       >
-        Click Me
-      </Base>
-      <Base
-        onClick={() =>
-          setAnimate(animate !== 'moveRight' ? 'moveRight' : 'moveLeft')
-        }
-      >
-        Click Me
-      </Base>
-      <Base
-        onClick={() =>
-          setAnimate(animate !== 'moveRight' ? 'moveRight' : 'moveLeft')
-        }
-      >
-        Click Me
-      </Base>
-    </Match>
+        <Base
+          onClick={() =>
+            setAnimate(animate !== 'moveRight' ? 'moveRight' : 'moveLeft')
+          }
+        >
+          Click Me
+        </Base>
+        <Base
+          onClick={() =>
+            setAnimate(animate !== 'moveRight' ? 'moveRight' : 'moveLeft')
+          }
+        >
+          Click Me
+        </Base>
+        <Base
+          onClick={() =>
+            setAnimate(animate !== 'moveRight' ? 'moveRight' : 'moveLeft')
+          }
+        >
+          Click Me
+        </Base>
+      </Match>
+    </ThemeProvider>
   )
 }

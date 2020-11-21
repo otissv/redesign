@@ -11,7 +11,7 @@ export const Portal: FC<PortalInterface> = function Portal({
 
   useEffect(() => {
     rootRef.current = document.getElementById(selector)
-  }, [])
+  }, [selector])
 
   useLayoutEffect(() => {
     rootRef.current && rootRef.current.appendChild(elementRef.current)

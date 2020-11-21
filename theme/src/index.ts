@@ -1,7 +1,6 @@
 export * from './appearance'
 export * from './border'
 export * from './color'
-export * from './defaults'
 export * from './elevate'
 export * from './font'
 export * from './global'

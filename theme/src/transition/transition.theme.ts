@@ -29,39 +29,44 @@ export function transitionTheme<
 >(theme?: P): T {
   const transition = maybe({})(theme?.transition)
 
+  const xslow = transition[0] || XSLOW
+  const slow = transition[1] || SLOW
+  const medium = transition[2] || MEDIUM
+  const fast = transition[3] || FAST
+
   const defaults: TransitionInterface = {
-    0: XSLOW,
-    1: SLOW,
-    2: MEDIUM,
-    3: FAST,
+    0: xslow,
+    1: slow,
+    2: medium,
+    3: fast,
 
     // ease
     easeFast: (props?: EasePropsInterface) => {
       return easeTransition({
         ...props,
         ease: EASE,
-        speed: FAST,
+        speed: fast,
       })
     },
     easeMedium: (props?: EasePropsInterface) => {
       return easeTransition({
         ...props,
         ease: EASE,
-        speed: MEDIUM,
+        speed: medium,
       })
     },
     easeSlow: (props?: EasePropsInterface) => {
       return easeTransition({
         ...props,
         ease: EASE,
-        speed: SLOW,
+        speed: slow,
       })
     },
     easeXslow: (props?: EasePropsInterface) => {
       return easeTransition({
         ...props,
         ease: EASE,
-        speed: XSLOW,
+        speed: xslow,
       })
     },
 
@@ -70,28 +75,28 @@ export function transitionTheme<
       return easeTransition({
         ...props,
         ease: EASE_IN,
-        speed: FAST,
+        speed: fast,
       })
     },
     easeInMedium: (props?: EasePropsInterface) => {
       return easeTransition({
         ...props,
         ease: EASE_IN,
-        speed: MEDIUM,
+        speed: medium,
       })
     },
     easeInSlow: (props?: EasePropsInterface) => {
       return easeTransition({
         ...props,
         ease: EASE_IN,
-        speed: SLOW,
+        speed: slow,
       })
     },
     easeInXslow: (props?: EasePropsInterface) => {
       return easeTransition({
         ...props,
         ease: EASE_IN,
-        speed: XSLOW,
+        speed: xslow,
       })
     },
 
@@ -100,28 +105,28 @@ export function transitionTheme<
       return easeTransition({
         ...props,
         ease: EASE_IN_OUT,
-        speed: FAST,
+        speed: fast,
       })
     },
     easeInOutMedium: (props?: EasePropsInterface) => {
       return easeTransition({
         ...props,
         ease: EASE_IN_OUT,
-        speed: MEDIUM,
+        speed: medium,
       })
     },
     easeInOutSlow: (props?: EasePropsInterface) => {
       return easeTransition({
         ...props,
         ease: EASE_IN_OUT,
-        speed: SLOW,
+        speed: slow,
       })
     },
     easeInOutXslow: (props?: EasePropsInterface) => {
       return easeTransition({
         ...props,
         ease: EASE_IN_OUT,
-        speed: XSLOW,
+        speed: xslow,
       })
     },
 
@@ -130,28 +135,28 @@ export function transitionTheme<
       return easeTransition({
         ...props,
         ease: EASE_OUT,
-        speed: FAST,
+        speed: fast,
       })
     },
     easeOutMedium: (props?: EasePropsInterface) => {
       return easeTransition({
         ...props,
         ease: EASE_OUT,
-        speed: MEDIUM,
+        speed: medium,
       })
     },
     easeOutSlow: (props?: EasePropsInterface) => {
       return easeTransition({
         ...props,
         ease: EASE_OUT,
-        speed: SLOW,
+        speed: slow,
       })
     },
     easeOutXslow: (props?: EasePropsInterface) => {
       return easeTransition({
         ...props,
         ease: EASE_OUT,
-        speed: XSLOW,
+        speed: xslow,
       })
     },
   }

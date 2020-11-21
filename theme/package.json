@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@redesign-system/theme",
-  "version": "0.0.3",
+  "version": "0.01",
   "license": "MIT",
   "typings": "index.d.ts",
   "publishConfig": {
@@ -45,7 +45,6 @@
   },
   "dependencies": {
     "deepmerge": "^4.2.2",
-    "facepaint": "^1.2.1",
-    "rambda": "^5.6.0"
+    "facepaint": "^1.2.1"
   }
 }

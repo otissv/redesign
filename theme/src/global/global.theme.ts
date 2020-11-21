@@ -27,7 +27,6 @@ export function globalTheme<
 
   const defaults: GlobalInterface = {
     html: {
-      lineHeight: font.lineHeight.default,
       textRendering: 'optimizeLegibility',
       msTextSizeSdjust: '100%',
       webkitTextSizeAdjust: '100%',
@@ -35,32 +34,30 @@ export function globalTheme<
       height: '100%',
       background: color.background,
       color: color.text,
-      letterSpacing: `${font.letterSpacing} !important`,
     },
 
     body: {
+      fontFamily: font.family.sans,
+      fontSize: font.size.default,
+      fontWeight: font.weight.default,
+      letterSpacing: `${font.letterSpacing} !important`,
+      lineHeight: font.lineHeight.default,
+      fontStyle: 'normal',
       height: '100%',
       background: color.background,
       color: color.text,
-      letterSpacing: `${font.letterSpacing} !important`,
       margin: 0,
       padding: 0,
-      fontWeight: font.weight.default,
       wordWrap: 'break-word',
       fontKerning: 'normal',
       mozFontFeatureSettings: `'kern', 'liga', 'clig', 'calt'`,
       msFontFeatureSettings: `'kern', 'liga', 'clig', 'calt'`,
       webkitFontFeatureSettings: `'kern', 'liga', 'clig', 'calt'`,
       fontFeatureSettings: `'kern', 'liga', 'clig', 'calt'`,
-
-      fontFamily: font.family.sans,
-      fontSize: font.size.default,
       fontSmooth: font.smooth,
     },
 
     a: {
-      fontFamily: font.family.sans,
-      fontSize: font.size.default,
       touchAction: 'manipulation',
       fontSmooth: font.smooth,
       backgroundColor: 'transparent',
@@ -89,6 +86,7 @@ export function globalTheme<
 
     address: {
       // margin: 0, // margin: `0  0 ${unit.default} 0`,
+
       margin: 0,
       padding: 0,
     },
@@ -180,6 +178,7 @@ export function globalTheme<
 
     dl: {
       // margin: 0, // margin: `0  0 ${unit.default} 0`,
+
       margin: 0,
       padding: 0,
     },
@@ -212,70 +211,60 @@ export function globalTheme<
     },
 
     form: {
-      // margin: 0, // margin: `0  0 ${unit.default} 0`,
       margin: 0,
       padding: 0,
     },
 
     h1: {
-      // margin: 0, // margin: `0  0 ${unit.default} 0`,
       margin: 0,
       padding: 0,
       fontWeight: 'bold',
       lineHeight: font.lineHeight[1],
-      fontFamily: font.family.sans,
       fontSize: font.size[10],
 
       fontSmooth: font.smooth,
     },
 
     h2: {
-      // margin: 0, // margin: `0  0 ${unit.default} 0`,
       margin: 0,
       padding: 0,
       fontWeight: 'bold',
       lineHeight: font.lineHeight[1],
-      fontFamily: font.family.sans,
       fontSize: font.size[7],
       fontSmooth: font.smooth,
     },
 
     h3: {
-      margin: 0, // margin: `0  0 ${unit.default} 0`,
       padding: 0,
       fontWeight: 'bold',
       lineHeight: font.lineHeight[1],
-      fontFamily: font.family.sans,
-      fontSize: font.size[6],
+      fontSize: font.size[7],
       fontSmooth: font.smooth,
     },
 
     h4: {
-      margin: 0, // margin: `0  0 ${unit.default} 0`,
+      margin: 0,
       padding: 0,
       fontWeight: 'bold',
       lineHeight: font.lineHeight[1],
-      fontFamily: font.family.sans,
       fontSmooth: font.smooth,
       fontSize: font.size[4],
     },
 
     h5: {
-      margin: 0, // margin: `0  0 ${unit.default} 0`,
+      margin: 0,
       padding: 0,
       fontWeight: 'bold',
       lineHeight: font.lineHeight[1],
-      fontFamily: font.family.sans,
       fontSize: font.size[4],
       fontSmooth: font.smooth,
     },
 
     h6: {
-      margin: 0, // margin: `0  0 ${unit.default} 0`,
+      margin: 0,
       padding: 0,
       fontWeight: 'bold',
       lineHeight: font.lineHeight[1],
-      fontFamily: font.family.sans,
       fontSize: font.size[3],
       fontSmooth: font.smooth,
     },
@@ -394,7 +383,6 @@ export function globalTheme<
 
     p: {
       fontSize: font.size.default,
-      fontFamily: font.family.sans,
       fontSmooth: font.smooth,
       margin: 0, // margin: `0  0 ${unit.default} 0`,
       padding: 0,

@@ -49,4 +49,4 @@ export const GoogleMaps = React.memo(function GoogleMaps({
   )
 })
 
-export default GoogleMaps
+GoogleMaps.displayName = 'GoogleMaps'

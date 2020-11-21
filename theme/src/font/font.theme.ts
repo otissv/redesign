@@ -1,14 +1,16 @@
-import { merge } from 'rambda'
+import merge from 'deepmerge'
 import { FontInterface, PartialFontInterface } from './font.types'
 import { PartialThemeInterface } from '../theme'
+import { maybe } from '../utils/maybe'
 
 export function fontTheme<
   P extends PartialThemeInterface,
   T extends PartialFontInterface
 >(theme?: P): T {
-  const color = theme?.color || {}
-  const font = theme?.font || {}
+  const maybeTheme = maybe({})
 
+  const color = maybeTheme(theme?.color)
+  const font = maybeTheme(theme?.font)
   const base = font.base || 16 // font base in pixels
 
   const defaults: FontInterface = {
@@ -75,5 +77,5 @@ export function fontTheme<
     },
   }
 
-  return merge(font)(defaults) as T
+  return merge(defaults, font) as T
 }

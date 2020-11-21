@@ -138,8 +138,10 @@ function handleInterpolation(
         console.error(
           'Functions that are interpolated in css calls will be stringified.\n' +
             'If you want to have a css call based on props, create a function that returns a css call like this\n' +
+            // @ts-ignore
             'let dynamicStyle = (props) => css`color: ${props.color}`\n' +
             'It can be called directly with props or interpolated in a styled call like this\n' +
+            // @ts-ignore
             "let SomeComponent = styled('div')`${dynamicStyle}`"
         )
       }

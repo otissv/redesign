@@ -4,7 +4,6 @@ import {
   BorderInterface,
   BORDER_NONE,
   BORDER_STYLE,
-  BORDER_DASH,
   BORDER_THICK_WIDTH,
   BORDER_THICK_COLOR,
   BORDER_THIN_WIDTH,
@@ -95,7 +94,6 @@ export const transitionThemeDefaults: TransitionInterface = {
 export const borderThemeDefaults: BorderInterface = {
   none: BORDER_NONE,
   style: BORDER_STYLE,
-  dash: BORDER_DASH,
 
   thickWidth: BORDER_THICK_WIDTH,
   thickColor: BORDER_THICK_COLOR,
@@ -104,13 +102,9 @@ export const borderThemeDefaults: BorderInterface = {
 
   thick: '',
   thickInvert: '',
-  thickDashed: '',
-  thickDashedInvert: '',
   thickTransparent: '',
 
   thin: '',
-  thinDashed: '',
-  thinDashedInvert: '',
   thinInvert: '',
   thinTransparent: '',
 }

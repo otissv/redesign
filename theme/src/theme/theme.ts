@@ -9,22 +9,23 @@ import { transitionTheme } from '../transition'
 import { unitTheme } from '../unit'
 import { utilityTheme } from '../utility'
 import { globalTheme } from '../global'
-import { mediaQueriesTheme } from '../mediaQueries'
+import { breakpointTheme, mediaQueriesTheme } from '../mediaQueries'
 
 export function createTheme(partialTheme: Partial<PartialThemeInterface> = {}) {
   const _color = colorTheme(partialTheme)
   const _unit = unitTheme(partialTheme)
+  const _breakpoints = breakpointTheme(partialTheme)
 
   const defaultTheme = {
     ...partialTheme,
     color: _color,
     unit: _unit,
+    breakpoints: _breakpoints,
   }
 
   const baseTheme = {
     ...defaultTheme,
     border: borderTheme(defaultTheme),
-    color: _color,
     elevate: elevateTheme(defaultTheme),
     font: fontTheme(defaultTheme),
     mediaQueries: mediaQueriesTheme(defaultTheme),

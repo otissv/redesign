@@ -13,8 +13,8 @@ function utilityTheme(theme) {
     var hostRadius = maybeTheme(theme.radius);
     var hostUnit = maybeTheme(theme.unit);
     var hostUtility = maybeTheme(theme.utility);
-    var hostMediaQueries = maybeTheme(theme.mediaQueries);
-    var defaults = tslib_1.__assign(tslib_1.__assign(tslib_1.__assign(tslib_1.__assign(tslib_1.__assign(tslib_1.__assign({}, utility_helpers_1.unitPositions({ unit: hostUnit, style: 'margin' })), utility_helpers_1.unitPositions({ unit: hostUnit, style: 'm' })), utility_helpers_1.unitPositions({ unit: hostUnit, style: 'padding' })), utility_helpers_1.unitPositions({ unit: hostUnit, style: 'p' })), { 
+    var hostBreakpoints = maybeTheme(theme.breakpoints);
+    var defaults = tslib_1.__assign(tslib_1.__assign(tslib_1.__assign(tslib_1.__assign(tslib_1.__assign(tslib_1.__assign({}, hostUtility), utility_helpers_1.unitPositions({ unit: hostUnit, style: 'margin' })), utility_helpers_1.unitPositions({ unit: hostUnit, style: 'm' })), utility_helpers_1.unitPositions({ unit: hostUnit, style: 'padding' })), utility_helpers_1.unitPositions({ unit: hostUnit, style: 'p' })), { 
         /*
          * Color
          */
@@ -54,7 +54,15 @@ function utilityTheme(theme) {
         /*
          * Media
          */
-        mediaQuires: utility_helpers_1.getMediaQuires(hostMediaQueries), mq: utility_helpers_1.getMediaQuires(hostMediaQueries), 
+        mediaQuires: utility_helpers_1.getMediaQuires(hostBreakpoints, hostUnit), mq: utility_helpers_1.getMediaQuires(hostBreakpoints, hostUnit), sm: function (value) {
+            return utility_helpers_1.getMediaQuires(hostBreakpoints, hostUnit)(value);
+        }, md: function (value) {
+            return utility_helpers_1.getMediaQuires(hostBreakpoints, hostUnit)(value);
+        }, lg: function (value) {
+            return utility_helpers_1.getMediaQuires(hostBreakpoints, hostUnit)(value);
+        }, xl: function (value) {
+            return utility_helpers_1.getMediaQuires(hostBreakpoints, hostUnit)(value);
+        }, 
         /*
          * Position
          */
@@ -90,7 +98,11 @@ function utilityTheme(theme) {
         /*
          * Transforms
          */
-        transform: utility_helpers_1.getTransform, tf: utility_helpers_1.getTransform }), hostUtility);
+        transform: utility_helpers_1.getTransform, tf: utility_helpers_1.getTransform, 
+        /*
+         * Filters
+         */
+        filter: utility_helpers_1.getFilter, filterBlur: utility_helpers_1.getFilterBlur, filterBrightness: utility_helpers_1.getFilterBrightness, filterContrast: utility_helpers_1.getFilterContrast, filterDropShadow: utility_helpers_1.getFilterDropShadow, filterGrayscale: utility_helpers_1.getFilterGrayscale, filterHueRotate: utility_helpers_1.getFilterHueRotate, filterOpacity: utility_helpers_1.getFilterOpacity, filterSaturate: utility_helpers_1.getFilterSaturate, filterSepia: utility_helpers_1.getFilterSepia, fr: utility_helpers_1.getFilter, frr: utility_helpers_1.getFilterBlur, frb: utility_helpers_1.getFilterBrightness, frc: utility_helpers_1.getFilterContrast, frd: utility_helpers_1.getFilterDropShadow, frg: utility_helpers_1.getFilterGrayscale, frh: utility_helpers_1.getFilterHueRotate, fro: utility_helpers_1.getFilterOpacity, frs: utility_helpers_1.getFilterSaturate, frp: utility_helpers_1.getFilterSepia });
     return defaults;
 }
 exports.utilityTheme = utilityTheme;

@@ -1,12 +1,11 @@
 import React from 'react'
-import { ThemeProvider } from '@redesign-system/ui-core'
+import { ThemeProvider, useBoolean } from '@redesign-system/ui-core'
 import { useSelected } from '@redesign-system/ui-core/useSelected'
 import { ChevronRightIcon } from '@redesign-system/material-icons/ChevronRightIcon'
 import { ChevronDownIcon } from '@redesign-system/material-icons/ChevronDownIcon'
 
 import { Table } from './Table'
 import { Checkbox } from '../Checkbox'
-import { useBoolean } from '../../../ui-core/src/useBoolean'
 import { Maybe } from '../Maybe'
 import { Toggle } from '../Toggle'
 

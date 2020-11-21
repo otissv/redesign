@@ -64,3 +64,4 @@ export const Heading: FC<HeadingInterface> = function Heading({
     </Base>
   )
 }
+Heading.displayName = 'Heading'

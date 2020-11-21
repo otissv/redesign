@@ -1,10 +1,9 @@
-
 const util = require("util");
-const childProcess = require('child_process')
+const childProcess = require("child_process");
 const path = require("path");
 const pkg = require(`${process.cwd()}/package.json`);
 
-const exec = util.promisify(childProcess.exec)
+const exec = util.promisify(childProcess.exec);
 
 const npmPkg = JSON.stringify({
   name: pkg.name,
@@ -21,14 +20,19 @@ const npmPkg = JSON.stringify({
   ...(pkg.peerDependencies ? { dependencies: pkg.dependencies } : {}),
 });
 
-console.log('Building...')
+console.log("Building...");
 
-exec('tsc --project tsconfig.json && touch build/package.json').then(() => {
-  return exec(`echo '${npmPkg}' > build/package.json`)
-})
-.then(()=> {
-  console.log('Finished building pkg.name')
-})
-.catch(({ stderr }) => {
-  console.log(stderr);
-})
+exec("tsc --project tsconfig.json && touch build/package.json")
+  .then(() => {
+    return exec(`echo '${npmPkg}' > build/package.json`);
+  })
+  .then(() => {
+    console.log("Finished building pkg.name");
+  })
+  .catch(({ stderr, stdout }) => {
+    if (stderr) {
+      console.log(stderr)
+    } else {
+      console.log(stdout)
+    }
+  });

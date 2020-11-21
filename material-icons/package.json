@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@redesign-system/material-icons",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -34,21 +34,19 @@
     "fluid": false
   },
   "peerDependencies": {
-    "@redesign-system/theme": ">=0",
-    "@redesign-system/ui-core": ">=0",
+    "@redesign-system/theme": ">=0.1",
+    "@redesign-system/ui-core": ">=0.1",
     "emotion": ">=10",
     "react": ">=16"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
-    "@redesign-system/theme": "^0.0.1",
-    "@redesign-system/ui-core": "^0.0.1",
-    "@storybook/addon-actions": "^6.1.0-alpha.26",
-    "@storybook/addon-docs": "^6.1.0-alpha.26",
-    "@storybook/addon-links": "^6.1.0-alpha.26",
-    "@storybook/addons": "^6.1.0-alpha.26",
-    "@storybook/react": "^6.1.0-alpha.26",
-    "@storybook/theming": "^6.1.0-alpha.26",
+    "@storybook/addon-actions": "^6.1.2",
+    "@storybook/addon-docs": "^6.1.2",
+    "@storybook/addon-links": "^6.1.2",
+    "@storybook/addons": "^6.1.2",
+    "@storybook/react": "^6.1.2",
+    "@storybook/theming": "^6.1.2",
     "@swc/cli": "^0.1.27",
     "@swc/core": "^1.2.36",
     "@types/jest": "^26.0.10",
@@ -74,5 +72,6 @@
     "tsdx": "^0.13.2",
     "tslib": "^2.0.1",
     "typescript": "^3.9.7"
-  }
+  },
+  "dependencies": {}
 }

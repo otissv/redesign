@@ -1,10 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.fontTheme = void 0;
-var rambda_1 = require("rambda");
+var tslib_1 = require("tslib");
+var deepmerge_1 = tslib_1.__importDefault(require("deepmerge"));
+var maybe_1 = require("../utils/maybe");
 function fontTheme(theme) {
-    var color = (theme === null || theme === void 0 ? void 0 : theme.color) || {};
-    var font = (theme === null || theme === void 0 ? void 0 : theme.font) || {};
+    var maybeTheme = maybe_1.maybe({});
+    var color = maybeTheme(theme === null || theme === void 0 ? void 0 : theme.color);
+    var font = maybeTheme(theme === null || theme === void 0 ? void 0 : theme.font);
     var base = font.base || 16; // font base in pixels
     var defaults = {
         base: base,
@@ -58,7 +61,7 @@ function fontTheme(theme) {
             default: 400,
         },
     };
-    return rambda_1.merge(font)(defaults);
+    return deepmerge_1.default(defaults, font);
 }
 exports.fontTheme = fontTheme;
 //# sourceMappingURL=font.theme.js.map

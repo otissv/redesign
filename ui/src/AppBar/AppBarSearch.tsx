@@ -1,18 +1,22 @@
 import React, { FC } from 'react'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { AppBarSearchInterface } from './appBar.types'
 import { Textbox } from '../Textbox'
 import { appBarSearchTheme } from './appBar.theme'
 
 export const AppBarSearch: FC<AppBarSearchInterface> = function AppBarSearch({
+  as = 'div',
   className = '',
   css = '',
   placeholder = 'Search',
   onSearch,
+  textbox,
+  id,
   ...propsRest
 }) {
-  const classNames = `AppBar ${className}`
-
+  const { theme } = useTheme()
+  const classNames = `AppBarSearch ${className}`
   const cssList = [appBarSearchTheme, css]
 
   function handleOnChange(e: any) {
@@ -21,15 +25,15 @@ export const AppBarSearch: FC<AppBarSearchInterface> = function AppBarSearch({
   }
 
   return (
-    <div>
+    <Base theme={theme} css={cssList} className={classNames} {...propsRest}>
       <Textbox
-        className={classNames}
-        css={cssList}
+        id="appBar-search"
+        label="search"
         placeholder={placeholder}
-        {...propsRest}
+        {...textbox}
         onChange={handleOnChange}
       />
-    </div>
+    </Base>
   )
 }
 

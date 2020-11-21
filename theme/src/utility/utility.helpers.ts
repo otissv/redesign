@@ -1,6 +1,5 @@
 import facepaint from 'facepaint'
 
-import { themeDefaults } from '../defaults'
 import { maybeString } from '../utils/maybe'
 import {
   RADIUS_CIRCLE,
@@ -58,8 +57,8 @@ import {
   DisplayTypes,
   TransitionTypes,
 } from './utility.types'
-
-import { MediaQueriesInterface } from '../mediaQueries'
+import { getAlias } from './utility.alias'
+import { BreakpointsInterface } from '../mediaQueries'
 import { FontInterface } from '../font'
 
 const propCase = (key: string) => toCamel(key).trim()
@@ -113,7 +112,14 @@ export const getBackgroundImage = (backgroundImage: string) => ({
  * Border
  */
 
-export function getRadiuses(radius: RadiusInterface = themeDefaults.radius) {
+export function getRadiuses(
+  radius: RadiusInterface = {
+    circle: RADIUS_CIRCLE,
+    none: RADIUS_NONE,
+    round: RADIUS_ROUND,
+    rounded: RADIUS_ROUNDED,
+  }
+) {
   return (value: keyof RadiusInterface | string) => {
     switch (value) {
       case 'circle':
@@ -324,23 +330,27 @@ export const getWhiteSpace = (whiteSpace: WhiteSpaceTypes) => ({ whiteSpace })
  */
 
 export const getMediaQuires = (
-  mediaQuires: MediaQueriesInterface
-) => (hostMediaQuires: { [key: string]: any }) => {
-  const { sm, md, lg, xl, ...breakpoints } = mediaQuires
+  breakpoints: BreakpointsInterface,
+  unit: UnitInterface
+) => (hostBreakpoints: { [key: string]: any }) => {
+  const { sm, md, lg, xl, ...breakpointsRest } = breakpoints
 
-  const mediaQuiresKeys = Object.keys(mediaQuires)
+  const breakpointKeys = Object.keys(breakpoints)
 
   let result: { [key: string]: string[] } = {}
 
-  for (let breakpoint in hostMediaQuires) {
-    const index = mediaQuiresKeys.indexOf(breakpoint)
+  for (let breakpoint in hostBreakpoints) {
+    const index = breakpointKeys.indexOf(breakpoint)
 
-    for (let prop in hostMediaQuires[breakpoint]) {
+    for (let key in hostBreakpoints[breakpoint]) {
+      const prop = getAlias(key) || key
+      const value = hostBreakpoints[breakpoint][key]
+
       if (result[prop]) {
-        result[prop][index] = hostMediaQuires[breakpoint][prop]
+        result[prop][index] = unit[value as keyof UnitInterface] || value
       } else {
         result[prop] = []
-        result[prop][index] = hostMediaQuires[breakpoint][prop]
+        result[prop][index] = unit[value as keyof UnitInterface] || value
       }
     }
   }
@@ -351,7 +361,7 @@ export const getMediaQuires = (
       `@media(min-width: ${md}px)`,
       `@media(min-width: ${lg}px)`,
       `@media(min-width: ${xl}px)`,
-      ...Object.values(breakpoints).map(b => `@media(min-width: ${b}px)`),
+      ...Object.values(breakpointsRest).map(b => `@media(min-width: ${b}px)`),
     ],
     {
       literal: true,
@@ -497,6 +507,31 @@ export const getTransform = (transform: string) => ({
   transform,
 })
 
+/*
+ * Filters
+ */
+export const getFilter = (filter: string) => ({ filter })
+export const getFilterBlur = (filterBlur: string) => ({ filterBlur })
+export const getFilterBrightness = (filterBrightness: string) => ({
+  filterBrightness,
+})
+export const getFilterContrast = (filterContrast: string) => ({
+  filterContrast,
+})
+export const getFilterDropShadow = (filterDropShadow: string) => ({
+  filterDropShadow,
+})
+export const getFilterGrayscale = (filterGrayscale: string) => ({
+  filterGrayscale,
+})
+export const getFilterHueRotate = (filterHueRotate: string) => ({
+  filterHueRotate,
+})
+export const getFilterOpacity = (filterOpacity: string) => ({ filterOpacity })
+export const getFilterSaturate = (filterSaturate: string) => ({
+  filterSaturate,
+})
+export const getFilterSepia = (filterSepia: string) => ({ filterSepia })
 /*
  Spacing
 */

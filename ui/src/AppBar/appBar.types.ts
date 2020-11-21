@@ -2,6 +2,7 @@ import {
   ThemeComponentInterface,
   AppearanceBaseTypes,
 } from '@redesign-system/theme'
+import { IconInterface } from '@redesign-system/ui-core'
 
 import {
   ButtonGroupInterface,
@@ -18,9 +19,13 @@ export type PositionType =
   | 'relative'
 
 export interface AppBarInterface extends ThemeComponentInterface {
+  children?: React.ReactNode
   appearance?: AppearanceBaseTypes
   position?: PositionType
+  opened?: boolean
 }
+
+export interface AppBarNavInterface extends ThemeComponentInterface {}
 
 export interface AppBarButtonGroupInterface extends ButtonGroupInterface {}
 
@@ -30,7 +35,33 @@ export interface AppBarButtonGroupButtonGroupInterface
 export interface AppBarButtonGroupButtonIconInterface
   extends ButtonGroupButtonIconInterface {}
 
-export interface AppBarSearchInterface extends TextboxInterface {}
+export interface AppBarSearchInterface extends TextboxInterface {
+  placeholder?: string
+  onSearch?: (e: any, { value }: { value: any }) => void
+  textbox?: TextboxInterface
+}
 
-export interface AppBarPanelInterface extends ThemeComponentInterface {}
-export interface AppBarBrandInterface extends ThemeComponentInterface {}
+export interface AppBarPanelInterface extends ThemeComponentInterface {
+  children?: React.ReactNode
+}
+
+export interface AppBarBrandInterface extends ThemeComponentInterface {
+  children?: React.ReactNode
+}
+
+export interface AppBarFooterInterface extends ThemeComponentInterface {
+  children?: React.ReactNode
+}
+
+export interface AppBarContentInterface extends ThemeComponentInterface {
+  children?: React.ReactNode
+}
+
+export interface AppBarTriggerInterface extends ThemeComponentInterface {
+  children?: React.ReactNode[]
+  opened?: boolean
+  onClick?: (e: any) => void
+  onChange?: (e: any) => void
+  triggerOn?: IconInterface
+  triggerOff?: IconInterface
+}

@@ -68,21 +68,21 @@ export function colorTheme<
     white: '#fff',
     transparent: 'rgba(0, 0, 0, 0)',
 
-    outline: '#006dea',
+    outline: colorDefaults?.outline || '#006dea',
 
-    text: _swatches[color['text']],
-    textInvert: _swatches[color['textInvert']],
+    text: colorDefaults?.text || _swatches[color['text']],
+    textInvert: colorDefaults?.textInvert || _swatches[color['textInvert']],
 
     linkText: colorDefaults?.linkText || '#4ea1f3',
-    linkTextHover: '#4ea1f3',
-    linkTextActive: '#4ea1f3',
-    linkTextFocus: '#4ea1f3',
-    linkTextVisited: '#4ea1f3',
-    linkBackground: '#4ea1f3',
-    linkBackgroundHover: '#4ea1f3',
-    linkBackgroundActive: '#4ea1f3',
-    linkBackgroundFocus: '#4ea1f3',
-    linkBackgroundVisited: '#4ea1f3',
+    linkTextHover: colorDefaults?.linkTextHover || '#4ea1f3',
+    linkTextActive: colorDefaults?.linkTextActive || '#4ea1f3',
+    linkTextFocus: colorDefaults?.linkTextFocus || '#4ea1f3',
+    linkTextVisited: colorDefaults?.linkTextVisited || '#4ea1f3',
+    linkBackground: colorDefaults?.linkBackground || '#4ea1f3',
+    linkBackgroundHover: colorDefaults?.linkBackgroundHover || '#4ea1f3',
+    linkBackgroundActive: colorDefaults?.linkBackgroundActive || '#4ea1f3',
+    linkBackgroundFocus: colorDefaults?.linkBackgroundFocus || '#4ea1f3',
+    linkBackgroundVisited: colorDefaults?.linkBackgroundVisited || '#4ea1f3',
 
     background: getColor({
       fallback: _swatches[`${color['background']}_600`],

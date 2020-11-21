@@ -3,7 +3,7 @@ import { ThemeProvider, useString } from '@redesign-system/ui-core'
 
 import { Nav } from './Nav'
 import { NavItem } from './NavItem'
-import { Button } from '../Button'
+import { NavItemButton } from './NavItemButton'
 
 export default {
   title: 'Components/Nav',
@@ -16,39 +16,36 @@ export const Default = () => {
     <ThemeProvider>
       <Nav>
         <NavItem id="dashboard" title="Default 1" onClick={onClick}>
-          <Button
+          <NavItemButton
             active={active === 'dashboard'}
-            as="a"
             href="#"
             textAlign="left"
           >
             Dashboard
-          </Button>
+          </NavItemButton>
         </NavItem>
         <NavItem id="projects" title="Projects" onClick={onClick}>
-          <Button
+          <NavItemButton
             active={active === 'projects'}
-            as="a"
             href="#"
             textAlign="left"
           >
             Projects
-          </Button>
+          </NavItemButton>
         </NavItem>
         <NavItem id="notes" title="Notes" onClick={onClick}>
-          <Button active={active === 'notes'} as="a" href="#" textAlign="left">
+          <NavItemButton active={active === 'notes'} href="#" textAlign="left">
             Notes
-          </Button>
+          </NavItemButton>
         </NavItem>
         <NavItem id="support" title="Support" onClick={onClick}>
-          <Button
+          <NavItemButton
             active={active === 'support'}
-            as="a"
             href="#"
             textAlign="left"
           >
             Support
-          </Button>
+          </NavItemButton>
         </NavItem>
       </Nav>
     </ThemeProvider>
@@ -62,39 +59,36 @@ export const Stacked = () => {
     <ThemeProvider>
       <Nav stacked>
         <NavItem id="dashboard" title="Default 1" onClick={onClick}>
-          <Button
+          <NavItemButton
             active={active === 'dashboard'}
-            as="a"
             href="#"
             textAlign="left"
           >
             Dashboard
-          </Button>
+          </NavItemButton>
         </NavItem>
         <NavItem id="projects" title="Projects" onClick={onClick}>
-          <Button
+          <NavItemButton
             active={active === 'projects'}
-            as="a"
             href="#"
             textAlign="left"
           >
             Projects
-          </Button>
+          </NavItemButton>
         </NavItem>
         <NavItem id="notes" title="Notes" onClick={onClick}>
-          <Button active={active === 'notes'} href="#" textAlign="left">
+          <NavItemButton active={active === 'notes'} href="#" textAlign="left">
             Notes
-          </Button>
+          </NavItemButton>
         </NavItem>
         <NavItem id="support" title="Support" onClick={onClick}>
-          <Button
+          <NavItemButton
             active={active === 'support'}
-            as="a"
             href="#"
             textAlign="left"
           >
             Support
-          </Button>
+          </NavItemButton>
         </NavItem>
       </Nav>
     </ThemeProvider>

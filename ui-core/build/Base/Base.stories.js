@@ -12,7 +12,9 @@ exports.default = {
 };
 var theme = theme_1.createTheme();
 exports.Default = function () { return (react_1.default.createElement(ThemeContext_1.ThemeProvider, null,
-    react_1.default.createElement(Base_1.Base, { w: "100px", h: "100px", theme: theme, color: "white" }, "Base"))); };
+    react_1.default.createElement(Base_1.Base, { w: "100px", h: "100px", theme: theme, color: "white", ff: "serif" }, "serif"),
+    react_1.default.createElement(Base_1.Base, { w: "100px", h: "100px", theme: theme, color: "white", ff: "sans" }, "sans"),
+    react_1.default.createElement(Base_1.Base, { w: "100px", h: "100px", theme: theme, color: "white", ff: "mono" }, "mono"))); };
 exports.Animate = function () {
     var _a = react_1.default.useState(''), animate = _a[0], setAnimate = _a[1];
     var animations = {

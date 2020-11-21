@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@redesign-system/ui",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "license": "MIT",
   "typings": "index.d.ts",
   "publishConfig": {
@@ -34,22 +34,23 @@
     "fluid": false
   },
   "peerDependencies": {
-    "@redesign-system/material-icons": ">=0",
+    "@redesign-system/material-icons": ">=.10",
     "emotion": ">=10",
     "react": ">=16"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@redesign-system/material-icons": "^0.0.1",
-    "@storybook/addon-a11y": "^6.1.0-alpha.26",
-    "@storybook/addon-actions": "^6.1.0-alpha.26",
-    "@storybook/addon-docs": "^6.1.0-alpha.26",
-    "@storybook/addon-essentials": "^6.1.0-alpha.26",
-    "@storybook/addon-links": "^6.1.0-alpha.26",
-    "@storybook/addons": "^6.1.0-alpha.26",
+    "@storybook/addon-a11y": "^6.1.2",
+    "@storybook/addon-actions": "^6.1.2",
+    "@storybook/addon-docs": "^6.1.2",
+    "@storybook/addon-essentials": "^6.1.2",
+    "@storybook/addon-links": "^6.1.2",
+    "@storybook/addons": "^6.1.2",
     "@storybook/preset-typescript": "^3.0.0",
-    "@storybook/react": "^6.1.0-alpha.26",
-    "@storybook/theming": "^6.1.0-alpha.26",
+    "@storybook/react": "^6.1.2",
+    "@storybook/theming": "^6.1.2",
+    "@types/facepaint": "^1.2.1",
     "@types/jest": "^26.0.9",
     "@types/react": "^16.9.46",
     "@types/react-dom": "^16.9.8",
@@ -65,8 +66,8 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "@redesign-system/theme": "^0.0.3",
-    "@redesign-system/ui-core": "^0.0.3",
+    "@redesign-system/theme": "^0.1.0",
+    "@redesign-system/ui-core": "^0.1.0",
     "cuid": "^2.1.8",
     "popmotion": "^9.0.0",
     "stylis": "^4.0.2"

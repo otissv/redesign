@@ -10,7 +10,7 @@ import { SwatchesInterface } from '../swatches/swatches.types'
 import { TransitionInterface } from '../transition'
 import { UnitInterface } from '../unit'
 import { GlobalInterface } from '../global'
-import { MediaQueriesInterface } from '../mediaQueries'
+import { BreakpointsInterface, MediaQueriesInterface } from '../mediaQueries'
 
 export type CssStringType = string
 export type CssObjectType = { [key: string]: any }
@@ -30,6 +30,7 @@ export interface ThemeInterface {
   color: ColorInterface
   elevate: ElevateInterface
   font: FontInterface
+  breakpoints: BreakpointsInterface
   mediaQueries: MediaQueriesInterface
   radius: RadiusInterface
   scrollbar: ScrollbarInterface
@@ -46,6 +47,7 @@ export interface PartialThemeInterface {
   elevate?: Partial<ElevateInterface>
   font?: Partial<FontInterface>
   radius?: Partial<RadiusInterface>
+  breakpoints?: Partial<BreakpointsInterface>
   mediaQueries?: Partial<MediaQueriesInterface>
   scrollbar?: Partial<ScrollbarInterface>
   utility?: Partial<UtilityInterface>

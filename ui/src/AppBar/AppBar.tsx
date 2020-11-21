@@ -1,43 +1,16 @@
-import React, { FC, Fragment } from 'react'
-import { Base, useTheme, useViewport } from '@redesign-system/ui-core'
+import React, { FC } from 'react'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
 import { AppBarInterface } from './appBar.types'
 import { appBarTheme, appBarAppearanceTheme } from './appBar.theme'
 import { AppBarPanel } from './AppBarPanel'
-
-export function useAppBar(
-  {
-    show = false,
-    smallAppBarWidth = 768,
-  }: {
-    show: boolean
-    smallAppBarWidth: number
-  } = {
-    show: false,
-    smallAppBarWidth: 768,
-  }
-) {
-  const { theme } = useTheme()
-  const [opened, setOpened] = React.useState(show)
-  const { breakpoint } = useViewport(theme)
-
-  const onOpenedClick = () => {
-    setOpened(!opened)
-  }
-
-  return {
-    onOpenedClick,
-    opened,
-    smallAppBar: breakpoint <= smallAppBarWidth,
-  }
-}
+import { AppBarContent } from './AppBarContent'
 
 export const AppBar: FC<AppBarInterface> = function AppBar({
   as = 'div',
   children,
   className = '',
   css = '',
-  smallAppBar,
   opened,
   ...propsRest
 }) {
@@ -45,10 +18,10 @@ export const AppBar: FC<AppBarInterface> = function AppBar({
   const classNames = `AppBar ${className}`
   const cssList = [appBarTheme, appBarAppearanceTheme, css]
 
+  const childrenArray = React.Children.toArray(children)
   const components =
-    smallAppBar &&
     children &&
-    React.Children.toArray(children).reduce(
+    childrenArray.reduce(
       (acc: any, component: any) => {
         switch (component.type?.displayName) {
           case 'AppBarBrand':
@@ -56,10 +29,10 @@ export const AppBar: FC<AppBarInterface> = function AppBar({
               ...acc,
               brand: [...acc.brand, component],
             }
-          case 'AppBarButtonGroup':
+          case 'AppNav':
             return {
               ...acc,
-              buttonGroup: [...acc.buttonGroup, component],
+              appNav: [...acc.appNav, component],
             }
 
           case 'AppBarFooter':
@@ -86,7 +59,7 @@ export const AppBar: FC<AppBarInterface> = function AppBar({
       },
       {
         brand: [],
-        buttonGroup: [],
+        appNav: [],
         content: [],
         footer: [],
         search: [],
@@ -95,29 +68,31 @@ export const AppBar: FC<AppBarInterface> = function AppBar({
     )
 
   return (
-    <Fragment>
-      <Base
-        as={as}
-        className={classNames}
-        theme={theme}
-        css={cssList}
-        aria-orientation="horizontal"
-        {...propsRest}
-      >
-        {!smallAppBar && children}
+    <Base
+      as={as}
+      className={classNames}
+      theme={theme}
+      css={cssList}
+      aria-orientation="horizontal"
+      {...propsRest}
+    >
+      {components.trigger}
+      {components.brand[0]}
 
-        {smallAppBar && components.trigger[0]}
-        {smallAppBar && components.brand[0]}
-      </Base>
+      <AppBarContent>
+        {components.appNav}
+        {components.content}
+        {components.search[0]}
+      </AppBarContent>
 
-      <AppBarPanel smallAppBar={smallAppBar} opened={opened}>
-        {smallAppBar && components.search[0]}
+      <AppBarPanel opened={opened}>
+        {components.search[0]}
 
-        {smallAppBar && components.buttonGroup}
-        {smallAppBar && components.content}
-        {smallAppBar && components.footer}
+        {components.appNav}
+        {components.content}
+        {components.footer}
       </AppBarPanel>
-    </Fragment>
+    </Base>
   )
 }
 

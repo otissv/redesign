@@ -1,6 +1,10 @@
 import { isFunction } from '@redesign-system/theme'
 
-import { NavInterface } from './nav.types'
+import {
+  NavInterface,
+  NavItemButtonInterface,
+  NavItemInterface,
+} from './nav.types'
 
 export function navTheme(props: NavInterface) {
   const {
@@ -20,7 +24,7 @@ export function navTheme(props: NavInterface) {
   }
 }
 
-export function navItemTheme(props: NavInterface) {
+export function navItemTheme(props: NavItemInterface) {
   const {
     theme: { NavItem },
   } = props
@@ -30,5 +34,17 @@ export function navItemTheme(props: NavInterface) {
       width: '100%',
     },
     ...(isFunction(NavItem) ? NavItem(props)?.appearance : NavItem?.appearance),
+  }
+}
+
+export function navItemButtonTheme(props: NavItemButtonInterface) {
+  const {
+    theme: { NavItemButton },
+  } = props
+
+  return {
+    ...(isFunction(NavItemButton)
+      ? NavItemButton(props)?.appearance
+      : NavItemButton?.appearance),
   }
 }

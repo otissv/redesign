@@ -11,15 +11,29 @@ function borderTheme(theme) {
     var border = maybeTheme(theme === null || theme === void 0 ? void 0 : theme.border);
     var color = maybeTheme(theme === null || theme === void 0 ? void 0 : theme.color);
     var initialBorders = {};
-    var defaults = tslib_1.__assign({ none: border_types_1.BORDER_NONE, style: border_types_1.BORDER_STYLE, dash: border_types_1.BORDER_DASH, thickWidth: border_types_1.BORDER_THICK_WIDTH, thickColor: color[border_types_1.BORDER_THICK_COLOR], thinWidth: border_types_1.BORDER_THIN_WIDTH, thinColor: color[border_types_1.BORDER_THIN_COLOR], 
+    var thickWidth = border.thickWidth || border_types_1.BORDER_THICK_WIDTH;
+    var thickColor = border.thickColor || color[border_types_1.BORDER_THICK_COLOR];
+    var thinWidth = border.thinWidth || border_types_1.BORDER_THIN_WIDTH;
+    var thinColor = border.thinColor || color[border_types_1.BORDER_THIN_COLOR];
+    var none = border_types_1.BORDER_NONE;
+    var style = border.style || border_types_1.BORDER_STYLE;
+    function getColor(value) {
+        return color[value] || value;
+    }
+    var defaults = tslib_1.__assign({ none: none,
+        style: style,
+        thickWidth: thickWidth,
+        thickColor: thickColor,
+        thinWidth: thinWidth,
+        thinColor: thinColor, 
         // thick
-        thick: border_types_1.BORDER_THICK_WIDTH + " " + border_types_1.BORDER_STYLE + " " + color[border_types_1.BORDER_THICK_COLOR], thickInvert: border_types_1.BORDER_THICK_WIDTH + " " + border_types_1.BORDER_STYLE + " " + color[border_types_1.BORDER_THICK_COLOR], thickDashed: border_types_1.BORDER_THICK_WIDTH + " " + border_types_1.BORDER_DASH + " " + color[border_types_1.BORDER_THICK_COLOR], thickDashedInvert: border_types_1.BORDER_THICK_WIDTH + " " + border_types_1.BORDER_DASH + " " + color[border_types_1.BORDER_THICK_COLOR], thickTransparent: border_types_1.BORDER_THICK_WIDTH + " " + border_types_1.BORDER_STYLE + " rgba(0, 0, 0, 0);", 
+        thick: thickWidth + " " + style + " " + getColor(thickColor), thickInvert: thickWidth + " " + style + " " + getColor(thickColor), thickTransparent: thickWidth + " " + style + " rgba(0, 0, 0, 0);", 
         // thin
-        thin: border_types_1.BORDER_THIN_WIDTH + " " + border_types_1.BORDER_STYLE + " " + color[border_types_1.BORDER_THIN_COLOR], thinDashed: border_types_1.BORDER_THIN_WIDTH + " " + border_types_1.BORDER_DASH + "  " + color[border_types_1.BORDER_THIN_COLOR], thinDashedInvert: border_types_1.BORDER_THIN_WIDTH + " " + border_types_1.BORDER_DASH + "  " + color[border_types_1.BORDER_THIN_COLOR], thinInvert: border_types_1.BORDER_THIN_WIDTH + " " + border_types_1.BORDER_STYLE + " " + color[border_types_1.BORDER_THIN_COLOR], thinTransparent: border_types_1.BORDER_THIN_WIDTH + " " + border_types_1.BORDER_STYLE + " rgba(0, 0, 0, 0);" }, Object.keys(color).reduce(function (previous, key) {
+        thin: thinWidth + " " + style + " " + getColor(thinColor), thinInvert: thinWidth + " " + style + " " + getColor(thinColor), thinTransparent: thinWidth + " " + style + " rgba(0, 0, 0, 0);" }, Object.keys(color).reduce(function (previous, key) {
         var _a;
         var color_key = color[key];
         var upperFirstKey = textTransform_1.toUpperFirst(textTransform_1.toCamel(key));
-        return tslib_1.__assign(tslib_1.__assign({}, previous), (_a = {}, _a["thick" + upperFirstKey] = border_types_1.BORDER_THICK_WIDTH + " " + border_types_1.BORDER_STYLE + " " + color_key, _a["thin" + upperFirstKey] = border_types_1.BORDER_THIN_WIDTH + " " + border_types_1.BORDER_STYLE + " " + color_key, _a["thickDashed" + upperFirstKey] = border_types_1.BORDER_THICK_WIDTH + " " + border_types_1.BORDER_DASH + " " + color_key, _a["thinDashed" + upperFirstKey] = border_types_1.BORDER_THIN_WIDTH + " " + border_types_1.BORDER_DASH + " " + color_key, _a));
+        return tslib_1.__assign(tslib_1.__assign({}, previous), (_a = {}, _a["thick" + upperFirstKey] = thickWidth + " " + style + " " + color_key, _a["thin" + upperFirstKey] = thinWidth + " " + style + " " + color_key, _a));
     }, initialBorders));
     return deepmerge_1.default(defaults, border);
 }

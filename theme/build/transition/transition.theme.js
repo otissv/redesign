@@ -12,62 +12,66 @@ function easeTransition(options) {
 exports.easeTransition = easeTransition;
 function transitionTheme(theme) {
     var transition = maybe_1.maybe({})(theme === null || theme === void 0 ? void 0 : theme.transition);
+    var xslow = transition[0] || transition_types_1.XSLOW;
+    var slow = transition[1] || transition_types_1.SLOW;
+    var medium = transition[2] || transition_types_1.MEDIUM;
+    var fast = transition[3] || transition_types_1.FAST;
     var defaults = {
-        0: transition_types_1.XSLOW,
-        1: transition_types_1.SLOW,
-        2: transition_types_1.MEDIUM,
-        3: transition_types_1.FAST,
+        0: xslow,
+        1: slow,
+        2: medium,
+        3: fast,
         // ease
         easeFast: function (props) {
-            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE, speed: transition_types_1.FAST }));
+            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE, speed: fast }));
         },
         easeMedium: function (props) {
-            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE, speed: transition_types_1.MEDIUM }));
+            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE, speed: medium }));
         },
         easeSlow: function (props) {
-            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE, speed: transition_types_1.SLOW }));
+            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE, speed: slow }));
         },
         easeXslow: function (props) {
-            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE, speed: transition_types_1.XSLOW }));
+            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE, speed: xslow }));
         },
         // easIn
         easeInFast: function (props) {
-            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_IN, speed: transition_types_1.FAST }));
+            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_IN, speed: fast }));
         },
         easeInMedium: function (props) {
-            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_IN, speed: transition_types_1.MEDIUM }));
+            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_IN, speed: medium }));
         },
         easeInSlow: function (props) {
-            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_IN, speed: transition_types_1.SLOW }));
+            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_IN, speed: slow }));
         },
         easeInXslow: function (props) {
-            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_IN, speed: transition_types_1.XSLOW }));
+            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_IN, speed: xslow }));
         },
         // easeInOut
         easeInOutFast: function (props) {
-            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_IN_OUT, speed: transition_types_1.FAST }));
+            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_IN_OUT, speed: fast }));
         },
         easeInOutMedium: function (props) {
-            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_IN_OUT, speed: transition_types_1.MEDIUM }));
+            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_IN_OUT, speed: medium }));
         },
         easeInOutSlow: function (props) {
-            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_IN_OUT, speed: transition_types_1.SLOW }));
+            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_IN_OUT, speed: slow }));
         },
         easeInOutXslow: function (props) {
-            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_IN_OUT, speed: transition_types_1.XSLOW }));
+            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_IN_OUT, speed: xslow }));
         },
         // easeOut
         easeOutFast: function (props) {
-            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_OUT, speed: transition_types_1.FAST }));
+            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_OUT, speed: fast }));
         },
         easeOutMedium: function (props) {
-            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_OUT, speed: transition_types_1.MEDIUM }));
+            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_OUT, speed: medium }));
         },
         easeOutSlow: function (props) {
-            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_OUT, speed: transition_types_1.SLOW }));
+            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_OUT, speed: slow }));
         },
         easeOutXslow: function (props) {
-            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_OUT, speed: transition_types_1.XSLOW }));
+            return easeTransition(tslib_1.__assign(tslib_1.__assign({}, props), { ease: transition_types_1.EASE_OUT, speed: xslow }));
         },
     };
     return deepmerge_1.default(defaults, transition);

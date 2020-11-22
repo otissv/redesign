@@ -333,18 +333,31 @@ export const getMediaQuires = (
   breakpoints: BreakpointsInterface,
   unit: UnitInterface
 ) => (hostBreakpoints: { [key: string]: any }) => {
-  const { sm, md, lg, xl, ...breakpointsRest } = breakpoints
-
-  const breakpointKeys = Object.keys(breakpoints)
+  const { sm, md, lg, xl } = breakpoints
 
   let result: { [key: string]: string[] } = {}
 
   for (let breakpoint in hostBreakpoints) {
-    const index = breakpointKeys.indexOf(breakpoint)
+    let index = 0
 
-    for (let key in hostBreakpoints[breakpoint]) {
+    switch (breakpoint) {
+      case 'sm':
+        index = 0
+        break
+      case 'md':
+        index = 2
+        break
+      case 'lg':
+        index = 4
+        break
+      case 'xl':
+        index = 6
+        break
+    }
+
+    for (let key in hostBreakpoints[breakpoint].min) {
       const prop = getAlias(key) || key
-      const value = hostBreakpoints[breakpoint][key]
+      const value = hostBreakpoints[breakpoint].min[key]
 
       if (result[prop]) {
         result[prop][index] = unit[value as keyof UnitInterface] || value
@@ -353,15 +366,30 @@ export const getMediaQuires = (
         result[prop][index] = unit[value as keyof UnitInterface] || value
       }
     }
+
+    for (let key in hostBreakpoints[breakpoint].max) {
+      const prop = getAlias(key) || key
+      const value = hostBreakpoints[breakpoint].max[key]
+
+      if (result[prop]) {
+        result[prop][index + 1] = unit[value as keyof UnitInterface] || value
+      } else {
+        result[prop] = []
+        result[prop][index + 1] = unit[value as keyof UnitInterface] || value
+      }
+    }
   }
 
   return facepaint(
     [
-      `@media(min-width: ${sm}px)`,
-      `@media(min-width: ${md}px)`,
-      `@media(min-width: ${lg}px)`,
-      `@media(min-width: ${xl}px)`,
-      ...Object.values(breakpointsRest).map(b => `@media(min-width: ${b}px)`),
+      `@media(min-width: ${sm.min}px)`, // 0
+      `@media(min-width: ${sm.max}px)`, // 1
+      `@media(min-width: ${md.min}px)`, // 2
+      `@media(min-width: ${md.max}px)`, // 3
+      `@media(min-width: ${lg.min}px)`, // 4
+      `@media(min-width: ${lg.max}px)`, // 5
+      `@media(min-width: ${xl.min}px)`, // 6
+      `@media(min-width: ${xl.max}px)`, // 7
     ],
     {
       literal: true,

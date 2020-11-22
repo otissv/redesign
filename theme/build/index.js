@@ -30,4 +30,5 @@ tslib_1.__exportStar(require("./utils/noop"), exports);
 tslib_1.__exportStar(require("./utils/textTransform"), exports);
 tslib_1.__exportStar(require("./utils/tryCatch"), exports);
 tslib_1.__exportStar(require("./utils/utils.types"), exports);
+tslib_1.__exportStar(require("./defaults"), exports);
 //# sourceMappingURL=index.js.map

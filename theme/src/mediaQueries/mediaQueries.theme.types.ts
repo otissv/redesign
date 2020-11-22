@@ -1,20 +1,20 @@
 export interface BreakpointsInterface {
-  sm: number
-  md: number
-  lg: number
-  xl: number
-  [key: string]: number
+  sm: { min: number; max: number }
+  md: { min: number; max: number }
+  lg: { min: number; max: number }
+  xl: { min: number; max: number }
+  [key: string]: { min: number; max: number }
 }
 
 export interface PartialBreakpointsInterface
   extends Partial<BreakpointsInterface> {}
 
 export interface MediaQueriesInterface {
-  sm: string
-  md: string
-  lg: string
-  xl: string
-  [key: string]: string
+  sm: { min: string; max: string }
+  md: { min: string; max: string }
+  lg: { min: string; max: string }
+  xl: { min: string; max: string }
+  [key: string]: { min: string; max: string }
 }
 
 export interface PartialMediaQueriesInterface

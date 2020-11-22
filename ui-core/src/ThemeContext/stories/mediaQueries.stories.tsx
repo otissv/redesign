@@ -43,13 +43,17 @@ export const Example = () => {
 
   const mq = {
     sm: {
-      color: 'blue',
-      background: 'green',
+      min: {
+        color: 'blue',
+        background: 'green',
+      },
     },
     md: {
-      fontSize: '48px',
-      color: 'white',
-      background: 'black',
+      min: {
+        fontSize: '48px',
+        color: 'white',
+        background: 'black',
+      },
     },
   }
 

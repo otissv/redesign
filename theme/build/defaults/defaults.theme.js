@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.themeDefaults = exports.unitThemeDefaults = exports.swatchesThemeDefaults = exports.utilityThemeDefaults = exports.scrollbarThemeDefaults = exports.radiusThemeDefaults = exports.mediaQueriesThemeDefaults = exports.fontThemeDefaults = exports.elevateThemeDefaults = exports.colorThemeDefaults = exports.borderThemeDefaults = exports.transitionThemeDefaults = void 0;
+exports.themeDefaults = void 0;
 var transition_1 = require("../transition");
 var border_1 = require("../border");
 var radius_1 = require("../radius");
 var noop_1 = require("../utils/noop");
-exports.transitionThemeDefaults = {
+var transitionThemeDefaults = {
     0: transition_1.XSLOW,
     1: transition_1.SLOW,
     2: transition_1.MEDIUM,
@@ -27,7 +27,7 @@ exports.transitionThemeDefaults = {
     easeOutSlow: noop_1.noopString,
     easeOutXslow: noop_1.noopString,
 };
-exports.borderThemeDefaults = {
+var borderThemeDefaults = {
     none: border_1.BORDER_NONE,
     style: border_1.BORDER_STYLE,
     thickWidth: border_1.BORDER_THICK_WIDTH,
@@ -41,7 +41,13 @@ exports.borderThemeDefaults = {
     thinInvert: '',
     thinTransparent: '',
 };
-exports.colorThemeDefaults = {
+var breakpointsTheme = {
+    sm: { min: 640, max: 767 },
+    md: { min: 768, max: 1023 },
+    lg: { min: 1024, max: 1279 },
+    xl: { min: 1280, max: 1535 },
+};
+var colorThemeDefaults = {
     black: '',
     white: '',
     transparent: '',
@@ -191,7 +197,7 @@ exports.colorThemeDefaults = {
     disabled_800: '',
     disabled_900: '',
 };
-exports.elevateThemeDefaults = {
+var elevateThemeDefaults = {
     0: '',
     1: '',
     2: '',
@@ -199,7 +205,7 @@ exports.elevateThemeDefaults = {
     4: '',
     5: '',
 };
-exports.fontThemeDefaults = {
+var fontThemeDefaults = {
     base: 16,
     color: 'grey_050',
     colorInvert: 'night_blue_700',
@@ -250,19 +256,19 @@ exports.fontThemeDefaults = {
         default: 400,
     },
 };
-exports.mediaQueriesThemeDefaults = {
-    sm: 640,
-    md: 768,
-    lg: 1024,
-    xl: 1280,
+var mediaQueriesThemeDefaults = {
+    sm: { min: "@media(min-width: 640px)", max: "@media(max-width: 767px)" },
+    md: { min: "@media(min-width: 768px)", max: "@media(max-width: 1023px)" },
+    lg: { min: "@media(min-width: 1024px)", max: "@media(max-width: 1279px)" },
+    xl: { min: "@media(min-width: 1280px)", max: "@media(max-width: 1535px)" },
 };
-exports.radiusThemeDefaults = {
+var radiusThemeDefaults = {
     circle: radius_1.RADIUS_CIRCLE,
     none: radius_1.RADIUS_NONE,
     round: radius_1.RADIUS_ROUND,
     rounded: radius_1.RADIUS_ROUNDED,
 };
-exports.scrollbarThemeDefaults = {
+var scrollbarThemeDefaults = {
     width: '',
     height: '',
     backgroundColor: '',
@@ -278,7 +284,7 @@ exports.scrollbarThemeDefaults = {
         },
     },
 };
-exports.utilityThemeDefaults = {
+var utilityThemeDefaults = {
     /*
      * Color
      */
@@ -715,8 +721,8 @@ exports.utilityThemeDefaults = {
     transform: function (_transform) { return ({ transform: '' }); },
     tf: function (_transform) { return ({ transform: '' }); },
 };
-exports.swatchesThemeDefaults = {};
-exports.unitThemeDefaults = {
+var swatchesThemeDefaults = {};
+var unitThemeDefaults = {
     1: '',
     2: '',
     0: '',
@@ -737,17 +743,18 @@ exports.unitThemeDefaults = {
     default: '',
 };
 exports.themeDefaults = {
-    transition: exports.transitionThemeDefaults,
-    border: exports.borderThemeDefaults,
-    color: exports.colorThemeDefaults,
-    elevate: exports.elevateThemeDefaults,
-    font: exports.fontThemeDefaults,
-    mediaQueries: exports.mediaQueriesThemeDefaults,
-    radius: exports.radiusThemeDefaults,
-    scrollbar: exports.scrollbarThemeDefaults,
-    utility: exports.utilityThemeDefaults,
-    swatches: exports.swatchesThemeDefaults,
-    unit: exports.unitThemeDefaults,
+    transition: transitionThemeDefaults,
+    border: borderThemeDefaults,
+    color: colorThemeDefaults,
+    elevate: elevateThemeDefaults,
+    font: fontThemeDefaults,
+    breakpoints: breakpointsTheme,
+    mediaQueries: mediaQueriesThemeDefaults,
+    radius: radiusThemeDefaults,
+    scrollbar: scrollbarThemeDefaults,
+    utility: utilityThemeDefaults,
+    swatches: swatchesThemeDefaults,
+    unit: unitThemeDefaults,
     global: {},
 };
 //# sourceMappingURL=defaults.theme.js.map

@@ -3,7 +3,6 @@ import merge from 'deepmerge'
 import { toCamel, toUpperFirst } from '../utils/textTransform'
 import { maybe } from '../utils/maybe'
 import {
-  BorderInterface,
   BORDER_NONE,
   BORDER_STYLE,
   BORDER_THICK_WIDTH,
@@ -12,7 +11,6 @@ import {
   BORDER_THIN_COLOR,
   PartialBorderInterface,
 } from './border.types'
-import { ColorInterface } from '../color'
 import { PartialThemeInterface } from '../theme'
 
 export function borderTheme<
@@ -22,8 +20,6 @@ export function borderTheme<
   const maybeTheme = maybe({})
   const border = maybeTheme(theme?.border)
   const color: { [key: string]: string } = maybeTheme(theme?.color)
-
-  const initialBorders: PartialThemeInterface = {}
 
   const thickWidth = border.thickWidth || BORDER_THICK_WIDTH
   const thickColor = border.thickColor || color[BORDER_THICK_COLOR]
@@ -37,7 +33,7 @@ export function borderTheme<
     return color[value] || value
   }
 
-  const defaults: BorderInterface = {
+  const defaults: any = {
     none,
     style,
     thickWidth,
@@ -54,18 +50,14 @@ export function borderTheme<
     thin: `${thinWidth} ${style} ${getColor(thinColor)}`,
     thinInvert: `${thinWidth} ${style} ${getColor(thinColor)}`,
     thinTransparent: `${thinWidth} ${style} rgba(0, 0, 0, 0);`,
+  }
 
-    ...Object.keys(color).reduce((previous, key) => {
-      const color_key = color[key as keyof ColorInterface]
+  for (let key in color) {
+    const colorValue = color[key]
+    const upperFirstKey: string = toUpperFirst(toCamel(key))
 
-      const upperFirstKey = toUpperFirst(toCamel(key))
-
-      return {
-        ...previous,
-        [`thick${upperFirstKey}`]: `${thickWidth} ${style} ${color_key}`,
-        [`thin${upperFirstKey}`]: `${thinWidth} ${style} ${color_key}`,
-      }
-    }, initialBorders),
+    defaults[`thick${upperFirstKey}`] = `${thickWidth} ${style} ${colorValue}`
+    defaults[`thin${upperFirstKey}`] = `${thinWidth} ${style} ${colorValue}`
   }
 
   return merge(defaults, border) as T

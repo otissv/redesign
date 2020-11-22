@@ -1,28 +1,32 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.mediaQueriesTheme = exports.breakpointTheme = void 0;
+exports.mediaQueriesTheme = exports.breakpointsTheme = void 0;
 var tslib_1 = require("tslib");
 var deepmerge_1 = tslib_1.__importDefault(require("deepmerge"));
 var maybe_1 = require("../utils/maybe");
-function breakpointTheme(theme) {
+function breakpointsTheme(theme) {
     var breakpoints = maybe_1.maybe({})(theme === null || theme === void 0 ? void 0 : theme.breakpoints);
     var defaults = {
-        sm: 425,
-        md: 768,
-        lg: 1024,
-        xl: 1280,
+        sm: { min: 640, max: 767 },
+        md: { min: 768, max: 1023 },
+        lg: { min: 1024, max: 1279 },
+        xl: { min: 1280, max: 1535 },
     };
     return deepmerge_1.default(defaults, breakpoints);
 }
-exports.breakpointTheme = breakpointTheme;
+exports.breakpointsTheme = breakpointsTheme;
 function mediaQueriesTheme(theme) {
     var mediaQueries = maybe_1.maybe({})(theme === null || theme === void 0 ? void 0 : theme.mediaQueries);
     var breakpoints = maybe_1.maybe({})(theme === null || theme === void 0 ? void 0 : theme.breakpoints);
-    var defaults = Object.entries(breakpoints).reduce(function (acc, _a) {
-        var _b;
-        var key = _a[0], value = _a[1];
-        return tslib_1.__assign(tslib_1.__assign({}, acc), (_b = {}, _b[key] = "@media(min-width: " + value + "px)", _b));
-    }, {});
+    var defaults = {};
+    for (var key in breakpoints) {
+        var breakpoint = breakpoints[key];
+        defaults[key] = tslib_1.__assign(tslib_1.__assign({}, (breakpoint.min
+            ? { min: "@media(min-width: " + breakpoint.min + "px)" }
+            : {})), (breakpoint.max
+            ? { max: "@media(max-width: " + breakpoint.max + "px)" }
+            : {}));
+    }
     return deepmerge_1.default(defaults, mediaQueries);
 }
 exports.mediaQueriesTheme = mediaQueriesTheme;

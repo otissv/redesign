@@ -62,9 +62,9 @@ import {
 import { UnitInterface } from '../unit'
 
 import { noopString } from '../utils/noop'
-import { MediaQueriesInterface } from '../mediaQueries'
+import { BreakpointsInterface, MediaQueriesInterface } from '../mediaQueries'
 
-export const transitionThemeDefaults: TransitionInterface = {
+const transitionThemeDefaults: TransitionInterface = {
   0: XSLOW,
   1: SLOW,
   2: MEDIUM,
@@ -91,7 +91,7 @@ export const transitionThemeDefaults: TransitionInterface = {
   easeOutXslow: noopString,
 }
 
-export const borderThemeDefaults: BorderInterface = {
+const borderThemeDefaults: BorderInterface = {
   none: BORDER_NONE,
   style: BORDER_STYLE,
 
@@ -109,7 +109,14 @@ export const borderThemeDefaults: BorderInterface = {
   thinTransparent: '',
 }
 
-export const colorThemeDefaults: ColorInterface = {
+const breakpointsTheme: BreakpointsInterface = {
+  sm: { min: 640, max: 767 },
+  md: { min: 768, max: 1023 },
+  lg: { min: 1024, max: 1279 },
+  xl: { min: 1280, max: 1535 },
+}
+
+const colorThemeDefaults: ColorInterface = {
   black: '',
   white: '',
   transparent: '',
@@ -274,7 +281,7 @@ export const colorThemeDefaults: ColorInterface = {
   disabled_900: '',
 }
 
-export const elevateThemeDefaults: ElevateInterface = {
+const elevateThemeDefaults: ElevateInterface = {
   0: '',
   1: '',
   2: '',
@@ -283,7 +290,7 @@ export const elevateThemeDefaults: ElevateInterface = {
   5: '',
 }
 
-export const fontThemeDefaults: FontInterface = {
+const fontThemeDefaults: FontInterface = {
   base: 16,
 
   color: 'grey_050',
@@ -343,21 +350,21 @@ export const fontThemeDefaults: FontInterface = {
   },
 }
 
-export const mediaQueriesThemeDefaults: MediaQueriesInterface = {
-  sm: 640,
-  md: 768,
-  lg: 1024,
-  xl: 1280,
+const mediaQueriesThemeDefaults: MediaQueriesInterface = {
+  sm: { min: `@media(min-width: 640px)`, max: `@media(max-width: 767px)` },
+  md: { min: `@media(min-width: 768px)`, max: `@media(max-width: 1023px)` },
+  lg: { min: `@media(min-width: 1024px)`, max: `@media(max-width: 1279px)` },
+  xl: { min: `@media(min-width: 1280px)`, max: `@media(max-width: 1535px)` },
 }
 
-export const radiusThemeDefaults: RadiusInterface = {
+const radiusThemeDefaults: RadiusInterface = {
   circle: RADIUS_CIRCLE,
   none: RADIUS_NONE,
   round: RADIUS_ROUND,
   rounded: RADIUS_ROUNDED,
 }
 
-export const scrollbarThemeDefaults: ScrollbarInterface = {
+const scrollbarThemeDefaults: ScrollbarInterface = {
   width: '',
   height: '',
   backgroundColor: '',
@@ -374,7 +381,7 @@ export const scrollbarThemeDefaults: ScrollbarInterface = {
   },
 }
 
-export const utilityThemeDefaults: UtilityInterface = {
+const utilityThemeDefaults: UtilityInterface = {
   /*
    * Color
    */
@@ -845,9 +852,9 @@ export const utilityThemeDefaults: UtilityInterface = {
   tf: (_transform: string) => ({ transform: '' }),
 }
 
-export const swatchesThemeDefaults = {}
+const swatchesThemeDefaults = {}
 
-export const unitThemeDefaults: UnitInterface = {
+const unitThemeDefaults: UnitInterface = {
   1: '',
   2: '',
   0: '',
@@ -874,6 +881,7 @@ export const themeDefaults: ThemeInterface = {
   color: colorThemeDefaults,
   elevate: elevateThemeDefaults,
   font: fontThemeDefaults,
+  breakpoints: breakpointsTheme,
   mediaQueries: mediaQueriesThemeDefaults,
   radius: radiusThemeDefaults,
   scrollbar: scrollbarThemeDefaults,

@@ -30,11 +30,15 @@ function utilityTheme(theme) {
         /*
          * Border
          */
-        border: utility_helpers_1.getBorder(hostBorder), borderBottom: utility_helpers_1.getBorderBottom(hostBorder), borderLeft: utility_helpers_1.getBorderLeft(hostBorder), borderRight: utility_helpers_1.getBorderRight(hostBorder), borderTop: utility_helpers_1.getBorderTop(hostBorder), borderY: utility_helpers_1.getBorderY(hostBorder), borderX: utility_helpers_1.getBorderX(hostBorder), borderColor: utility_helpers_1.getBorderColor(hostColor), borderWidth: utility_helpers_1.getBorderWidth, borderStyle: utility_helpers_1.getBorderStyle, bd: utility_helpers_1.getBorder(hostBorder), bdb: utility_helpers_1.getBorderBottom(hostBorder), bdl: utility_helpers_1.getBorderLeft(hostBorder), bdr: utility_helpers_1.getBorderRight(hostBorder), bdt: utility_helpers_1.getBorderTop(hostBorder), bdx: utility_helpers_1.getBorderX(hostBorder), bdy: utility_helpers_1.getBorderY(hostBorder), bdc: utility_helpers_1.getBorderColor(hostColor), bdw: utility_helpers_1.getBorderWidth, bds: utility_helpers_1.getBorderStyle, radius: utility_helpers_1.getRadius(hostRadius), borderBottomRadius: utility_helpers_1.getBorderBottomRadius(hostRadius), borderLeftRadius: utility_helpers_1.getBorderLeftRadius(hostRadius), borderRightRadius: utility_helpers_1.getBorderRightRadius(hostRadius), borderTopRadius: utility_helpers_1.getBorderTopRadius(hostRadius), borderYRadius: utility_helpers_1.getBorderYRadius(hostRadius), borderXRadius: utility_helpers_1.getBorderXRadius(hostRadius), r: utility_helpers_1.getRadius(hostRadius), rb: utility_helpers_1.getBorderBottomRadius(hostRadius), rl: utility_helpers_1.getBorderLeftRadius(hostRadius), rr: utility_helpers_1.getBorderRightRadius(hostRadius), rt: utility_helpers_1.getBorderTopRadius(hostRadius), ry: utility_helpers_1.getBorderYRadius(hostRadius), rx: utility_helpers_1.getBorderXRadius(hostRadius), 
+        border: utility_helpers_1.getBorder(hostBorder), borderBottom: utility_helpers_1.getBorderBottom(hostBorder), borderLeft: utility_helpers_1.getBorderLeft(hostBorder), borderRight: utility_helpers_1.getBorderRight(hostBorder), borderTop: utility_helpers_1.getBorderTop(hostBorder), borderY: utility_helpers_1.getBorderY(hostBorder), borderX: utility_helpers_1.getBorderX(hostBorder), borderColor: utility_helpers_1.getBorderColor(hostColor), borderWidth: utility_helpers_1.getBorderWidth, borderStyle: utility_helpers_1.getBorderStyle, bd: utility_helpers_1.getBorder(hostBorder), bdb: utility_helpers_1.getBorderBottom(hostBorder), bdl: utility_helpers_1.getBorderLeft(hostBorder), bdr: utility_helpers_1.getBorderRight(hostBorder), bdt: utility_helpers_1.getBorderTop(hostBorder), bdx: utility_helpers_1.getBorderX(hostBorder), bdy: utility_helpers_1.getBorderY(hostBorder), bdc: utility_helpers_1.getBorderColor(hostColor), bdw: utility_helpers_1.getBorderWidth, bds: utility_helpers_1.getBorderStyle, radius: utility_helpers_1.getRadius(hostRadius), borderBottomRadius: utility_helpers_1.getBorderBottomRadius(hostRadius), borderLeftRadius: utility_helpers_1.getBorderLeftRadius(hostRadius), borderRightRadius: utility_helpers_1.getBorderRightRadius(hostRadius), borderTopRadius: utility_helpers_1.getBorderTopRadius(hostRadius), borderYRadius: utility_helpers_1.getBorderYRadius(hostRadius), borderXRadius: utility_helpers_1.getBorderXRadius(hostRadius), r: utility_helpers_1.getRadius(hostRadius), rb: utility_helpers_1.getBorderBottomRadius(hostRadius), rl: utility_helpers_1.getBorderLeftRadius(hostRadius), rr: utility_helpers_1.getBorderRightRadius(hostRadius), rt: utility_helpers_1.getBorderTopRadius(hostRadius), rx: utility_helpers_1.getBorderXRadius(hostRadius), ry: utility_helpers_1.getBorderYRadius(hostRadius), 
         /*
          * Elevate
          */
-        elevate: utility_helpers_1.getElevate(hostElevate), e: utility_helpers_1.getElevate(hostElevate), boxSizing: utility_helpers_1.getBoxSizing, bs: utility_helpers_1.getBoxSizing, 
+        elevate: utility_helpers_1.getElevate(hostElevate), e: utility_helpers_1.getElevate(hostElevate), 
+        /*
+         * Box Sizing
+         */
+        boxSizing: utility_helpers_1.getBoxSizing, bs: utility_helpers_1.getBoxSizing, 
         /*
          * Centered
          */
@@ -50,31 +54,35 @@ function utilityTheme(theme) {
         /*
          * Text
          */
-        textAlign: utility_helpers_1.getTextAlign, ta: utility_helpers_1.getTextAlign, truncate: utility_helpers_1.getTruncate, tc: utility_helpers_1.getTruncate, wordBreak: utility_helpers_1.getWordBreak, wb: utility_helpers_1.getWordBreak, listStyle: utility_helpers_1.getListStyle, lt: utility_helpers_1.getListStyle, listPosition: utility_helpers_1.getListPosition, lp: utility_helpers_1.getListPosition, textDecoration: utility_helpers_1.getTextDecoration, td: utility_helpers_1.getTextDecoration, tt: utility_helpers_1.getTextTransform, verticalAlign: utility_helpers_1.getVerticalAlign, va: utility_helpers_1.getVerticalAlign, whiteSpace: utility_helpers_1.getWhiteSpace, 
+        textAlign: utility_helpers_1.getTextAlign, ta: utility_helpers_1.getTextAlign, truncate: utility_helpers_1.getTruncate, tc: utility_helpers_1.getTruncate, wordBreak: utility_helpers_1.getWordBreak, wb: utility_helpers_1.getWordBreak, listStyle: utility_helpers_1.getListStyle, lt: utility_helpers_1.getListStyle, listPosition: utility_helpers_1.getListPosition, lp: utility_helpers_1.getListPosition, textDecoration: utility_helpers_1.getTextDecoration, td: utility_helpers_1.getTextDecoration, tt: utility_helpers_1.getTextTransform, verticalAlign: utility_helpers_1.getVerticalAlign, va: utility_helpers_1.getVerticalAlign, whiteSpace: utility_helpers_1.getWhiteSpace, ws: utility_helpers_1.getWhiteSpace, 
         /*
          * Media
          */
-        mediaQuires: utility_helpers_1.getMediaQuires(hostBreakpoints, hostUnit), mq: utility_helpers_1.getMediaQuires(hostBreakpoints, hostUnit), sm: function (value) {
-            return utility_helpers_1.getMediaQuires(hostBreakpoints, hostUnit)(value);
-        }, md: function (value) {
-            return utility_helpers_1.getMediaQuires(hostBreakpoints, hostUnit)(value);
-        }, lg: function (value) {
-            return utility_helpers_1.getMediaQuires(hostBreakpoints, hostUnit)(value);
-        }, xl: function (value) {
-            return utility_helpers_1.getMediaQuires(hostBreakpoints, hostUnit)(value);
-        }, 
+        mediaQuires: utility_helpers_1.getMediaQuires(hostBreakpoints, hostUnit), mq: utility_helpers_1.getMediaQuires(hostBreakpoints, hostUnit), 
+        // sm: (value: { [key: string]: number | string }) =>
+        //   getMediaQuires(hostBreakpoints, hostUnit)(value),
+        // md: (value: { [key: string]: number | string }) =>
+        //   getMediaQuires(hostBreakpoints, hostUnit)(value),
+        // lg: (value: { [key: string]: number | string }) =>
+        //   getMediaQuires(hostBreakpoints, hostUnit)(value),
+        // xl: (value: { [key: string]: number | string }) =>
+        //   getMediaQuires(hostBreakpoints, hostUnit)(value),
         /*
          * Position
          */
         position: utility_helpers_1.getPosition, ps: utility_helpers_1.getPosition, top: utility_helpers_1.getBorderTop, bottom: utility_helpers_1.getBottom, left: utility_helpers_1.getLeft, right: utility_helpers_1.getRight, 
         /*
+         * Overflow
+         */
+        overflow: utility_helpers_1.getOverflow, of: utility_helpers_1.getOverflow, overflowX: utility_helpers_1.getOverflowX, ox: utility_helpers_1.getOverflowX, overflowY: utility_helpers_1.getOverflowY, oy: utility_helpers_1.getOverflowY, overflowScrolling: utility_helpers_1.getOverflowScrolling, os: utility_helpers_1.getOverflowScrolling, overflowWrap: utility_helpers_1.getOverflowWrap, ow: utility_helpers_1.getOverflowWrap, 
+        /*
          * Float
          */
         float: utility_helpers_1.getFloat, ft: utility_helpers_1.getFloat, clearFix: utility_helpers_1.getClearFix, cf: utility_helpers_1.getClearFix, 
         /*
-         * Overflow
+         * Font
          */
-        overflow: utility_helpers_1.getOverflow, of: utility_helpers_1.getOverflow, overflowX: utility_helpers_1.getOverflowX, ox: utility_helpers_1.getOverflowX, overflowY: utility_helpers_1.getOverflowY, oy: utility_helpers_1.getOverflowY, overflowScrolling: utility_helpers_1.getOverflowScrolling, os: utility_helpers_1.getOverflowScrolling, overflowWrap: utility_helpers_1.getOverflowWrap, ow: utility_helpers_1.getOverflowWrap, fontFamily: utility_helpers_1.getFontFamily(hostFont), fontSize: utility_helpers_1.getFontSize(hostFont), fs: utility_helpers_1.getFontSize(hostFont), lineHeight: utility_helpers_1.getLineHeight(hostFont), lh: utility_helpers_1.getLineHeight(hostFont), letterSpacing: utility_helpers_1.getLetterSpacing, ls: utility_helpers_1.getLetterSpacing(hostFont), fontWeight: utility_helpers_1.getFontWeight(hostFont), fw: utility_helpers_1.getFontWeight(hostFont), 
+        fontFamily: utility_helpers_1.getFontFamily(hostFont), ff: utility_helpers_1.getFontFamily(hostFont), fontSize: utility_helpers_1.getFontSize(hostFont), fs: utility_helpers_1.getFontSize(hostFont), lineHeight: utility_helpers_1.getLineHeight(hostFont), lh: utility_helpers_1.getLineHeight(hostFont), letterSpacing: utility_helpers_1.getLetterSpacing, ls: utility_helpers_1.getLetterSpacing(hostFont), fontWeight: utility_helpers_1.getFontWeight(hostFont), fw: utility_helpers_1.getFontWeight(hostFont), 
         /*
          * Z Index
          */
@@ -86,7 +94,7 @@ function utilityTheme(theme) {
         /*
          * Visibility
          */
-        visibility: utility_helpers_1.getVisibility, 
+        visibility: utility_helpers_1.getVisibility, vs: utility_helpers_1.getVisibility, 
         /*
          * Interactivity
          */

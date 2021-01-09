@@ -96,17 +96,18 @@ export const BaseComponent: FC<BaseInterface> = function Base(props) {
     animations,
   })
 
-  const attributes = Object.entries(propsRest).reduce(
-    (acc: any, [key, value]: any) => {
-      return ignore.includes(key) || typeof value === 'undefined'
-        ? acc
-        : {
-            ...acc,
-            [key]: key === 'style' ? { ...acc.style, ...value } : value,
-          }
-    },
-    { style: animationStyles || {} }
-  )
+  let attributes: { [key: string]: any } = {}
+
+  for (let key in propsRest) {
+    if (key === 'style') {
+      attributes.style = {
+        ...animationStyles,
+        ...propsRest.style,
+      }
+    } else if (!ignore.includes(key)) {
+      attributes[key] = propsRest[key]
+    }
+  }
 
   // clone children props and css
   const clonedChildren =

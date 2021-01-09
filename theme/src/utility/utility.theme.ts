@@ -199,15 +199,18 @@ export function utilityTheme<
     rl: getBorderLeftRadius(hostRadius),
     rr: getBorderRightRadius(hostRadius),
     rt: getBorderTopRadius(hostRadius),
-    ry: getBorderYRadius(hostRadius),
     rx: getBorderXRadius(hostRadius),
+    ry: getBorderYRadius(hostRadius),
 
     /*
      * Elevate
      */
-
     elevate: getElevate(hostElevate),
     e: getElevate(hostElevate),
+
+    /*
+     * Box Sizing
+     */
     boxSizing: getBoxSizing,
     bs: getBoxSizing,
 
@@ -280,20 +283,21 @@ export function utilityTheme<
     verticalAlign: getVerticalAlign,
     va: getVerticalAlign,
     whiteSpace: getWhiteSpace,
+    ws: getWhiteSpace,
 
     /*
      * Media
      */
     mediaQuires: getMediaQuires(hostBreakpoints, hostUnit),
     mq: getMediaQuires(hostBreakpoints, hostUnit),
-    sm: (value: { [key: string]: number | string }) =>
-      getMediaQuires(hostBreakpoints, hostUnit)(value),
-    md: (value: { [key: string]: number | string }) =>
-      getMediaQuires(hostBreakpoints, hostUnit)(value),
-    lg: (value: { [key: string]: number | string }) =>
-      getMediaQuires(hostBreakpoints, hostUnit)(value),
-    xl: (value: { [key: string]: number | string }) =>
-      getMediaQuires(hostBreakpoints, hostUnit)(value),
+    // sm: (value: { [key: string]: number | string }) =>
+    //   getMediaQuires(hostBreakpoints, hostUnit)(value),
+    // md: (value: { [key: string]: number | string }) =>
+    //   getMediaQuires(hostBreakpoints, hostUnit)(value),
+    // lg: (value: { [key: string]: number | string }) =>
+    //   getMediaQuires(hostBreakpoints, hostUnit)(value),
+    // xl: (value: { [key: string]: number | string }) =>
+    //   getMediaQuires(hostBreakpoints, hostUnit)(value),
 
     /*
      * Position
@@ -304,14 +308,6 @@ export function utilityTheme<
     bottom: getBottom,
     left: getLeft,
     right: getRight,
-
-    /*
-     * Float
-     */
-    float: getFloat,
-    ft: getFloat,
-    clearFix: getClearFix,
-    cf: getClearFix,
 
     /*
      * Overflow
@@ -326,7 +322,20 @@ export function utilityTheme<
     os: getOverflowScrolling,
     overflowWrap: getOverflowWrap,
     ow: getOverflowWrap,
+
+    /*
+     * Float
+     */
+    float: getFloat,
+    ft: getFloat,
+    clearFix: getClearFix,
+    cf: getClearFix,
+
+    /*
+     * Font
+     */
     fontFamily: getFontFamily(hostFont),
+    ff: getFontFamily(hostFont),
     fontSize: getFontSize(hostFont),
     fs: getFontSize(hostFont),
     lineHeight: getLineHeight(hostFont),
@@ -354,6 +363,7 @@ export function utilityTheme<
      * Visibility
      */
     visibility: getVisibility,
+    vs: getVisibility,
 
     /*
      * Interactivity

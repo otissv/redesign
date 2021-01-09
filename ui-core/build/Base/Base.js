@@ -59,13 +59,15 @@ exports.BaseComponent = function Base(props) {
         animate: active,
         animations: animations,
     });
-    var attributes = Object.entries(propsRest).reduce(function (acc, _a) {
-        var _b;
-        var key = _a[0], value = _a[1];
-        return ignore.includes(key) || typeof value === 'undefined'
-            ? acc
-            : tslib_1.__assign(tslib_1.__assign({}, acc), (_b = {}, _b[key] = key === 'style' ? tslib_1.__assign(tslib_1.__assign({}, acc.style), value) : value, _b));
-    }, { style: animationStyles || {} });
+    var attributes = {};
+    for (var key in propsRest) {
+        if (key === 'style') {
+            attributes.style = tslib_1.__assign(tslib_1.__assign({}, animationStyles), propsRest.style);
+        }
+        else if (!ignore.includes(key)) {
+            attributes[key] = propsRest[key];
+        }
+    }
     // clone children props and css
     var clonedChildren = childrenProps || childrenCss
         ? react_1.default.Children.map(children, function (child) {

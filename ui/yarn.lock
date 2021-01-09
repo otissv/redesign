@@ -1725,20 +1725,19 @@
   resolved "https://registry.yarnpkg.com/@redesign-system/material-icons/-/material-icons-0.0.1.tgz#46d7a69d10aaba5693a94fbc59fc35f9205d3846"
   integrity sha512-DvtySMvaJ5dCUsEMaDAj89cysjMnuAvN/ly277YzUE3vVpJWr3iPikYwTYP1Mjx+ciuY69JpKueZnJYeC6AHjw==
 
-"@redesign-system/theme@^0.0.3", "@redesign-system/theme@^0.1.0":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@redesign-system/theme/-/theme-0.0.3.tgz#c6926692cbac92e55e79ba92c41fc32b13c411a6"
-  integrity sha512-GUOBMyq4DIE7WmeBli5oi2hF5gz3QT1H8ytyihfyIaann1k04xtQ+vjfSyqaFuza9Woi+YRdQP1oEymPkT33Bg==
+"@redesign-system/theme@^0.1.0":
+  version "0.1.0"
+  resolved "http://localhost:4873/@redesign-system%2ftheme/-/theme-0.1.0.tgz#02886aee5843bab423c58295030b13990fe4f001"
+  integrity sha512-/i5c8LdCbuPAdbcjGKrnG0gDvB5azSwLAFtzBv1qCFeQiFs7an5tIBNsnrsN0AQCevoGJLZNDLN8ci9pKspC6w==
   dependencies:
     deepmerge "^4.2.2"
     facepaint "^1.2.1"
 
 "@redesign-system/ui-core@^0.1.0":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@redesign-system/ui-core/-/ui-core-0.0.3.tgz#06bccf39c6941f2b1fea5516470ced198dd5fde3"
-  integrity sha512-wsnU/KB6RpPXtqJkgPxtntG7IOQr/dwfLvzV2WONA4gzFIcgmSSUnr8d/q6TpOPKUcqSOX0kKjzjo6k1nPCeww==
+  version "0.1.0"
+  resolved "http://localhost:4873/@redesign-system%2fui-core/-/ui-core-0.1.0.tgz#954d294815958ca0bdf0a1073996c1b257f74c10"
+  integrity sha512-belr9l8DO29fgwNwSdZht4B9Otabgm0q3smP6N5fMisKtvXYNtU0DxnjiViPjnmeQZzj57j4AOfrBkaA03i11A==
   dependencies:
-    "@redesign-system/theme" "^0.0.3"
     popmotion "^9.0.0"
 
 "@rollup/plugin-commonjs@^11.0.0":

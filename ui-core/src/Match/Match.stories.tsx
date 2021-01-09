@@ -23,6 +23,9 @@ export const Default = () => (
       p={4}
       color="white"
       bg="grey"
+      style={{
+        color: 'red',
+      }}
     >
       <Base>Box</Base>
       <Base>Box</Base>
@@ -70,6 +73,9 @@ export const Animate = () => {
         opacity="0.2"
         color="white"
         bg="grey"
+        style={{
+          color: 'red',
+        }}
       >
         <Base
           onClick={() =>

@@ -6,7 +6,23 @@ export default {
   title: 'Theme/MediaQueries',
 }
 
-export const MediaQueries = () => {
+export const Breakpoints = () => {
+  let rows = []
+
+  for (let key in theme.breakpoints) {
+    const item = theme.breakpoints[key]
+
+    const row = (
+      <tr key={key}>
+        <Td>{key}</Td>
+        <Td>{item.min as string}</Td>
+        <Td>{item.max as string}</Td>
+      </tr>
+    )
+
+    rows.push(row)
+  }
+
   return (
     <ThemeProvider>
       <Box display="flex" flexWrap="wrap">
@@ -14,19 +30,46 @@ export const MediaQueries = () => {
           <thead>
             <tr>
               <Th>Key</Th>
-              <Th>Value</Th>
+              <Th>Min Value</Th>
+              <Th>Max Value</Th>
             </tr>
           </thead>
-          <tbody>
-            {Object.entries(theme.mediaQueries).map(([key, query]) => {
-              return (
-                <tr key={key}>
-                  <Td>{key}</Td>
-                  <Td>{query as string}</Td>
-                </tr>
-              )
-            })}
-          </tbody>
+          <tbody>{rows}</tbody>
+        </table>
+      </Box>
+    </ThemeProvider>
+  )
+}
+
+export const MediaQueries = () => {
+  let rows = []
+
+  for (let key in theme.mediaQueries) {
+    const item = theme.mediaQueries[key]
+
+    const row = (
+      <tr key={key}>
+        <Td>{key}</Td>
+        <Td>{item.min as string}</Td>
+        <Td>{item.max as string}</Td>
+      </tr>
+    )
+
+    rows.push(row)
+  }
+
+  return (
+    <ThemeProvider>
+      <Box display="flex" flexWrap="wrap">
+        <table>
+          <thead>
+            <tr>
+              <Th>Key</Th>
+              <Th>Min Value</Th>
+              <Th>Max Value</Th>
+            </tr>
+          </thead>
+          <tbody>{rows}</tbody>
         </table>
       </Box>
     </ThemeProvider>

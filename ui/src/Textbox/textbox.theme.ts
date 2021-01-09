@@ -50,7 +50,6 @@ export function textboxTheme(props: TextboxInterface) {
     '-webkitAppearance': 'none',
     background: color.grey_600,
     border: border.thinTransparent,
-    borderBottom: border.thinText,
     color: color.text,
     display: 'inline-block',
     fontSize: font.size.default,
@@ -93,7 +92,6 @@ export function textboxAppearanceTheme(props: TextboxInterface) {
 
   const accent = {
     background: color.accent_600,
-    borderBottom: border.thinText,
     '&:hover': {
       background: color.accent_500,
     },
@@ -110,7 +108,6 @@ export function textboxAppearanceTheme(props: TextboxInterface) {
 
   const active = {
     background: color.active_600,
-    borderBottom: border.thinText,
     '&:hover': {
       background: color.active_500,
     },
@@ -127,7 +124,6 @@ export function textboxAppearanceTheme(props: TextboxInterface) {
 
   const action = {
     background: color.action_600,
-    borderBottom: border.thinText,
     '&:hover': {
       background: color.action_500,
     },
@@ -144,7 +140,6 @@ export function textboxAppearanceTheme(props: TextboxInterface) {
 
   const danger = {
     background: color.danger_600,
-    borderBottom: border.thinText,
     '&:hover': {
       background: color.danger_500,
     },
@@ -161,7 +156,6 @@ export function textboxAppearanceTheme(props: TextboxInterface) {
 
   const secondaryDanger = {
     border: border.thinDanger,
-    borderBottom: border.thinDanger,
     background: color.transparent,
     '&:hover': {
       background: color.grey_500,
@@ -198,7 +192,6 @@ export function textboxAppearanceTheme(props: TextboxInterface) {
 
   const error = {
     background: color.error_600,
-    borderBottom: border.thinText,
     '&:hover': {
       background: color.error_500,
     },
@@ -214,7 +207,6 @@ export function textboxAppearanceTheme(props: TextboxInterface) {
   }
   const secondaryError = {
     border: border.thinError,
-    borderBottom: border.thinError,
     background: color.transparent,
     '&:hover': {
       background: color.grey_500,
@@ -250,7 +242,6 @@ export function textboxAppearanceTheme(props: TextboxInterface) {
 
   const success = {
     background: color.success_600,
-    borderBottom: border.thinText,
     '&:hover': {
       background: color.success_500,
     },
@@ -267,7 +258,6 @@ export function textboxAppearanceTheme(props: TextboxInterface) {
 
   const warning = {
     background: color.yellow_600,
-    borderBottom: border.thinText,
     '&:hover': {
       background: color.yellow_500,
     },
@@ -577,7 +567,7 @@ export function textboxAppearanceTheme(props: TextboxInterface) {
     case DISABLED:
       return disabled
     case PRIMARY_DISABLED:
-      return { disabled, ...textboxAppearanceTheme?.disabled }
+      return disabled
     case SECONDARY_DISABLED:
       return disabled
     case TERTIARY_DISABLED:

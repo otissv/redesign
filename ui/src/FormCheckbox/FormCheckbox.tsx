@@ -1,15 +1,15 @@
 import React, { FC } from 'react'
 import { isString, SECONDARY_ERROR } from '@redesign-system/theme'
 
-import { FormTextBoxInterface } from './formTextbox.types'
+import { FormCheckboxInterface } from './formCheckbox.types'
 
 import { Base, useTheme } from '@redesign-system/ui-core'
 import { Maybe } from '../Maybe'
 import { Either } from '../Either'
-import { Textbox } from '../Textbox'
+import { Checkbox } from '../Checkbox'
 import { ErrorMessage, ErrorMessageInterface } from '../ErrorMessage'
 import { Label, LabelInterface } from '../Label'
-import { formTextboxTheme } from './formTextboxField.theme'
+import { formCheckboxTheme } from './formCheckbox.theme'
 
 interface HelpMessageInterface {
   required?: boolean
@@ -19,7 +19,7 @@ function HelpMessage({ children }: any) {
   return <p>{children}</p>
 }
 
-export const FormTextbox: FC<FormTextBoxInterface> = function FormTextbox({
+export const FormCheckbox: FC<FormCheckboxInterface> = function FormCheckbox({
   children,
   as = 'div',
   control,
@@ -31,7 +31,7 @@ export const FormTextbox: FC<FormTextBoxInterface> = function FormTextbox({
   label,
   placeholder,
   required,
-  value = '',
+  checked = false,
   onChange,
   onFocus,
   onBlur,
@@ -39,8 +39,8 @@ export const FormTextbox: FC<FormTextBoxInterface> = function FormTextbox({
   ...propsRest
 }) {
   const { theme } = useTheme()
-  const classNames = `FormTextbox ${className}`
-  const cssList = [formTextboxTheme, css]
+  const classNames = `FormCheckbox ${className}`
+  const cssList = [formCheckboxTheme, css]
 
   const invalid =
     (typeof errorMessage === 'string' && !!Boolean(errorMessage)) ||
@@ -58,27 +58,41 @@ export const FormTextbox: FC<FormTextBoxInterface> = function FormTextbox({
         <Maybe check={Boolean(label)}>
           <Either check={isString(label)}>
             <Label htmlFor={id} required={required}>
+              <Checkbox
+                placeholder={placeholder}
+                required={required}
+                checked={checked}
+                invalid={invalid}
+                onChange={onChange}
+                onFocus={onFocus}
+                onBlur={onBlur}
+                {...control}
+                id={id}
+                label={label as string}
+                appearance={invalid ? SECONDARY_ERROR : control?.appearance}
+              />{' '}
               {label}
+              {children}
             </Label>
-            <Label {...(label as LabelInterface)} htmlFor={id} />
+            <Label {...(label as LabelInterface)} htmlFor={id}>
+              <Checkbox
+                placeholder={placeholder}
+                required={required}
+                checked={checked}
+                invalid={invalid}
+                onChange={onChange}
+                onFocus={onFocus}
+                onBlur={onBlur}
+                {...control}
+                id={id}
+                label={label as string}
+                appearance={invalid ? SECONDARY_ERROR : control?.appearance}
+              />{' '}
+              {(label as LabelInterface)?.children}
+              {children}
+            </Label>
           </Either>
         </Maybe>
-
-        <Textbox
-          placeholder={placeholder}
-          required={required}
-          value={value}
-          invalid={invalid}
-          onChange={onChange}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          {...control}
-          id={id}
-          label={label as string}
-          appearance={invalid ? SECONDARY_ERROR : control?.appearance}
-        />
-
-        {children}
 
         <Maybe check={invalid}>
           <Either check={isString(errorMessage)}>

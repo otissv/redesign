@@ -6,7 +6,7 @@ export function useViewport({ mediaQueries }: any) {
 
   const mq = React.useMemo(() => mediaQueries, [mediaQueries])
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     //TODO: add debounce
     function updateSize() {
       setViewport([window.innerWidth, window.innerHeight])

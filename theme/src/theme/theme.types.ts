@@ -66,3 +66,7 @@ export interface ThemeComponentInterface {
   match?: boolean
   [key: string]: any
 }
+
+export interface CreateThemeInterface extends Partial<PartialThemeInterface> {
+  [key: string]: any
+}

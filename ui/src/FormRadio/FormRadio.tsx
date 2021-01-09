@@ -1,15 +1,15 @@
 import React, { FC } from 'react'
 import { isString, SECONDARY_ERROR } from '@redesign-system/theme'
 
-import { FormTextBoxInterface } from './formTextbox.types'
+import { FormRadioInterface } from './formRadio.types'
 
 import { Base, useTheme } from '@redesign-system/ui-core'
 import { Maybe } from '../Maybe'
 import { Either } from '../Either'
-import { Textbox } from '../Textbox'
+import { Radio } from '../Radio'
 import { ErrorMessage, ErrorMessageInterface } from '../ErrorMessage'
 import { Label, LabelInterface } from '../Label'
-import { formTextboxTheme } from './formTextboxField.theme'
+import { formRadioTheme } from './formRadio.theme'
 
 interface HelpMessageInterface {
   required?: boolean
@@ -19,7 +19,7 @@ function HelpMessage({ children }: any) {
   return <p>{children}</p>
 }
 
-export const FormTextbox: FC<FormTextBoxInterface> = function FormTextbox({
+export const FormRadio: FC<FormRadioInterface> = function FormRadio({
   children,
   as = 'div',
   control,
@@ -31,16 +31,17 @@ export const FormTextbox: FC<FormTextBoxInterface> = function FormTextbox({
   label,
   placeholder,
   required,
-  value = '',
+  checked = false,
   onChange,
   onFocus,
   onBlur,
   appearance,
+  name,
   ...propsRest
 }) {
   const { theme } = useTheme()
-  const classNames = `FormTextbox ${className}`
-  const cssList = [formTextboxTheme, css]
+  const classNames = `FormRadio ${className}`
+  const cssList = [formRadioTheme, css]
 
   const invalid =
     (typeof errorMessage === 'string' && !!Boolean(errorMessage)) ||
@@ -58,27 +59,42 @@ export const FormTextbox: FC<FormTextBoxInterface> = function FormTextbox({
         <Maybe check={Boolean(label)}>
           <Either check={isString(label)}>
             <Label htmlFor={id} required={required}>
+              <Radio
+                placeholder={placeholder}
+                required={required}
+                checked={checked}
+                invalid={invalid}
+                onChange={onChange}
+                onFocus={onFocus}
+                onBlur={onBlur}
+                {...control}
+                id={id}
+                name={name}
+                label={label as string}
+                appearance={invalid ? SECONDARY_ERROR : control?.appearance}
+              />{' '}
               {label}
+              {children}
             </Label>
-            <Label {...(label as LabelInterface)} htmlFor={id} />
+            <Label {...(label as LabelInterface)} htmlFor={id}>
+              <Radio
+                placeholder={placeholder}
+                required={required}
+                checked={checked}
+                invalid={invalid}
+                onChange={onChange}
+                onFocus={onFocus}
+                onBlur={onBlur}
+                {...control}
+                id={id}
+                label={label as string}
+                appearance={invalid ? SECONDARY_ERROR : control?.appearance}
+              />{' '}
+              {(label as LabelInterface)?.children}
+              {children}
+            </Label>
           </Either>
         </Maybe>
-
-        <Textbox
-          placeholder={placeholder}
-          required={required}
-          value={value}
-          invalid={invalid}
-          onChange={onChange}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          {...control}
-          id={id}
-          label={label as string}
-          appearance={invalid ? SECONDARY_ERROR : control?.appearance}
-        />
-
-        {children}
 
         <Maybe check={invalid}>
           <Either check={isString(errorMessage)}>

@@ -1,8 +1,17 @@
 import React from 'react'
 import { createTheme } from '@redesign-system/theme'
-import { ThemeProvider } from '../../ThemeContext'
 
-import { Box } from './story.components'
+import { ThemeProvider, useTheme } from '../../ThemeContext'
+import { Base } from '../../Base'
+
+function Box(props: any) {
+  const { theme }: any = useTheme()
+
+  const css = {
+    color: 'red',
+  }
+  return <Base css={css} theme={theme} {...props}></Base>
+}
 
 export default {
   title: 'Custom Theme',
@@ -33,18 +42,16 @@ export const Light = () => {
           "'Source Code Pro', 'Consolas', 'Inconsolata', 'Monaco', monospace",
       },
     },
+    Box: {
+      default: {
+        color: 'red',
+      },
+    },
   })
 
   return (
-    <ThemeProvider>
-      <Box
-        w="100px"
-        h="100px"
-        theme={theme}
-        ff="serif"
-        bg="background"
-        border="thin"
-      >
+    <ThemeProvider theme={theme}>
+      <Box w="100px" h="100px" border="thin">
         serif
       </Box>
     </ThemeProvider>

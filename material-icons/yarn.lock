@@ -1719,6 +1719,21 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
 
+"@redesign-system/theme@^0.1.0":
+  version "0.1.0"
+  resolved "http://localhost:4873/@redesign-system%2ftheme/-/theme-0.1.0.tgz#02886aee5843bab423c58295030b13990fe4f001"
+  integrity sha512-/i5c8LdCbuPAdbcjGKrnG0gDvB5azSwLAFtzBv1qCFeQiFs7an5tIBNsnrsN0AQCevoGJLZNDLN8ci9pKspC6w==
+  dependencies:
+    deepmerge "^4.2.2"
+    facepaint "^1.2.1"
+
+"@redesign-system/ui-core@^0.1.0":
+  version "0.1.0"
+  resolved "http://localhost:4873/@redesign-system%2fui-core/-/ui-core-0.1.0.tgz#954d294815958ca0bdf0a1073996c1b257f74c10"
+  integrity sha512-belr9l8DO29fgwNwSdZht4B9Otabgm0q3smP6N5fMisKtvXYNtU0DxnjiViPjnmeQZzj57j4AOfrBkaA03i11A==
+  dependencies:
+    popmotion "^9.0.0"
+
 "@rollup/plugin-commonjs@^11.0.0":
   version "11.1.0"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-commonjs/-/plugin-commonjs-11.1.0.tgz#60636c7a722f54b41e419e1709df05c7234557ef"
@@ -5121,6 +5136,11 @@ deep-object-diff@^1.1.0:
   resolved "https://registry.yarnpkg.com/deep-object-diff/-/deep-object-diff-1.1.0.tgz#d6fabf476c2ed1751fc94d5ca693d2ed8c18bc5a"
   integrity sha512-b+QLs5vHgS+IoSNcUE4n9HP2NwcHj7aqnJWsjPtuG75Rh5TOaGt0OjAYInh77d5T16V5cRDC+Pw/6ZZZiETBGw==
 
+deepmerge@^4.2.2:
+  version "4.2.2"
+  resolved "http://localhost:4873/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
+  integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
+
 defaults@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/defaults/-/defaults-1.0.3.tgz#c656051e9817d9ff08ed881477f3fe4019f3ef7d"
@@ -6118,6 +6138,11 @@ extsprintf@^1.2.0:
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.4.0.tgz#e2689f8f356fad62cca65a3a91c5df5f9551692f"
   integrity sha1-4mifjzVvrWLMplo6kcXfX5VRaS8=
 
+facepaint@^1.2.1:
+  version "1.2.1"
+  resolved "http://localhost:4873/facepaint/-/facepaint-1.2.1.tgz#89929e601b15227278c53c516f764fc462b09c33"
+  integrity sha512-oNvBekbhsm/0PNSOWca5raHNAi6dG960Bx6LJgxDPNF59WpuspgQ17bN5MKwOr7JcFdQYc7StW3VZ28DBZLavQ==
+
 fast-deep-equal@^3.1.1:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
@@ -6409,6 +6434,13 @@ fragment-cache@^0.2.1:
   integrity sha1-QpD60n8T6Jvn8zeZxrxaCr//DRk=
   dependencies:
     map-cache "^0.2.2"
+
+framesync@^4.1.0:
+  version "4.1.0"
+  resolved "http://localhost:4873/framesync/-/framesync-4.1.0.tgz#69a8db3ca432dc70d6a76ba882684a1497ef068a"
+  integrity sha512-MmgZ4wCoeVxNbx2xp5hN/zPDCbLSKiDt4BbbslK7j/pM2lg5S0vhTNv1v8BCVb99JPIo6hXBFdwzU7Q4qcAaoQ==
+  dependencies:
+    hey-listen "^1.0.5"
 
 fresh@0.5.2:
   version "0.5.2"
@@ -6954,6 +6986,11 @@ he@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
+
+hey-listen@^1.0.5, hey-listen@^1.0.8:
+  version "1.0.8"
+  resolved "http://localhost:4873/hey-listen/-/hey-listen-1.0.8.tgz#8e59561ff724908de1aa924ed6ecc84a56a9aa68"
+  integrity sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==
 
 highlight.js@^10.1.1, highlight.js@~10.3.0:
   version "10.3.1"
@@ -9956,6 +9993,16 @@ polished@^3.4.4:
   dependencies:
     "@babel/runtime" "^7.9.2"
 
+popmotion@^9.0.0:
+  version "9.0.1"
+  resolved "http://localhost:4873/popmotion/-/popmotion-9.0.1.tgz#63657089c124ffad500c45e6eb20b8e3cca919af"
+  integrity sha512-pXBHRaLz/WBlatXb0ADPGXksqr24z24z1H2/xTtsin9E6dJ0bGK1nWyZpcvdjDIIf8XxAkbf3/FN3JxayVmFbQ==
+  dependencies:
+    framesync "^4.1.0"
+    hey-listen "^1.0.8"
+    style-value-types "^3.1.9"
+    tslib "^1.10.0"
+
 posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
@@ -11807,6 +11854,14 @@ style-to-object@0.3.0, style-to-object@^0.3.0:
   integrity sha512-CzFnRRXhzWIdItT3OmF8SQfWyahHhjq3HwcMNCNLn+N7klOOqPjMeG/4JSu77D7ypZdGvSzvkrbyeTMizz2VrA==
   dependencies:
     inline-style-parser "0.1.1"
+
+style-value-types@^3.1.9:
+  version "3.1.9"
+  resolved "http://localhost:4873/style-value-types/-/style-value-types-3.1.9.tgz#faf7da660d3f284ed695cff61ea197d85b9122cc"
+  integrity sha512-050uqgB7WdvtgacoQKm+4EgKzJExVq0sieKBQQtJiU3Muh6MYcCp4T3M8+dfl6VOF2LR0NNwXBP1QYEed8DfIw==
+  dependencies:
+    hey-listen "^1.0.8"
+    tslib "^1.10.0"
 
 supports-color@^2.0.0:
   version "2.0.0"

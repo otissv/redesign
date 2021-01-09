@@ -1,4 +1,4 @@
-import { PartialThemeInterface } from '../theme'
+import { CreateThemeInterface } from '../theme'
 import { borderTheme } from '../border'
 import { colorTheme } from '../color'
 import { elevateTheme } from '../elevate'
@@ -11,7 +11,7 @@ import { utilityTheme } from '../utility'
 import { globalTheme } from '../global'
 import { breakpointsTheme, mediaQueriesTheme } from '../mediaQueries'
 
-export function createTheme(partialTheme: Partial<PartialThemeInterface> = {}) {
+export function createTheme(partialTheme: CreateThemeInterface = {}) {
   const _color = colorTheme(partialTheme)
   const _unit = unitTheme(partialTheme)
   const _breakpoints = breakpointsTheme(partialTheme)

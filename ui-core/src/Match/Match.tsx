@@ -40,9 +40,8 @@ export const Match: FC<MatchInterface> = function Match({
         },
       })
     }
-
     currentAnimation.current = active
-  }, [active, animations])
+  }, [active])
 
   const childrenArray = React.Children.toArray(children)
 

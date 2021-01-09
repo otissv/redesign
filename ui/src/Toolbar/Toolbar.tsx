@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
+import { Base, useTheme } from '@redesign-system/ui-core'
 
-import { AppBar } from '../AppBar'
 import { toolbarTheme } from './toolbar.theme'
 import { ToolbarInterface } from './toolbar.types'
 
@@ -10,13 +10,15 @@ export const Toolbar: FC<ToolbarInterface> = function Toolbar({
   css,
   ...propsRest
 }) {
+  const { theme } = useTheme()
+
   const classNames = `Toolbar ${className}`
   const cssList = [toolbarTheme, css]
 
   return (
-    <AppBar className={classNames} css={cssList} {...propsRest}>
+    <Base className={classNames} css={cssList} theme={theme} {...propsRest}>
       {children}
-    </AppBar>
+    </Base>
   )
 }
 

@@ -34,7 +34,7 @@ export function appBarTheme(props: AppBarInterface) {
     zIndex: '1100',
     padding: unit[4],
 
-    [mediaQueries.lg]: {
+    [mediaQueries.lg.min]: {
       display: 'inline-flex',
       alignItems: 'center',
       height: '56px',
@@ -44,7 +44,7 @@ export function appBarTheme(props: AppBarInterface) {
     'ul.Nav': {
       width: '100%',
       flexDirection: 'column',
-      [mediaQueries.lg]: {
+      [mediaQueries.lg.min]: {
         flexDirection: 'row',
         height: '50px',
         width: 'auto',
@@ -95,7 +95,7 @@ export function appBarContentTheme(props: AppBarInterface) {
     display: 'none',
     alignItems: 'center',
     flex: 1,
-    [mediaQueries.lg]: {
+    [mediaQueries.lg.min]: {
       display: 'flex',
     },
 
@@ -213,7 +213,7 @@ export function appBarPanelTheme(props: AppBarInterface) {
     flexDirection: 'column',
     zIndex: 9999,
 
-    [mediaQueries.lg]: {
+    [mediaQueries.lg.min]: {
       display: 'none',
     },
 
@@ -230,7 +230,7 @@ export function appBarSearchTheme(props: AppBarInterface) {
 
   return {
     position: 'relative',
-    [mediaQueries.lg]: {
+    [mediaQueries.lg.min]: {
       display: 'inline-block',
     },
     ...(isFunction(AppBarSearch)
@@ -249,7 +249,7 @@ export function appBarTriggerTheme(props: AppBarInterface) {
     marginRight: unit[4],
     display: 'inline-block',
 
-    [mediaQueries.lg]: {
+    [mediaQueries.lg.min]: {
       display: 'none',
     },
     ...(isFunction(AppBarTrigger)

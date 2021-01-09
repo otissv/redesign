@@ -3,6 +3,7 @@ import { AliasInterface } from './utility.types'
 export function getAlias(style: string) {
   const alias: AliasInterface = {
     cl: 'color',
+
     bg: 'background',
     bga: 'backgroundAttachment',
     bgl: 'backgroundClip',
@@ -51,15 +52,17 @@ export function getAlias(style: string) {
     p9: 'padding9',
     p10: 'padding10',
 
-    br: 'border',
-    brb: 'borderBottom',
-    brl: 'borderLeft',
-    brr: 'borderRight',
-    brt: 'borderTop',
-    brx: 'borderX',
-    bry: 'borderY',
-    brw: 'borderWidth',
-    brc: 'borderColor',
+    d: 'display',
+
+    bd: 'border',
+    bdb: 'borderBottom',
+    bdl: 'borderLeft',
+    bdr: 'borderRight',
+    bdt: 'borderTop',
+    bdx: 'borderX',
+    bdy: 'borderY',
+    bdc: 'borderColor',
+    bdw: 'borderWidth',
     bds: 'borderStyle',
 
     r: 'radius',
@@ -70,7 +73,11 @@ export function getAlias(style: string) {
     rx: 'borderXRadius',
     ry: 'borderYRadius',
 
-    d: 'display',
+    e: 'elevate',
+
+    bs: 'boxSizing',
+
+    ct: 'centered',
 
     fl: 'flex',
     flg: 'flexGrow',
@@ -88,16 +95,12 @@ export function getAlias(style: string) {
     ai: 'alignItems',
     af: 'alignSelf',
 
-    e: 'elevate',
-
-    cd: 'centered',
-
     mh: 'maxHeight',
     mw: 'maxWidth',
 
     ta: 'textAlign',
-    wb: 'wordBreak',
     tc: 'truncate',
+    wb: 'wordBreak',
     lt: 'listStyle',
     lp: 'listPosition',
     td: 'textDecoration',
@@ -115,20 +118,19 @@ export function getAlias(style: string) {
 
     ps: 'position',
 
+    ft: 'float',
+    cf: 'clearFix',
+
+    ff: 'fontFamily',
     fs: 'fontSize',
     lh: 'lineHeight',
     ls: 'letterSpacing',
     fw: 'fontWeight',
-    ff: 'fontFamily',
-    fv: 'fontVariantNumeric',
 
-    ft: 'float',
-    cf: 'clearFix',
+    zi: 'zIndex',
 
     ot: 'objectFit',
     op: 'objectPosition',
-
-    bs: 'boxSizing',
 
     vs: 'visibility',
 
@@ -137,6 +139,8 @@ export function getAlias(style: string) {
     pe: 'pointerEvents',
     rs: 'resize',
     us: 'userSelect',
+
+    tr: 'transition',
 
     tf: 'transform',
 
